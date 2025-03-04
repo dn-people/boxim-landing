@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.d0161271.css",
-    "main.js": "/static/js/main.128f43eb.js",
-    "static/js/453.42972ea4.chunk.js": "/static/js/453.42972ea4.chunk.js",
-    "index.html": "/index.html",
-    "main.d0161271.css.map": "/static/css/main.d0161271.css.map",
-    "main.128f43eb.js.map": "/static/js/main.128f43eb.js.map",
-    "453.42972ea4.chunk.js.map": "/static/js/453.42972ea4.chunk.js.map"
+    "main.css": "/dn-people.com/static/css/main.d0161271.css",
+    "main.js": "/dn-people.com/static/js/main.0c3adbd9.js",
+    "static/js/453.42972ea4.chunk.js": "/dn-people.com/static/js/453.42972ea4.chunk.js",
+    "index.html": "/dn-people.com/index.html",
+    "main.d0161271.css.map": "/dn-people.com/static/css/main.d0161271.css.map",
+    "main.0c3adbd9.js.map": "/dn-people.com/static/js/main.0c3adbd9.js.map",
+    "453.42972ea4.chunk.js.map": "/dn-people.com/static/js/453.42972ea4.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.d0161271.css",
-    "static/js/main.128f43eb.js"
+    "static/js/main.0c3adbd9.js"
   ]
 }
