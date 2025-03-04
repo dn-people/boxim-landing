@@ -209,6 +209,7 @@ const App = () => {
               initial={{ y: 50, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.5 }}
+              onClick={() => window.open("https://boxim.io", "_blank")}
             >
               바로가기
             </Button>
@@ -911,6 +912,7 @@ const App = () => {
             initial={{ y: 50, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.3 }}
+            onClick={() => window.open("https://boxim.io", "_blank")}
           >
             바로가기
           </Button>
