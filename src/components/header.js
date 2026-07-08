@@ -63,6 +63,9 @@ const Header = ({ section }) => {
             >
               후기
             </Nav>
+            <Nav isLight={isLight} href="/blog/" isActive={false}>
+              블로그
+            </Nav>
           </div>
         </div>
       </div>

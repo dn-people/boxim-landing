@@ -1,3 +1,17 @@
 # https://www.robotstxt.org/robotstxt.html
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
 User-agent: *
-Disallow:
+Allow: /
+
+Sitemap: https://dn-people.com/sitemap.xml
