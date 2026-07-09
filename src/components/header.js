@@ -17,8 +17,6 @@ const Header = ({ section }) => {
     }
   }, [section]);
 
-  //   console.log(isLight);
-
   return (
     <header className="fixed top-3 lg:top-6 left-0 right-0 z-10">
       <div className="container mx-auto px-3 lg:px-6">

@@ -93,8 +93,6 @@ const App = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [scroll]);
 
-  console.log(section);
-
   const mission1Hide = scroll > 4 * screen;
 
   const onUpdateScreen = () => {
@@ -126,7 +124,7 @@ const App = () => {
 
   return (
     <>
-      <Header scroll={scroll} section={section} />
+      <Header section={section} />
       <section
         id="hero-section"
         className="w-full min-h-screen flex flex-col justify-center relative overflow-hidden"
@@ -826,17 +824,11 @@ const App = () => {
               <br />
               실제 후기
             </Text.Header1>
-            <Marquee
-              style={{ height: "360px", overflow: "visible" }}
-              // autoFill
-            >
+            <Marquee style={{ height: "360px", overflow: "visible" }}>
               {reviewDataRow1.map((data) => (
                 <motion.div
                   className="w-90 h-90 flex flex-col gap-6 p-6 rounded-[12px] bg-white mx-4"
                   key={data.name}
-                  // initial={{ y: 50, opacity: 0 }}
-                  // whileInView={{ y: 0, opacity: 1 }}
-                  // transition={{ duration: 0.5, ease: "easeInOut" }}
                 >
                   <div className="flex">
                     <Star />
@@ -855,15 +847,11 @@ const App = () => {
             <Marquee
               style={{ height: "360px", overflow: "visible" }}
               direction="right"
-              // autoFill
             >
               {reviewDataRow2.map((data) => (
                 <motion.div
                   className="w-90 h-90 flex flex-col gap-6 p-6 rounded-[12px] bg-white mx-4"
                   key={data.name}
-                  // initial={{ y: 50, opacity: 0 }}
-                  // whileInView={{ y: 0, opacity: 1 }}
-                  // transition={{ duration: 0.5, ease: "easeInOut" }}
                 >
                   <div className="flex">
                     <Star />
