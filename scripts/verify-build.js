@@ -73,7 +73,12 @@ if (html.includes('content="summary"') && !html.includes("summary_large_image"))
 if (!html.includes('"@type": "Organization"') && !html.includes('"@type":"Organization"'))
   fail("homepage JSON-LD Organization missing");
 
-// 6. (R5에서 css 검증 블록이 여기에 추가된다)
+// 6. CSS 무결성 (R5: font-family 폴백 체인 정상)
+const cssDir = path.join(buildDir, "static", "css");
+const mainCss = fs.readdirSync(cssDir).find((f) => /^main\..*\.css$/.test(f));
+const css = fs.readFileSync(path.join(cssDir, mainCss), "utf8");
+if (/font-family:\s*"Pretendard,/.test(css)) fail("font-family still a single quoted string");
+if (!css.includes("Pretendard")) fail("Pretendard missing from css");
 
 if (failed) { console.error("VERIFY FAILED"); process.exit(1); }
 console.log("VERIFY OK");
