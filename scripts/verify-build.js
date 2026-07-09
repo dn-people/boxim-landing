@@ -60,6 +60,10 @@ const html = read("index.html");
 if (!html.includes("빡심팀")) fail("homepage title text missing");
 if (!html.includes('name="description"')) fail("meta description missing");
 // (이후 항목들이 이 아래에 검증 라인을 누적 추가한다)
+// R1: 깨진/중복 참조 제거 유지
+if ((html.match(/<title/g) || []).length !== 1) fail("title must appear exactly once");
+for (const bad of ["React App", "logo192", "manifest.json", "/public/pc/"])
+  if (html.includes(bad)) fail(`index.html must not contain: ${bad}`);
 
 // 6. (R5에서 css 검증 블록이 여기에 추가된다)
 
