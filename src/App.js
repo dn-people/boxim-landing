@@ -19,7 +19,7 @@ import {
 } from "./data/content";
 import { reviewDataRow1, reviewDataRow2 } from "./data/reviews";
 import Header from "./components/header";
-import Star from "./components/star";
+import ReviewCard from "./components/review-card";
 import Text from "./components/text";
 
 const App = () => {
@@ -564,22 +564,7 @@ const App = () => {
             </Text.Header1>
             <Marquee style={{ height: "360px", overflow: "visible" }}>
               {reviewDataRow1.map((data) => (
-                <motion.div
-                  className="w-90 h-90 flex flex-col gap-6 p-6 rounded-[12px] bg-white mx-4"
-                  key={data.name}
-                >
-                  <div className="flex">
-                    <Star />
-                    <Star />
-                    <Star />
-                    <Star />
-                    <Star />
-                  </div>
-                  <Text.Header6>{data.name}</Text.Header6>
-                  <Text.Header5 className="flex-1 font-normal overflow-hidden text-ellipsis">
-                    {data.content}
-                  </Text.Header5>
-                </motion.div>
+                <ReviewCard key={data.name} {...data} />
               ))}
             </Marquee>
             <Marquee
@@ -587,22 +572,7 @@ const App = () => {
               direction="right"
             >
               {reviewDataRow2.map((data) => (
-                <motion.div
-                  className="w-90 h-90 flex flex-col gap-6 p-6 rounded-[12px] bg-white mx-4"
-                  key={data.name}
-                >
-                  <div className="flex">
-                    <Star />
-                    <Star />
-                    <Star />
-                    <Star />
-                    <Star />
-                  </div>
-                  <Text.Header6>{data.name}</Text.Header6>
-                  <Text.Header5 className="flex-1 font-normal overflow-hidden text-ellipsis">
-                    {data.content}
-                  </Text.Header5>
-                </motion.div>
+                <ReviewCard key={data.name} {...data} />
               ))}
             </Marquee>
           </div>
