@@ -1,6 +1,6 @@
 # boxim-landing (dn-people.com)
 
-통신상품 원스톱 서비스 "빡심" 랜딩 페이지 + "동네방네" 블로그(정적 HTML).
+통신상품 원스톱 서비스 "동네방네" 랜딩 페이지 + "동네방네" 블로그(정적 HTML).
 react-scripts(CRA) 기반이며, 랜딩은 React SPA, 블로그(`/blog/`)는
 `public/blog/` 아래 정적 HTML로 서빙된다.
 

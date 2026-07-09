@@ -22,7 +22,7 @@ const ReviewSection = ({ sectionRef }) => (
           whileInView={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.5, ease: "easeInOut" }}
         >
-          빡심 이용자의
+          동네방네 이용자의
           <br />
           실제 후기
         </Text.Header1>

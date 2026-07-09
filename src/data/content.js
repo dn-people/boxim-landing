@@ -85,7 +85,7 @@ export const whyCards = [
     image: "./why-3.png",
     imagePosition: "bg-bottom",
     title: "지원금 가장 많은 요금제 추천",
-    body: "사실상 큰 차이 없는 수천개의 요금제 중 현 시점 최대의 지원금을 드릴 수 있는 답을 빡심이 찾아 드립니다",
+    body: "사실상 큰 차이 없는 수천개의 요금제 중 현 시점 최대의 지원금을 드릴 수 있는 답을 동네방네가 찾아 드립니다",
   },
 ];
 

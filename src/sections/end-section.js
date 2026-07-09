@@ -27,7 +27,7 @@ const EndSection = ({ sectionRef }) => (
         transition={{ duration: 0.5, ease: "easeInOut", delay: 0.2 }}
         className="text-center"
       >
-        빡심으로 쉽고 편리하게
+        동네방네로 쉽고 편리하게
         <br />
         통신비 SAVE 하자
       </Text.Header1>

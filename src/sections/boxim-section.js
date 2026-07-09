@@ -23,7 +23,7 @@ const BoximSection = ({ sectionRef }) => (
         whileInView={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5, ease: "easeInOut" }}
       >
-        빡심을 만드는 사람들은 이미 시장에서 유명합니다
+        동네방네를 만드는 사람들은 이미 시장에서 유명합니다
       </Text.Header1>
       <div className="flex flex-col lg:flex-row gap-6">
         {boximStats.map((stat, index) => (

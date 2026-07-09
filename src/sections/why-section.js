@@ -20,7 +20,7 @@ const WhySection = ({ sectionRef }) => (
         whileInView={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5, ease: "easeInOut" }}
       >
-        빡심은 왜
+        동네방네는 왜
         <br />
         저렴하고, 간편하고, 쉬울까요?
       </Text.Header1>

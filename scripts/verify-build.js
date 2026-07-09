@@ -37,7 +37,7 @@ else {
     "통신생활 원스톱 솔루션",
     "현명한 통신생활 3대 원칙",
     "저렴하고, 간편하고, 쉬울까요?",
-    "빡심 이용자의",
+    "동네방네 이용자의",
     "https://boxim.io",
     "ark****",
     "ddin****",
@@ -67,7 +67,7 @@ for (const loc of locs) {
 
 // 5. index.html 기본 무결성
 const html = read("index.html");
-if (!html.includes("빡심팀")) fail("homepage title text missing");
+if (!html.includes("동네방네팀")) fail("homepage title text missing");
 if (!html.includes('name="description"')) fail("meta description missing");
 // (이후 항목들이 이 아래에 검증 라인을 누적 추가한다)
 // R1: 깨진/중복 참조 제거 유지

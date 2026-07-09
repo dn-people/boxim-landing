@@ -20,7 +20,7 @@ const ConceptSection = ({ sectionRef }) => (
         whileInView={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5, ease: "easeInOut" }}
       >
-        <span className="font-normal">빡심팀이 강조하는</span>
+        <span className="font-normal">동네방네팀이 강조하는</span>
         <br />
         현명한 통신생활 3대 원칙
       </Text.Header1>

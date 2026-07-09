@@ -34,7 +34,7 @@ const IntroSection = ({ sectionRef }) => {
         >
           어렵고 복잡한 통신상품 구매는
           <br />
-          빡심에게 맡기세요
+          동네방네에게 맡기세요
         </Text.Header1>
         <AnimatePresence>
           <motion.div

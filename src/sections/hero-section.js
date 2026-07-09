@@ -64,7 +64,7 @@ const HeroSection = () => {
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.4 }}
           >
-            빡심에서 쉽고 간편하게
+            동네방네에서 쉽고 간편하게
           </Text.Header1>
         </div>
         <div>
