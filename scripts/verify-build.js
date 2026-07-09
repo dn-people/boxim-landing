@@ -64,6 +64,8 @@ if (!html.includes('name="description"')) fail("meta description missing");
 if ((html.match(/<title/g) || []).length !== 1) fail("title must appear exactly once");
 for (const bad of ["React App", "logo192", "manifest.json", "/public/pc/"])
   if (html.includes(bad)) fail(`index.html must not contain: ${bad}`);
+// R2: Tailwind CDN 정확한 버전 고정 유지
+if (!/@tailwindcss\/browser@\d+\.\d+\.\d+/.test(html)) fail("tailwind CDN version must be pinned exactly");
 
 // 6. (R5에서 css 검증 블록이 여기에 추가된다)
 
