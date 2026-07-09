@@ -18,6 +18,7 @@ const mustExist = [
   "icon-phone.png", "icon-box.png", "icon-tablet.png", "icon-watch.png",
   "icon-usim.png", "icon-setupbox.png", "icon-plan.png", "icon-accs.png",
   "favicon.ico", "favicon-16x16.png", "favicon-32x32.png",
+  "logo-dnbn.svg",
 ];
 for (const f of mustExist)
   if (!fs.existsSync(path.join(buildDir, f))) fail(`missing build file: ${f}`);
