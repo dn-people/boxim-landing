@@ -3,6 +3,11 @@ import { useEffect, useRef, useState } from "react";
 import Marquee from "react-fast-marquee";
 
 import Button from "./components/button";
+import {
+  BOXIM_URL,
+  SECTION_IN_VIEW_MARGIN,
+  SECTION_SCROLL_MARGIN,
+} from "./constants";
 import { reviewDataRow1, reviewDataRow2 } from "./components/datas";
 import Header from "./components/header";
 import Star from "./components/star";
@@ -33,39 +38,39 @@ const App = () => {
 
   const introSectionRef = useRef(null);
   const isIntroSection = useInView(introSectionRef, {
-    margin: "0px 0px -90% 0px",
+    margin: SECTION_IN_VIEW_MARGIN,
   });
   const conceptSectionRef = useRef(null);
   const isConceptSection = useInView(conceptSectionRef, {
-    margin: "0px 0px -90% 0px",
+    margin: SECTION_IN_VIEW_MARGIN,
   });
   const missionSectionRef = useRef(null);
   const isMissionSection = useInView(missionSectionRef, {
-    margin: "0px 0px -90% 0px",
+    margin: SECTION_IN_VIEW_MARGIN,
   });
   const whySectionRef = useRef(null);
   const isWhySection = useInView(whySectionRef, {
-    margin: "0px 0px -90% 0px",
+    margin: SECTION_IN_VIEW_MARGIN,
   });
   const typeSectionRef = useRef(null);
   const isTypeSection = useInView(typeSectionRef, {
-    margin: "0px 0px -90% 0px",
+    margin: SECTION_IN_VIEW_MARGIN,
   });
   const boximSectionRef = useRef(null);
   const isBoximSection = useInView(boximSectionRef, {
-    margin: "0px 0px -90% 0px",
+    margin: SECTION_IN_VIEW_MARGIN,
   });
   const historySectionRef = useRef(null);
   const isHistorySection = useInView(historySectionRef, {
-    margin: "0px 0px -90% 0px",
+    margin: SECTION_IN_VIEW_MARGIN,
   });
   const reviewSectionRef = useRef(null);
   const isReviewSection = useInView(reviewSectionRef, {
-    margin: "0px 0px -90% 0px",
+    margin: SECTION_IN_VIEW_MARGIN,
   });
   const endSectionRef = useRef(null);
   const isEndSection = useInView(endSectionRef, {
-    margin: "0px 0px -90% 0px",
+    margin: SECTION_IN_VIEW_MARGIN,
   });
 
   useEffect(() => {
@@ -207,7 +212,7 @@ const App = () => {
               initial={{ y: 50, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.5 }}
-              onClick={() => window.open("https://boxim.io", "_blank")}
+              onClick={() => window.open(BOXIM_URL, "_blank")}
             >
               바로가기
             </Button>
@@ -218,7 +223,7 @@ const App = () => {
         id="intro-section"
         ref={introSectionRef}
         className="w-full min-h-160 h-screen max-h-200 bg-white"
-        style={{ scrollMarginTop: "96px" }}
+        style={SECTION_SCROLL_MARGIN}
       >
         <div
           id="intro-container"
@@ -336,7 +341,7 @@ const App = () => {
         id="concept-section"
         ref={conceptSectionRef}
         className="w-full min-h-160 h-screen max-h-200 bg-gray-100"
-        style={{ scrollMarginTop: "96px" }}
+        style={SECTION_SCROLL_MARGIN}
       >
         <div
           id="concept-container"
@@ -411,7 +416,7 @@ const App = () => {
         id="mission-section"
         ref={missionSectionRef}
         className="w-full min-h-480 h-[300vh] bg-white"
-        style={{ scrollMarginTop: "96px" }}
+        style={SECTION_SCROLL_MARGIN}
       >
         <div
           id="mission-container"
@@ -477,7 +482,7 @@ const App = () => {
         id="why-section"
         ref={whySectionRef}
         className="w-full min-h-screen flex flex-col justify-center bg-gray-100"
-        style={{ scrollMarginTop: "96px" }}
+        style={SECTION_SCROLL_MARGIN}
       >
         <div
           id="why-container"
@@ -549,7 +554,7 @@ const App = () => {
         id="type-section"
         ref={typeSectionRef}
         className="w-full min-h-screen flex flex-col justify-center bg-white"
-        style={{ scrollMarginTop: "96px" }}
+        style={SECTION_SCROLL_MARGIN}
       >
         <div
           id="type-container"
@@ -693,7 +698,7 @@ const App = () => {
         ref={boximSectionRef}
         style={{
           backgroundImage: "url(./boxim-wallpaper.jpeg)",
-          scrollMarginTop: "96px",
+          ...SECTION_SCROLL_MARGIN,
         }}
         className="w-full min-h-160 h-screen max-h-200 bg-cover bg-no-repeat bg-center text-white"
       >
@@ -744,7 +749,7 @@ const App = () => {
         ref={historySectionRef}
         style={{
           backgroundImage: "url(./history.jpeg)",
-          scrollMarginTop: "96px",
+          ...SECTION_SCROLL_MARGIN,
         }}
         className="w-full min-h-screen flex flex-col justify-center bg-cover bg-no-repeat bg-center text-white"
       >
@@ -807,7 +812,7 @@ const App = () => {
       <section
         id="review-section"
         ref={reviewSectionRef}
-        style={{ scrollMarginTop: "96px" }}
+        style={SECTION_SCROLL_MARGIN}
         className="w-full min-h-screen flex bg-gray-100"
       >
         <div className="w-full flex flex-col justify-center overflow-hidden">
@@ -900,7 +905,7 @@ const App = () => {
             initial={{ y: 50, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.3 }}
-            onClick={() => window.open("https://boxim.io", "_blank")}
+            onClick={() => window.open(BOXIM_URL, "_blank")}
           >
             바로가기
           </Button>
