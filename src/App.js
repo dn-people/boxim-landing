@@ -8,12 +8,7 @@ import {
   SECTION_IN_VIEW_MARGIN,
   SECTION_SCROLL_MARGIN,
 } from "./constants";
-import {
-  boximStats,
-  historyEntries,
-  productTypes,
-  whyCards,
-} from "./data/content";
+import { boximStats, historyEntries } from "./data/content";
 import { reviewDataRow1, reviewDataRow2 } from "./data/reviews";
 import Header from "./components/header";
 import ReviewCard from "./components/review-card";
@@ -21,6 +16,9 @@ import Text from "./components/text";
 import ConceptSection from "./sections/concept-section";
 import HeroSection from "./sections/hero-section";
 import IntroSection from "./sections/intro-section";
+import MissionSection from "./sections/mission-section";
+import TypeSection from "./sections/type-section";
+import WhySection from "./sections/why-section";
 
 const App = () => {
   const [screen, setScreen] = useState(0);
@@ -124,163 +122,9 @@ const App = () => {
       <HeroSection />
       <IntroSection sectionRef={introSectionRef} />
       <ConceptSection sectionRef={conceptSectionRef} />
-      <section
-        id="mission-section"
-        ref={missionSectionRef}
-        className="w-full min-h-480 h-[300vh] bg-white"
-        style={SECTION_SCROLL_MARGIN}
-      >
-        <div
-          id="mission-container"
-          className="container mx-auto min-h-160 h-screen flex flex-col p-6 lg:p-12 justify-center gap-12 lg:gap-24 sticky top-0"
-        >
-          <Text.Header1
-            initial={{ y: 50, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.5, ease: "easeInOut" }}
-          >
-            하지만
-            <br />
-            <span className="font-normal">
-              통신 시장의 현실을 바꿀 수 있을까요?
-            </span>
-          </Text.Header1>
-          <div className="w-full h-120 relative">
-            <div
-              id="mission-1"
-              className={`absolute top-0 left-0 right-0 bottom-0 bg-gray-100 z-2 flex flex-col lg:items-center justify-center lg:flex-row rounded-[16px] transition-all duration-500 ${
-                mission1Hide ? "hide" : ""
-              }`}
-            >
-              <div className="lg:flex-1 flex flex-col justify-center items-center gap-2 lg:gap-3 p-12 ">
-                <Text.Header3 className="text-center">
-                  어차피 알려줘도 아무도 안해요.
-                </Text.Header3>
-                <Text.Header5 className="font-normal text-center">
-                  “막상 구매하려고 하면, 현실적인 장벽에 부딫혀요. 진짜
-                  답답하죠.”
-                </Text.Header5>
-              </div>
-              <div
-                style={{ backgroundImage: "url(./mission-1.png)" }}
-                className="flex-1 h-full bg-no-repeat bg-contain bg-bottom"
-              />
-            </div>
-            <div
-              id="mission-2"
-              className="absolute top-0 left-0 right-0 bottom-0 bg-gray-100 z-1 flex flex-col lg:items-center justify-center lg:flex-row rounded-[16px]"
-            >
-              <div className="flex-1 flex flex-col justify-center items-center gap-2 lg:gap-3 p-6 lg:p-12 ">
-                <Text.Header3 className="text-center">
-                  왜 그럴까요?
-                </Text.Header3>
-                <Text.Header5 className="font-normal text-center">
-                  현재 통신 시장은 너무나도 복잡합니다. 수많은 유통 구조와
-                  복잡한 요금제, 그리고 신뢰하기 어려운 판매처들. 소비자
-                  입장에선 선뜻 구매 결정을 내리기가 쉽지 않죠. 이런 고민을 하다
-                  보면 결국 ‘모르겠다. 그냥 대리점 가야겠다.’는 결론에 도달하곤
-                  합니다.
-                </Text.Header5>
-              </div>
-              <div
-                style={{ backgroundImage: "url(./mission-2.png)" }}
-                className="flex-1 h-full bg-no-repeat bg-contain bg-bottom"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-      <section
-        id="why-section"
-        ref={whySectionRef}
-        className="w-full min-h-screen flex flex-col justify-center bg-gray-100"
-        style={SECTION_SCROLL_MARGIN}
-      >
-        <div
-          id="why-container"
-          className="container mx-auto flex flex-col px-6 lg:px-12 py-16 lg:py-24 justify-center gap-12 lg:gap-24"
-        >
-          <Text.Header1
-            initial={{ y: 50, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.5, ease: "easeInOut" }}
-          >
-            빡심은 왜 
-            <br />
-            저렴하고, 간편하고, 쉬울까요?
-          </Text.Header1>
-          <div className="flex flex-col lg:flex-row gap-6">
-            {whyCards.map((card, index) => (
-              <motion.div
-                key={card.title}
-                className="lg:flex-1 flex flex-col gap-6 p-6 rounded-[12px] bg-white"
-                initial={{ y: 50, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                transition={{
-                  duration: 0.5,
-                  ease: "easeInOut",
-                  delay: index * 0.1,
-                }}
-              >
-                <div
-                  style={{ backgroundImage: `url(${card.image})` }}
-                  className={`h-48 rounded-[12px] bg-gray-100 bg-no-repeat ${card.imagePosition} bg-contain`}
-                />
-                <Text.Header3>{card.title}</Text.Header3>
-                <Text.Header5 className="font-normal">{card.body}</Text.Header5>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-      <section
-        id="type-section"
-        ref={typeSectionRef}
-        className="w-full min-h-screen flex flex-col justify-center bg-white"
-        style={SECTION_SCROLL_MARGIN}
-      >
-        <div
-          id="type-container"
-          className="container mx-auto flex flex-col px-6 lg:px-12 py-16 lg:py-24 justify-center gap-12 lg:gap-24"
-        >
-          <Text.Header1
-            initial={{ y: 50, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.5, ease: "easeInOut" }}
-          >
-            다양한 통신상품을
-            <br />
-            준비했습니다
-          </Text.Header1>
-          <div className="flex flex-col gap-6">
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
-              {productTypes.map((product, index) => (
-                <motion.div
-                  key={product.label}
-                  className="lg:flex-1 flex flex-col gap-3"
-                  initial={{ y: 50, opacity: 0 }}
-                  whileInView={{ y: 0, opacity: 1 }}
-                  transition={{
-                    duration: 0.5,
-                    ease: "easeInOut",
-                    delay: index * 0.05,
-                  }}
-                >
-                  <div className="flex items-center justify-center h-48 rounded-[12px] bg-gray-100">
-                    <div
-                      style={{ backgroundImage: `url(${product.icon})` }}
-                      className="w-24 h-24 bg-no-repeat bg-center bg-contain"
-                    />
-                  </div>
-                  <Text.Header4 className="text-center">
-                    {product.label}
-                  </Text.Header4>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      <MissionSection sectionRef={missionSectionRef} mission1Hide={mission1Hide} />
+      <WhySection sectionRef={whySectionRef} />
+      <TypeSection sectionRef={typeSectionRef} />
       <section
         id="boxim-section"
         ref={boximSectionRef}
