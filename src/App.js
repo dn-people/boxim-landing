@@ -8,7 +8,7 @@ import {
   SECTION_IN_VIEW_MARGIN,
   SECTION_SCROLL_MARGIN,
 } from "./constants";
-import { reviewDataRow1, reviewDataRow2 } from "./components/datas";
+import { reviewDataRow1, reviewDataRow2 } from "./data/reviews";
 import Header from "./components/header";
 import Star from "./components/star";
 import Text from "./components/text";
