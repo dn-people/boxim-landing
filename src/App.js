@@ -1,4 +1,4 @@
-import { AnimatePresence, motion, useInView } from "motion/react";
+import { motion, useInView } from "motion/react";
 import { useEffect, useRef, useState } from "react";
 import Marquee from "react-fast-marquee";
 
@@ -10,10 +10,7 @@ import {
 } from "./constants";
 import {
   boximStats,
-  conceptPrinciples,
-  heroTitles,
   historyEntries,
-  introSlides,
   productTypes,
   whyCards,
 } from "./data/content";
@@ -21,29 +18,14 @@ import { reviewDataRow1, reviewDataRow2 } from "./data/reviews";
 import Header from "./components/header";
 import ReviewCard from "./components/review-card";
 import Text from "./components/text";
+import ConceptSection from "./sections/concept-section";
+import HeroSection from "./sections/hero-section";
+import IntroSection from "./sections/intro-section";
 
 const App = () => {
   const [screen, setScreen] = useState(0);
   const [scroll, setScroll] = useState(0);
   const [section, setSection] = useState(null);
-  const [heroTitle, setHeroTitle] = useState(1);
-  const [introSection, setIntroSection] = useState(1);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setHeroTitle((prev) => (prev % 3) + 1);
-    }, 2000);
-
-    return () => clearInterval(interval);
-  }, []);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setIntroSection((prev) => (prev % 3) + 1);
-    }, 5000);
-
-    return () => clearInterval(interval);
-  }, []);
 
   const introSectionRef = useRef(null);
   const isIntroSection = useInView(introSectionRef, {
@@ -139,164 +121,9 @@ const App = () => {
   return (
     <>
       <Header section={section} />
-      <section
-        id="hero-section"
-        className="w-full min-h-screen flex flex-col justify-center relative overflow-hidden"
-      >
-        <motion.div
-          style={{ backgroundImage: "url(./hero.jpeg)" }}
-          className="absolute top-0 left-0 right-0 bottom-0 -z-1 bg-cover bg-no-repeat bg-center"
-          initial={{ scale: 1.5 }}
-          animate={{ scale: 1 }}
-          transition={{ duration: 1, ease: "easeInOut" }}
-        />
-        <div
-          id="hero-container"
-          className="container mx-auto flex flex-col p-6 lg:p-12 gap-6 lg:gap-12 justify-center text-white font-bold"
-        >
-          <div className="flex flex-col">
-            <AnimatePresence>
-              <motion.div
-                className="w-full h-14 relative overflow-hidden"
-                initial={{ y: 50, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.5, ease: "easeInOut", delay: 0.2 }}
-              >
-                <Text.Header1
-                  key={heroTitles[heroTitle - 1].key}
-                  className="absolute inset-0"
-                  initial={{ x: 100, opacity: 0 }}
-                  animate={{ x: 0, opacity: 1 }}
-                  exit={{ x: -100, opacity: 0 }}
-                >
-                  {heroTitles[heroTitle - 1].text}
-                </Text.Header1>
-              </motion.div>
-            </AnimatePresence>
-            <Text.Header1
-              initial={{ y: 50, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-            >
-              통신생활 원스톱 솔루션
-            </Text.Header1>
-            <Text.Header1
-              initial={{ y: 50, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-            >
-              빡심에서 쉽고 간편하게
-            </Text.Header1>
-          </div>
-          <div>
-            <Button
-              initial={{ y: 50, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.5 }}
-              onClick={() => window.open(BOXIM_URL, "_blank")}
-            >
-              바로가기
-            </Button>
-          </div>
-        </div>
-      </section>
-      <section
-        id="intro-section"
-        ref={introSectionRef}
-        className="w-full min-h-160 h-screen max-h-200 bg-white"
-        style={SECTION_SCROLL_MARGIN}
-      >
-        <div
-          id="intro-container"
-          className="container mx-auto h-full flex flex-col p-6 lg:p-12 justify-center gap-12 lg:gap-24"
-        >
-          <Text.Header1
-            initial={{ y: 50, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.5, ease: "easeInOut" }}
-          >
-            어렵고 복잡한 통신상품 구매는
-            <br />
-            빡심에게 맡기세요
-          </Text.Header1>
-          <AnimatePresence>
-            <motion.div
-              className="w-full h-96 lg:h-48 relative overflow-hidden"
-              initial={{ y: 50, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.5, ease: "easeInOut" }}
-            >
-              <motion.div
-                key={introSlides[introSection - 1].key}
-                className="absolute inset-0 flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-6 px-6 py-6 rounded-[12px] bg-gray-100"
-                initial={{ x: 100, opacity: 0 }}
-                animate={{ x: 0, opacity: 1 }}
-                exit={{ x: -100, opacity: 0 }}
-                transition={{ duration: 1, ease: "easeInOut" }}
-              >
-                <div
-                  style={{
-                    backgroundImage: `url(${introSlides[introSection - 1].image})`,
-                  }}
-                  className="flex-none w-20 h-20 lg:w-16 lg:h-16 rounded-full bg-gray-500 bg-no-repeat bg-cover bg-center"
-                />
-                <div className="flex flex-col">
-                  <Text.Header6>
-                    {introSlides[introSection - 1].persona}
-                  </Text.Header6>
-                  <Text.Header4 className="font-normal">
-                    {introSlides[introSection - 1].quote}
-                  </Text.Header4>
-                </div>
-              </motion.div>
-            </motion.div>
-          </AnimatePresence>
-        </div>
-      </section>
-      <section
-        id="concept-section"
-        ref={conceptSectionRef}
-        className="w-full min-h-160 h-screen max-h-200 bg-gray-100"
-        style={SECTION_SCROLL_MARGIN}
-      >
-        <div
-          id="concept-container"
-          className="container mx-auto h-full flex flex-col p-6 lg:p-12 justify-center gap-12 lg:gap-24"
-        >
-          <Text.Header1
-            initial={{ y: 50, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.5, ease: "easeInOut" }}
-          >
-            <span className="font-normal">빡심팀이 강조하는</span>
-            <br />
-            현명한 통신생활 3대 원칙
-          </Text.Header1>
-          <div className="flex flex-col gap-6">
-            {conceptPrinciples.map((principle, index) => (
-              <motion.div
-                key={principle.title}
-                className="flex items-center gap-6 p-6 rounded-[12px] bg-white"
-                initial={{ y: 50, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.5, ease: "easeInOut" }}
-              >
-                <div className="flex-none flex items-center justify-center w-8 h-8 rounded-[4px] bg-blue-100 font-bold text-blue-500">
-                  <Text.Body1>{index + 1}</Text.Body1>
-                </div>
-                <div className="flex-1 flex flex-col">
-                  <Text.Header5>{principle.title}</Text.Header5>
-                  {principle.note && (
-                    <Text.Body3 className="text-gray-500">
-                      {principle.note}
-                    </Text.Body3>
-                  )}
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <HeroSection />
+      <IntroSection sectionRef={introSectionRef} />
+      <ConceptSection sectionRef={conceptSectionRef} />
       <section
         id="mission-section"
         ref={missionSectionRef}
