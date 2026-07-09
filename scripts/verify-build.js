@@ -69,6 +69,9 @@ if (!/@tailwindcss\/browser@\d+\.\d+\.\d+/.test(html)) fail("tailwind CDN versio
 // R3: canonical + twitter card 정합 유지
 if (!html.includes('rel="canonical"')) fail("canonical link missing");
 if (html.includes('content="summary"') && !html.includes("summary_large_image")) fail("twitter card should be summary_large_image");
+// R4: 홈페이지 JSON-LD 유지
+if (!html.includes('"@type": "Organization"') && !html.includes('"@type":"Organization"'))
+  fail("homepage JSON-LD Organization missing");
 
 // 6. (R5에서 css 검증 블록이 여기에 추가된다)
 

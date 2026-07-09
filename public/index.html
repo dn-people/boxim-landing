@@ -57,6 +57,30 @@
     <link rel="icon" type="image/png" sizes="32x32" href="%PUBLIC_URL%/favicon-32x32.png" />
 
     <script src="https://unpkg.com/@tailwindcss/browser@4.3.2"></script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://dn-people.com/#organization",
+            "name": "동네방네",
+            "url": "https://dnbn.co.kr/",
+            "logo": "https://dn-people.com/ogImage.jpg",
+            "sameAs": ["https://dn-people.com/", "https://boxim.io"]
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://dn-people.com/#website",
+            "url": "https://dn-people.com/",
+            "name": "동네방네",
+            "alternateName": "빡심팀",
+            "inLanguage": "ko-KR",
+            "publisher": { "@id": "https://dn-people.com/#organization" }
+          }
+        ]
+      }
+    </script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
