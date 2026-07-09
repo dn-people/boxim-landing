@@ -82,6 +82,12 @@ if (html.includes('content="summary"') && !html.includes("summary_large_image"))
 if (!html.includes('"@type": "Organization"') && !html.includes('"@type":"Organization"'))
   fail("homepage JSON-LD Organization missing");
 
+// R19: 블로그 썸네일 자가 호스팅 (외부 핫링크 제거)
+for (const f of ["blog/index.html", "blog/best-phone-buying-site/index.html"])
+  if (read(f).includes("shopby-images")) fail(`external hotlink remains in ${f}`);
+if (!fs.existsSync(path.join(buildDir, "blog/assets/best-phone-buying-site.png")))
+  fail("self-hosted blog thumbnail missing");
+
 // 6. CSS 무결성 (R5: font-family 폴백 체인 정상)
 const cssDir = path.join(buildDir, "static", "css");
 const mainCss = fs.readdirSync(cssDir).find((f) => /^main\..*\.css$/.test(f));
