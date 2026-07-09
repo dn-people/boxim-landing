@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{{TITLE}} | 동네방네</title>
+    <meta name="description" content="{{DESCRIPTION}}" />
+    <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1" />
+    <link rel="canonical" href="https://dn-people.com/blog/{{SLUG}}/" />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="ko_KR" />
+    <meta property="og:site_name" content="동네방네" />
+    <meta property="og:title" content="{{TITLE}} | 동네방네" />
+    <meta property="og:description" content="{{OG_DESCRIPTION}}" />
+    <meta property="og:url" content="https://dn-people.com/blog/{{SLUG}}/" />
+    <meta property="og:image" content="{{THUMB_URL}}" />
+    <meta property="article:published_time" content="{{PUBLISHED_DATE}}" />
+    <meta property="article:modified_time" content="{{PUBLISHED_DATE}}" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="{{TITLE}} | 동네방네" />
+    <meta name="twitter:description" content="{{OG_DESCRIPTION}}" />
+    <meta name="twitter:image" content="{{THUMB_URL}}" />
+    <link rel="icon" href="/favicon.ico" />
+    <link
+      rel="stylesheet"
+      crossorigin
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css"
+    />
+    <style>
+      *{box-sizing:border-box}
+      html{scroll-behavior:smooth}
+      body{margin:0;font-family:"Pretendard","Apple SD Gothic Neo",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#111827;background:#fff;line-height:1.75;word-break:keep-all}
+      a{color:#0159fb;text-decoration:underline;text-underline-offset:3px}
+      .site-header{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.88);backdrop-filter:blur(14px);border-bottom:1px solid #e5e7eb}
+      .header-inner{max-width:1120px;margin:0 auto;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+      .brand{font-size:20px;font-weight:900;letter-spacing:0;color:#111827;text-decoration:none}
+      .nav{display:flex;align-items:center;gap:4px;flex-wrap:wrap;justify-content:flex-end}
+      .nav a{display:flex;align-items:center;justify-content:center;padding:10px 12px;border-radius:4px;font-size:15px;line-height:1;font-weight:800;color:#6b7280;text-decoration:none}
+      .nav a.active{background:#3b82f6;color:#fff}
+      .article-wrap{max-width:900px;margin:0 auto;padding:52px 20px 80px}
+      .breadcrumb{display:flex;gap:8px;align-items:center;margin-bottom:22px;color:#6b7280;font-size:15px;font-weight:700}
+      .breadcrumb a{color:#6b7280;text-decoration:none}
+      h1{font-size:40px;line-height:1.32;margin:0 0 16px;font-weight:900;color:#111827;letter-spacing:0}
+      .post-meta{margin:0 0 26px;color:#6b7280;font-size:15px;font-weight:700}
+      .hero-image{display:block;width:100%;height:auto;border-radius:8px;margin:0 auto 30px}
+      h2{font-size:25px;line-height:1.45;margin:46px 0 16px;font-weight:900;color:#0159fb;letter-spacing:0}
+      h3{font-size:19px;line-height:1.5;margin:24px 0 10px;font-weight:900;color:#111827;letter-spacing:0}
+      p{font-size:17px;margin:0 0 16px}
+      ul,ol{margin:0 0 20px 22px;padding:0}
+      li{font-size:17px;margin:6px 0}
+      .summary-box{background:#f5f8ff;border-left:5px solid #0159fb;padding:18px 20px;margin:0 0 32px}
+      .note-box{background:#fafafa;border:1px solid #e6eaf2;border-radius:8px;padding:18px 20px;margin:24px 0}
+      .table-scroll{width:100%;overflow-x:auto;margin:18px 0 28px}
+      table{width:100%;min-width:680px;border-collapse:collapse;border-top:2px solid #0159fb}
+      th,td{font-size:16px;text-align:left;vertical-align:top;border-bottom:1px solid #e6eaf2;padding:13px 12px}
+      th{background:#f5f8ff;font-weight:900;color:#111827}
+      .check-list{background:#fff;border:1px solid #e6eaf2;border-radius:8px;padding:18px 20px;margin:20px 0 28px}
+      .check-list ol{margin-bottom:0}
+      .faq-item{border-top:1px solid #e6eaf2;padding:18px 0}
+      .faq-item:last-child{border-bottom:1px solid #e6eaf2}
+      .faq-item h3{margin:0 0 8px;color:#0159fb}
+      .source-list{background:#fafafa;border-radius:8px;padding:18px 20px;margin:18px 0 30px}
+      .source-list ul{margin-bottom:0}
+      .brand-cta{background:#0159fb;color:#fff;padding:22px 24px;border-radius:8px;font-size:20px;font-weight:900;text-align:center;margin-top:34px}
+      .brand-cta a{color:#fff;text-decoration:underline}
+      .small{font-size:15px;color:#555}
+      .divider{height:1px;background:#e6eaf2;margin:36px 0}
+      .footer{border-top:1px solid #e5e7eb;background:#fafafa}
+      .footer-inner{max-width:900px;margin:0 auto;padding:24px 20px;color:#6b7280;font-size:14px}
+      @media(max-width:720px){.header-inner{align-items:flex-start;flex-direction:column}.nav{justify-content:flex-start}.article-wrap{padding:36px 18px 64px}h1{font-size:31px}h2{font-size:22px}p,li{font-size:16px}th,td{font-size:15px;padding:11px 10px}.brand-cta{font-size:18px}}
+    </style>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Article",
+            "@id": "https://dn-people.com/blog/{{SLUG}}/#article",
+            "headline": "{{TITLE}}",
+            "description": "{{DESCRIPTION}}",
+            "inLanguage": "ko-KR",
+            "datePublished": "{{PUBLISHED_DATE}}",
+            "dateModified": "{{PUBLISHED_DATE}}",
+            "image": "{{THUMB_URL}}",
+            "author": {
+              "@type": "Organization",
+              "name": "동네방네",
+              "url": "https://dnbn.co.kr/"
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "동네방네",
+              "url": "https://dnbn.co.kr/"
+            },
+            "mainEntityOfPage": {
+              "@type": "WebPage",
+              "@id": "https://dn-people.com/blog/{{SLUG}}/"
+            }
+          },
+          {
+            "@type": "FAQPage",
+            "@id": "https://dn-people.com/blog/{{SLUG}}/#faq",
+            "inLanguage": "ko-KR",
+            "mainEntity": [
+              {{FAQ_JSONLD_ITEMS}}
+            ]
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="/">동네방네</a>
+        <nav class="nav" aria-label="주요 메뉴">
+          <a href="/#hero-section">홈</a>
+          <a href="/#intro-section">소개</a>
+          <a href="/#boxim-section">회사</a>
+          <a href="/#review-section">후기</a>
+          <a class="active" href="/blog/">블로그</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="article-wrap">
+      <div class="breadcrumb">
+        <a href="/">홈</a>
+        <span>/</span>
+        <a href="/blog/">블로그</a>
+      </div>
+
+      <article>
+        <h1>{{TITLE}}</h1>
+        <p class="post-meta">{{PUBLISHED_DATE_KR}} · 동네방네 {{CATEGORY}}</p>
+
+        <img
+          class="hero-image"
+          src="{{THUMB_URL}}"
+          alt="{{THUMB_ALT}}"
+          loading="lazy"
+        />
+
+        <div class="summary-box">
+          <p><strong>요약 답변</strong></p>
+          {{SUMMARY_HTML}}
+          <p class="small">기준일: {{PUBLISHED_DATE_KR}}</p>
+        </div>
+
+        {{BODY_HTML}}
+
+        <div class="divider"></div>
+
+        <h2>자주 묻는 질문</h2>
+
+        {{FAQ_HTML}}
+
+        <h2>참고할 공식 사이트</h2>
+        <div class="source-list">
+          {{SOURCES_HTML}}
+        </div>
+
+        <div class="brand-cta">
+          자급제폰, 오픈박스폰, 알뜰폰 요금제까지 한 번에 비교하고 싶다면<br />
+          휴대폰 살 땐 동네방네 <a href="https://dnbn.co.kr/" target="_blank" rel="noopener">dnbn.co.kr</a>
+        </div>
+      </article>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">휴대폰 살 땐 동네방네 dnbn.co.kr</div>
+    </footer>
+  </body>
+</html>
