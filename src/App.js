@@ -13,7 +13,7 @@ const App = () => {
   const [scroll, setScroll] = useState(0);
   const [section, setSection] = useState(null);
   const [heroTitle, setHeroTitle] = useState(1);
-  const [introSecton, setIntroSection] = useState(1);
+  const [introSection, setIntroSection] = useState(1);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -326,7 +326,7 @@ const App = () => {
                       </div>
                     </motion.div>
                   ),
-                }[introSecton]
+                }[introSection]
               }
             </motion.div>
           </AnimatePresence>
