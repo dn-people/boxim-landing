@@ -9,7 +9,11 @@ import {
   SECTION_SCROLL_MARGIN,
 } from "./constants";
 import {
+  boximStats,
   conceptPrinciples,
+  heroTitles,
+  historyEntries,
+  introSlides,
   productTypes,
   whyCards,
 } from "./data/content";
@@ -158,43 +162,15 @@ const App = () => {
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.5, ease: "easeInOut", delay: 0.2 }}
               >
-                {
-                  {
-                    1: (
-                      <Text.Header1
-                        key="smartphone"
-                        className="absolute inset-0"
-                        initial={{ x: 100, opacity: 0 }}
-                        animate={{ x: 0, opacity: 1 }}
-                        exit={{ x: -100, opacity: 0 }}
-                      >
-                        스마트폰 구매
-                      </Text.Header1>
-                    ),
-                    2: (
-                      <Text.Header1
-                        key="cell"
-                        className="absolute inset-0"
-                        initial={{ x: 100, opacity: 0 }}
-                        animate={{ x: 0, opacity: 1 }}
-                        exit={{ x: -100, opacity: 0 }}
-                      >
-                        통신사 가입
-                      </Text.Header1>
-                    ),
-                    3: (
-                      <Text.Header1
-                        key="usim"
-                        className="absolute inset-0"
-                        initial={{ x: 100, opacity: 0 }}
-                        animate={{ x: 0, opacity: 1 }}
-                        exit={{ x: -100, opacity: 0 }}
-                      >
-                        유심 구매
-                      </Text.Header1>
-                    ),
-                  }[heroTitle]
-                }
+                <Text.Header1
+                  key={heroTitles[heroTitle - 1].key}
+                  className="absolute inset-0"
+                  initial={{ x: 100, opacity: 0 }}
+                  animate={{ x: 0, opacity: 1 }}
+                  exit={{ x: -100, opacity: 0 }}
+                >
+                  {heroTitles[heroTitle - 1].text}
+                </Text.Header1>
               </motion.div>
             </AnimatePresence>
             <Text.Header1
@@ -250,94 +226,29 @@ const App = () => {
               whileInView={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.5, ease: "easeInOut" }}
             >
-              {
-                {
-                  1: (
-                    <motion.div
-                      key="intro-1"
-                      className="absolute inset-0 flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-6 px-6 py-6 rounded-[12px] bg-gray-100"
-                      initial={{ x: 100, opacity: 0 }}
-                      animate={{ x: 0, opacity: 1 }}
-                      exit={{ x: -100, opacity: 0 }}
-                      transition={{ duration: 1, ease: "easeInOut" }}
-                    >
-                      <div
-                        style={{ backgroundImage: "url(./intro-1.jpeg)" }}
-                        className="flex-none w-20 h-20 lg:w-16 lg:h-16 rounded-full bg-gray-500 bg-no-repeat bg-cover bg-center"
-                      />
-                      <div className="flex flex-col">
-                        <Text.Header6>
-                          최신 스마트폰 & 가성비 모두 챙겨야 하는 20대 대학생
-                          A님
-                        </Text.Header6>
-                        <Text.Header4 className="font-normal">
-                          “민트급 자급제폰을 할인된 가격으로 구매하고, 추천해준
-                          저렴한 유심 요금제 가입으로 기존의 2년 약정으로
-                          구매했을 때 보다 훨씬 더 저렴하게 스마트폰을
-                          구매했어요.”
-                        </Text.Header4>
-                      </div>
-                    </motion.div>
-                  ),
-                  2: (
-                    <motion.div
-                      key="intro-2"
-                      className="absolute inset-0 flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-6 px-6 py-6 rounded-[12px] bg-gray-100"
-                      initial={{ x: 100, opacity: 0 }}
-                      animate={{ x: 0, opacity: 1 }}
-                      exit={{ x: -100, opacity: 0 }}
-                      transition={{ duration: 1, ease: "easeInOut" }}
-                    >
-                      <div
-                        style={{ backgroundImage: "url(./intro-2.jpeg)" }}
-                        className="flex-none w-20 h-20 lg:w-16 lg:h-16 rounded-full bg-gray-500 bg-no-repeat bg-cover bg-center"
-                      />
-                      <div className="flex flex-col">
-                        <Text.Header6>
-                          부모님 스마트폰 바꿔드리고 싶은 사회 초년생 30대
-                          직장인 B님
-                        </Text.Header6>
-                        <Text.Header4 className="font-normal">
-                          "부모님께서는 이동통신사를 직접 방문하거나 복잡한
-                          절차를 따라야 하는 불편함 없이, 제가 대신 모든 과정을
-                          처리해드리니 정말 편리하셨어요. 온라인에서 간단하게
-                          구매하고, 개통까지 문제없이 진행되니까 시간도 절약되고
-                          부모님도 최신 기능을 바로 경험하실 수 있었습니다."
-                        </Text.Header4>
-                      </div>
-                    </motion.div>
-                  ),
-                  3: (
-                    <motion.div
-                      key="intro-3"
-                      className="absolute inset-0 flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-6 px-6 py-6 rounded-[12px] bg-gray-100"
-                      initial={{ x: 100, opacity: 0 }}
-                      animate={{ x: 0, opacity: 1 }}
-                      exit={{ x: -100, opacity: 0 }}
-                      transition={{ duration: 1, ease: "easeInOut" }}
-                    >
-                      <div
-                        style={{ backgroundImage: "url(./intro-3.jpeg)" }}
-                        className="flex-none w-20 h-20 lg:w-16 lg:h-16 rounded-full bg-gray-500 bg-no-repeat bg-cover bg-center"
-                      />
-                      <div className="flex flex-col">
-                        <Text.Header6>
-                          자녀들 스마트폰 구매부터 가족 통신비에 민감한 40대
-                          가장 C님
-                        </Text.Header6>
-                        <Text.Header4 className="font-normal">
-                          “제 아이의 첫 스마트폰을 구매하면서, 평소에 바쁜 일정
-                          때문에 직접 여러 통신사를 방문하거나 복잡한 절차를
-                          거치기 어려웠는데, 스마트폰 구매부터 저렴한 요금제 및
-                          결합을 통한 추가 할인 등 모든 과정을 온라인에서
-                          간편하게 한 번에 처리하여 시간과 저희 가족 통신비용을
-                          크게 절약 할 수 있었습니다.”
-                        </Text.Header4>
-                      </div>
-                    </motion.div>
-                  ),
-                }[introSection]
-              }
+              <motion.div
+                key={introSlides[introSection - 1].key}
+                className="absolute inset-0 flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-6 px-6 py-6 rounded-[12px] bg-gray-100"
+                initial={{ x: 100, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                exit={{ x: -100, opacity: 0 }}
+                transition={{ duration: 1, ease: "easeInOut" }}
+              >
+                <div
+                  style={{
+                    backgroundImage: `url(${introSlides[introSection - 1].image})`,
+                  }}
+                  className="flex-none w-20 h-20 lg:w-16 lg:h-16 rounded-full bg-gray-500 bg-no-repeat bg-cover bg-center"
+                />
+                <div className="flex flex-col">
+                  <Text.Header6>
+                    {introSlides[introSection - 1].persona}
+                  </Text.Header6>
+                  <Text.Header4 className="font-normal">
+                    {introSlides[introSection - 1].quote}
+                  </Text.Header4>
+                </div>
+              </motion.div>
             </motion.div>
           </AnimatePresence>
         </div>
@@ -564,33 +475,24 @@ const App = () => {
             빡심을 만드는 사람들은 이미 시장에서 유명합니다
           </Text.Header1>
           <div className="flex flex-col lg:flex-row gap-6">
-            <motion.div
-              className="lg:flex-1 flex flex-col gap-3 p-6 rounded-[12px] bg-[rgba(31,41,55,0.75)] backdrop-blur-md"
-              initial={{ y: 50, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.5, ease: "easeInOut" }}
-            >
-              <Text.Header2>200억 +</Text.Header2>
-              <Text.Header5 className="font-normal">누적 매출액</Text.Header5>
-            </motion.div>
-            <motion.div
-              className="lg:flex-1 flex flex-col gap-3 p-6 rounded-[12px] bg-[rgba(31,41,55,0.75)] backdrop-blur-md"
-              initial={{ y: 50, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.5, ease: "easeInOut", delay: 0.1 }}
-            >
-              <Text.Header2>1위</Text.Header2>
-              <Text.Header5 className="font-normal">박스폰 판매</Text.Header5>
-            </motion.div>
-            <motion.div
-              className="lg:flex-1 flex flex-col gap-3 p-6 rounded-[12px] bg-[rgba(31,41,55,0.75)] backdrop-blur-md"
-              initial={{ y: 50, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.5, ease: "easeInOut", delay: 0.2 }}
-            >
-              <Text.Header2>10명중 9명+</Text.Header2>
-              <Text.Header5 className="font-normal">고객 만족</Text.Header5>
-            </motion.div>
+            {boximStats.map((stat, index) => (
+              <motion.div
+                key={stat.value}
+                className="lg:flex-1 flex flex-col gap-3 p-6 rounded-[12px] bg-[rgba(31,41,55,0.75)] backdrop-blur-md"
+                initial={{ y: 50, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                transition={{
+                  duration: 0.5,
+                  ease: "easeInOut",
+                  delay: index * 0.1,
+                }}
+              >
+                <Text.Header2>{stat.value}</Text.Header2>
+                <Text.Header5 className="font-normal">
+                  {stat.label}
+                </Text.Header5>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
@@ -617,45 +519,26 @@ const App = () => {
             약정폰 위주의 기존 통신시장에 새로운 변화를 만듭니다
           </Text.Header1>
           <div className="flex flex-col gap-6">
-            <motion.div
-              className="flex flex-col gap-3 p-6 rounded-[12px] bg-[rgba(31,41,55,0.75)] backdrop-blur-md"
-              initial={{ y: 50, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.5, ease: "easeInOut" }}
-            >
-              <Text.Header6>2022년</Text.Header6>
-              <Text.Header5 className="font-normal">
-                • 삼성전자판매 공식 입찰협력사 선정
-              </Text.Header5>
-            </motion.div>
-            <motion.div
-              className="flex flex-col gap-3 p-6 rounded-[12px] bg-[rgba(31,41,55,0.75)] backdrop-blur-md"
-              initial={{ y: 50, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.5, ease: "easeInOut", delay: 0.1 }}
-            >
-              <Text.Header6>2023년</Text.Header6>
-              <Text.Header5 className="font-normal">
-                • LG U+ 공식 입찰협력사 선정
-              </Text.Header5>
-              <Text.Header5 className="font-normal">
-                • KT m&s 공식 입찰협력사 선정
-              </Text.Header5>
-            </motion.div>
-            <motion.div
-              className="flex flex-col gap-3 p-6 rounded-[12px] bg-[rgba(31,41,55,0.75)] backdrop-blur-md"
-              initial={{ y: 50, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.5, ease: "easeInOut", delay: 0.2 }}
-            >
-              <Text.Header6>2024년</Text.Header6>
-              <Text.Header5 className="font-normal">
-                • 미디어로그 공식 입찰협력사 선정
-              </Text.Header5>
-              <Text.Header5 className="font-normal">
-                • 민팃 공식 입찰협력사 선정
-              </Text.Header5>
-            </motion.div>
+            {historyEntries.map((entry, index) => (
+              <motion.div
+                key={entry.year}
+                className="flex flex-col gap-3 p-6 rounded-[12px] bg-[rgba(31,41,55,0.75)] backdrop-blur-md"
+                initial={{ y: 50, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                transition={{
+                  duration: 0.5,
+                  ease: "easeInOut",
+                  delay: index * 0.1,
+                }}
+              >
+                <Text.Header6>{entry.year}</Text.Header6>
+                {entry.items.map((item) => (
+                  <Text.Header5 key={item} className="font-normal">
+                    {item}
+                  </Text.Header5>
+                ))}
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>

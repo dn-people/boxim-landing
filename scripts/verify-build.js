@@ -46,6 +46,11 @@ else {
     "중간 유통구조 생략",
     "최신 자급제폰",
     "인터넷 / TV 요금제",
+    // R12: 데이터화된 hero/intro/stats/history 카피 보존
+    "스마트폰 구매",
+    "유심 구매",
+    "200억 +",
+    "2024년",
   ];
   for (const s of mustContain) if (!bundle.includes(s)) fail(`bundle missing copy: ${s}`);
 }
