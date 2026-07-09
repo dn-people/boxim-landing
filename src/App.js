@@ -883,7 +883,7 @@ const App = () => {
           transition={{ duration: 1, ease: "easeInOut" }}
         />
         <div
-          id="hero-container"
+          id="end-container"
           className="container mx-auto flex flex-col items-center p-6 lg:p-12 gap-3 lg:gap-6 justify-center text-white font-bold"
         >
           <Text.Header1
