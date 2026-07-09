@@ -66,6 +66,9 @@ for (const bad of ["React App", "logo192", "manifest.json", "/public/pc/"])
   if (html.includes(bad)) fail(`index.html must not contain: ${bad}`);
 // R2: Tailwind CDN 정확한 버전 고정 유지
 if (!/@tailwindcss\/browser@\d+\.\d+\.\d+/.test(html)) fail("tailwind CDN version must be pinned exactly");
+// R3: canonical + twitter card 정합 유지
+if (!html.includes('rel="canonical"')) fail("canonical link missing");
+if (html.includes('content="summary"') && !html.includes("summary_large_image")) fail("twitter card should be summary_large_image");
 
 // 6. (R5에서 css 검증 블록이 여기에 추가된다)
 
