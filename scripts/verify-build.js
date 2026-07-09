@@ -42,6 +42,10 @@ else {
     "ddin****",
     "누적 매출액",
     "삼성전자판매 공식 입찰협력사 선정",
+    // R11: 데이터화된 concept/why/type 카피 보존
+    "중간 유통구조 생략",
+    "최신 자급제폰",
+    "인터넷 / TV 요금제",
   ];
   for (const s of mustContain) if (!bundle.includes(s)) fail(`bundle missing copy: ${s}`);
 }

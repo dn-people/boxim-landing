@@ -8,6 +8,11 @@ import {
   SECTION_IN_VIEW_MARGIN,
   SECTION_SCROLL_MARGIN,
 } from "./constants";
+import {
+  conceptPrinciples,
+  productTypes,
+  whyCards,
+} from "./data/content";
 import { reviewDataRow1, reviewDataRow2 } from "./data/reviews";
 import Header from "./components/header";
 import Star from "./components/star";
@@ -357,58 +362,27 @@ const App = () => {
             현명한 통신생활 3대 원칙
           </Text.Header1>
           <div className="flex flex-col gap-6">
-            <motion.div
-              className="flex items-center gap-6 p-6 rounded-[12px] bg-white"
-              initial={{ y: 50, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.5, ease: "easeInOut" }}
-            >
-              <div className="flex-none flex items-center justify-center w-8 h-8 rounded-[4px] bg-blue-100 font-bold text-blue-500">
-                <Text.Body1>1</Text.Body1>
-              </div>
-              <div className="flex-1 flex flex-col">
-                <Text.Header5>
-                  스마트폰 단말기 구매와 통신상품 가입을 분리해서 각각 저렴하게
-                  구매하고 가입하는게 더 유리하다
-                </Text.Header5>
-              </div>
-            </motion.div>
-            <motion.div
-              className="flex items-center gap-6 p-6 rounded-[12px] bg-white"
-              initial={{ y: 50, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.5, ease: "easeInOut" }}
-            >
-              <div className="flex-none flex items-center justify-center w-8 h-8 rounded-[4px] bg-blue-100 font-bold text-blue-500">
-                <Text.Body1>2</Text.Body1>
-              </div>
-              <div className="flex-1 flex flex-col">
-                <Text.Header5>
-                  스마트폰 단말기는 믿을 수 있는 판매처에서 “박스폰”을 최대한
-                  저렴하게 구매한다
-                </Text.Header5>
-                <Text.Body3 className="text-gray-500">
-                  * 박스폰: 새롭게 출시된 최신 자급제폰 부터 할인폭이 큰 민트급
-                  미개통 자급제폰
-                </Text.Body3>
-              </div>
-            </motion.div>
-            <motion.div
-              className="flex items-center gap-6 p-6 rounded-[12px] bg-white"
-              initial={{ y: 50, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.5, ease: "easeInOut" }}
-            >
-              <div className="flex-none flex items-center justify-center w-8 h-8 rounded-[4px] bg-blue-100 font-bold text-blue-500">
-                <Text.Body1>3</Text.Body1>
-              </div>
-              <div className="flex-1 flex flex-col">
-                <Text.Header5>
-                  통신상품은 유심과 인터넷/TV를 통합상품으로 동시에 약정하여
-                  추가 할인 및 지원금을 최대한 확보하는것이 더욱 유리하다
-                </Text.Header5>
-              </div>
-            </motion.div>
+            {conceptPrinciples.map((principle, index) => (
+              <motion.div
+                key={principle.title}
+                className="flex items-center gap-6 p-6 rounded-[12px] bg-white"
+                initial={{ y: 50, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.5, ease: "easeInOut" }}
+              >
+                <div className="flex-none flex items-center justify-center w-8 h-8 rounded-[4px] bg-blue-100 font-bold text-blue-500">
+                  <Text.Body1>{index + 1}</Text.Body1>
+                </div>
+                <div className="flex-1 flex flex-col">
+                  <Text.Header5>{principle.title}</Text.Header5>
+                  {principle.note && (
+                    <Text.Body3 className="text-gray-500">
+                      {principle.note}
+                    </Text.Body3>
+                  )}
+                </div>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
@@ -498,55 +472,26 @@ const App = () => {
             저렴하고, 간편하고, 쉬울까요?
           </Text.Header1>
           <div className="flex flex-col lg:flex-row gap-6">
-            <motion.div
-              className="lg:flex-1 flex flex-col gap-6 p-6 rounded-[12px] bg-white"
-              initial={{ y: 50, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.5, ease: "easeInOut" }}
-            >
-              <div
-                style={{ backgroundImage: "url(./why-1.png)" }}
-                className="h-48 rounded-[12px] bg-gray-100 bg-no-repeat bg-center bg-contain"
-              />
-              <Text.Header3>중간 유통구조 생략</Text.Header3>
-              <Text.Header5 className="font-normal">
-                제조사/이동통신사들의 공식 협력업체로서 직접 대량으로 단말기
-                매입하여 바로 소비자들께 판매합니다
-              </Text.Header5>
-            </motion.div>
-            <motion.div
-              className="lg:flex-1 flex flex-col gap-6 p-6 rounded-[12px] bg-white"
-              initial={{ y: 50, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.5, ease: "easeInOut", delay: 0.1 }}
-            >
-              <div
-                style={{ backgroundImage: "url(./why-2.png)" }}
-                className="h-48 rounded-[12px] bg-gray-100 bg-no-repeat bg-bottom bg-contain"
-              />
-              <Text.Header3>서로 다른 시장에서 직접 쌓은 전문성</Text.Header3>
-              <Text.Header5 className="font-normal">
-                서로 완전히 다른 단말기 유통시장과 통신사 요금제 약정 시장에서
-                직접 발로 뛰며 구축한 인프라로 자급제 구매부터 요금제 개통까지
-                한번에 해결해드립니다
-              </Text.Header5>
-            </motion.div>
-            <motion.div
-              className="lg:flex-1 flex flex-col gap-6 p-6 rounded-[12px] bg-white"
-              initial={{ y: 50, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.5, ease: "easeInOut", delay: 0.2 }}
-            >
-              <div
-                style={{ backgroundImage: "url(./why-3.png)" }}
-                className="h-48 rounded-[12px] bg-gray-100 bg-no-repeat bg-bottom bg-contain"
-              />
-              <Text.Header3>지원금 가장 많은 요금제 추천</Text.Header3>
-              <Text.Header5 className="font-normal">
-                사실상 큰 차이 없는 수천개의 요금제 중 현 시점 최대의 지원금을
-                드릴 수 있는 답을 빡심이 찾아 드립니다
-              </Text.Header5>
-            </motion.div>
+            {whyCards.map((card, index) => (
+              <motion.div
+                key={card.title}
+                className="lg:flex-1 flex flex-col gap-6 p-6 rounded-[12px] bg-white"
+                initial={{ y: 50, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                transition={{
+                  duration: 0.5,
+                  ease: "easeInOut",
+                  delay: index * 0.1,
+                }}
+              >
+                <div
+                  style={{ backgroundImage: `url(${card.image})` }}
+                  className={`h-48 rounded-[12px] bg-gray-100 bg-no-repeat ${card.imagePosition} bg-contain`}
+                />
+                <Text.Header3>{card.title}</Text.Header3>
+                <Text.Header5 className="font-normal">{card.body}</Text.Header5>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
@@ -571,124 +516,29 @@ const App = () => {
           </Text.Header1>
           <div className="flex flex-col gap-6">
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
-              <motion.div
-                className="lg:flex-1 flex flex-col gap-3"
-                initial={{ y: 50, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.5, ease: "easeInOut" }}
-              >
-                <div className="flex items-center justify-center h-48 rounded-[12px] bg-gray-100">
-                  <div
-                    style={{ backgroundImage: "url(./icon-phone.png)" }}
-                    className="w-24 h-24 bg-no-repeat bg-center bg-contain"
-                  />
-                </div>
-                <Text.Header4 className="text-center">
-                  최신 자급제폰
-                </Text.Header4>
-              </motion.div>
-              <motion.div
-                className="lg:flex-1 flex flex-col gap-3"
-                initial={{ y: 50, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.5, ease: "easeInOut", delay: 0.05 }}
-              >
-                <div className="flex items-center justify-center h-48 rounded-[12px] bg-gray-100">
-                  <div
-                    style={{ backgroundImage: "url(./icon-box.png)" }}
-                    className="w-24 h-24 bg-no-repeat bg-center bg-contain"
-                  />
-                </div>
-                <Text.Header4 className="text-center">박스폰</Text.Header4>
-              </motion.div>
-              <motion.div
-                className="lg:flex-1 flex flex-col gap-3"
-                initial={{ y: 50, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.5, ease: "easeInOut", delay: 0.1 }}
-              >
-                <div className="flex items-center justify-center h-48 rounded-[12px] bg-gray-100">
-                  <div
-                    style={{ backgroundImage: "url(./icon-tablet.png)" }}
-                    className="w-24 h-24 bg-no-repeat bg-center bg-contain"
-                  />
-                </div>
-                <Text.Header4 className="text-center">태블릿</Text.Header4>
-              </motion.div>
-              <motion.div
-                className="lg:flex-1 flex flex-col gap-3"
-                initial={{ y: 50, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.5, ease: "easeInOut", delay: 0.15 }}
-              >
-                <div className="flex items-center justify-center h-48 rounded-[12px] bg-gray-100">
-                  <div
-                    style={{ backgroundImage: "url(./icon-watch.png)" }}
-                    className="w-24 h-24 bg-no-repeat bg-center bg-contain"
-                  />
-                </div>
-                <Text.Header4 className="text-center">스마트 워치</Text.Header4>
-              </motion.div>
-              <motion.div
-                className="lg:flex-1 flex flex-col gap-3"
-                initial={{ y: 50, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.5, ease: "easeInOut", delay: 0.2 }}
-              >
-                <div className="flex items-center justify-center h-48 rounded-[12px] bg-gray-100">
-                  <div
-                    style={{ backgroundImage: "url(./icon-usim.png)" }}
-                    className="w-24 h-24 bg-no-repeat bg-center bg-contain"
-                  />
-                </div>
-                <Text.Header4 className="text-center">유심 요금제</Text.Header4>
-              </motion.div>
-              <motion.div
-                className="lg:flex-1 flex flex-col gap-3"
-                initial={{ y: 50, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.5, ease: "easeInOut", delay: 0.25 }}
-              >
-                <div className="flex items-center justify-center h-48 rounded-[12px] bg-gray-100">
-                  <div
-                    style={{ backgroundImage: "url(./icon-setupbox.png)" }}
-                    className="w-24 h-24 bg-no-repeat bg-center bg-contain"
-                  />
-                </div>
-                <Text.Header4 className="text-center">
-                  인터넷 / TV 요금제
-                </Text.Header4>
-              </motion.div>
-              <motion.div
-                className="lg:flex-1 flex flex-col gap-3"
-                initial={{ y: 50, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.5, ease: "easeInOut", delay: 0.3 }}
-              >
-                <div className="flex items-center justify-center h-48 rounded-[12px] bg-gray-100">
-                  <div
-                    style={{ backgroundImage: "url(./icon-plan.png)" }}
-                    className="w-24 h-24 bg-no-repeat bg-center bg-contain"
-                  />
-                </div>
-                <Text.Header4 className="text-center">
-                  이통사 약정 요금제
-                </Text.Header4>
-              </motion.div>
-              <motion.div
-                className="lg:flex-1 flex flex-col gap-3"
-                initial={{ y: 50, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.5, ease: "easeInOut", delay: 0.35 }}
-              >
-                <div className="flex items-center justify-center h-48 rounded-[12px] bg-gray-100">
-                  <div
-                    style={{ backgroundImage: "url(./icon-accs.png)" }}
-                    className="w-24 h-24 bg-no-repeat bg-center bg-contain"
-                  />
-                </div>
-                <Text.Header4 className="text-center">악세사리</Text.Header4>
-              </motion.div>
+              {productTypes.map((product, index) => (
+                <motion.div
+                  key={product.label}
+                  className="lg:flex-1 flex flex-col gap-3"
+                  initial={{ y: 50, opacity: 0 }}
+                  whileInView={{ y: 0, opacity: 1 }}
+                  transition={{
+                    duration: 0.5,
+                    ease: "easeInOut",
+                    delay: index * 0.05,
+                  }}
+                >
+                  <div className="flex items-center justify-center h-48 rounded-[12px] bg-gray-100">
+                    <div
+                      style={{ backgroundImage: `url(${product.icon})` }}
+                      className="w-24 h-24 bg-no-repeat bg-center bg-contain"
+                    />
+                  </div>
+                  <Text.Header4 className="text-center">
+                    {product.label}
+                  </Text.Header4>
+                </motion.div>
+              ))}
             </div>
           </div>
         </div>
