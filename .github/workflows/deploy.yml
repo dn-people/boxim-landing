@@ -1,0 +1,48 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+      - refactor/2026-07-landing
+  workflow_dispatch:
+
+# gh-pages 브랜치로 빌드 결과를 push하기 위한 권한
+permissions:
+  contents: write
+
+# 배포가 겹치지 않도록 (최신 것만 실행)
+concurrency:
+  group: pages-deploy
+  cancel-in-progress: true
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+        env:
+          # CRA는 CI=true면 경고를 에러로 취급 → 배포 실패를 막기 위해 false
+          CI: false
+
+      - name: Deploy to gh-pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build
+          publish_branch: gh-pages
+          # 매 배포를 단일 커밋으로 (gh-pages 히스토리 누적 방지)
+          force_orphan: true
