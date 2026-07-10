@@ -25,7 +25,7 @@ const Header = ({ section }) => {
             isLight ? "bg-[rgba(255,255,255,0.5)]" : "bg-[rgba(0,0,0,0.5)]"
           }`}
         >
-          <Logo />
+          <Logo isLight={isLight} />
           <div className="flex items-center gap-1">
             <Nav
               isLight={isLight}
@@ -73,13 +73,14 @@ const Header = ({ section }) => {
 
 export default Header;
 
-const Logo = () => (
+const Logo = ({ isLight }) => (
   <img
     src="/logo-dnbn.svg"
     alt="동네방네"
     width="98"
     height="28"
-    className="h-7 w-auto"
+    className="h-7 w-auto transition duration-150"
+    style={isLight ? undefined : { filter: "brightness(0) invert(1)" }}
   />
 );
 
