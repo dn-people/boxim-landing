@@ -4,7 +4,7 @@ import Text from "../components/text";
 import { SECTION_SCROLL_MARGIN } from "../constants";
 import { dnbnStats } from "../data/content";
 
-const dnbnSection = ({ sectionRef }) => (
+const DnbnSection = ({ sectionRef }) => (
   <section
     id="dnbn-section"
     ref={sectionRef}
@@ -49,4 +49,4 @@ const dnbnSection = ({ sectionRef }) => (
   </section>
 );
 
-export default dnbnSection;
+export default DnbnSection;
