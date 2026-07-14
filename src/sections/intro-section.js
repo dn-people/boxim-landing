@@ -27,7 +27,7 @@ const IntroSection = ({ sectionRef }) => {
         id="intro-container"
         className="container mx-auto h-full flex flex-col p-6 lg:p-12 justify-center gap-12 lg:gap-24"
       >
-        <Text.Header1
+        <Text.SectionTitle
           initial={{ y: 50, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.5, ease: "easeInOut" }}
@@ -35,7 +35,7 @@ const IntroSection = ({ sectionRef }) => {
           어렵고 복잡한 통신상품 구매는
           <br />
           동네방네에게 맡기세요
-        </Text.Header1>
+        </Text.SectionTitle>
         <AnimatePresence>
           <motion.div
             className="w-full h-96 lg:h-48 relative overflow-hidden"

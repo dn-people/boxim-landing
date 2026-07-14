@@ -15,7 +15,7 @@ const TypeSection = ({ sectionRef }) => (
       id="type-container"
       className="container mx-auto flex flex-col px-6 lg:px-12 py-16 lg:py-24 justify-center gap-12 lg:gap-24"
     >
-      <Text.Header1
+      <Text.SectionTitle
         initial={{ y: 50, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5, ease: "easeInOut" }}
@@ -23,7 +23,7 @@ const TypeSection = ({ sectionRef }) => (
         다양한 통신상품을
         <br />
         준비했습니다
-      </Text.Header1>
+      </Text.SectionTitle>
       <div className="flex flex-col gap-6">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
           {productTypes.map((product, index) => (

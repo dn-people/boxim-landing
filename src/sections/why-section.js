@@ -15,7 +15,7 @@ const WhySection = ({ sectionRef }) => (
       id="why-container"
       className="container mx-auto flex flex-col px-6 lg:px-12 py-16 lg:py-24 justify-center gap-12 lg:gap-24"
     >
-      <Text.Header1
+      <Text.SectionTitle
         initial={{ y: 50, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5, ease: "easeInOut" }}
@@ -23,7 +23,7 @@ const WhySection = ({ sectionRef }) => (
         동네방네는 왜
         <br />
         저렴하고, 간편하고, 쉬울까요?
-      </Text.Header1>
+      </Text.SectionTitle>
       <div className="flex flex-col lg:flex-row gap-6">
         {whyCards.map((card, index) => (
           <motion.div

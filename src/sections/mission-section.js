@@ -12,7 +12,7 @@ const MissionSection = ({ sectionRef, mission1Hide }) => (
       id="mission-container"
       className="container mx-auto min-h-160 h-screen flex flex-col p-6 lg:p-12 justify-center gap-12 lg:gap-24 sticky top-0"
     >
-      <Text.Header1
+      <Text.SectionTitle
         initial={{ y: 50, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5, ease: "easeInOut" }}
@@ -22,7 +22,7 @@ const MissionSection = ({ sectionRef, mission1Hide }) => (
         <span className="font-normal">
           통신 시장의 현실을 바꿀 수 있을까요?
         </span>
-      </Text.Header1>
+      </Text.SectionTitle>
       <div className="w-full h-120 relative">
         <div
           id="mission-1"

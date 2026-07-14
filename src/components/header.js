@@ -26,7 +26,7 @@ const Header = ({ section }) => {
           }`}
         >
           <Logo isLight={isLight} />
-          <div className="flex items-center gap-1">
+          <nav aria-label="주요 메뉴" className="flex items-center gap-1">
             <Nav
               isLight={isLight}
               href="/#hero-section"
@@ -64,7 +64,7 @@ const Header = ({ section }) => {
             <Nav isLight={isLight} href="/blog/" isActive={false}>
               블로그
             </Nav>
-          </div>
+          </nav>
         </div>
       </div>
     </header>
@@ -74,14 +74,16 @@ const Header = ({ section }) => {
 export default Header;
 
 const Logo = ({ isLight }) => (
-  <img
-    src="/logo-dnbn.svg"
-    alt="동네방네"
-    width="98"
-    height="28"
-    className="h-7 w-auto transition duration-150"
-    style={isLight ? undefined : { filter: "brightness(0) invert(1)" }}
-  />
+  <a href="/" aria-label="동네방네팀 홈">
+    <img
+      src="/logo-dnbn.svg"
+      alt="동네방네"
+      width="98"
+      height="28"
+      className="h-7 w-auto transition duration-150"
+      style={isLight ? undefined : { filter: "brightness(0) invert(1)" }}
+    />
+  </a>
 );
 
 const Nav = ({ children, isActive, isLight, ...props }) => (

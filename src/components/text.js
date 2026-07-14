@@ -17,6 +17,14 @@ const Text = {
       {children}
     </motion.h2>
   ),
+  SectionTitle: ({ children, className, ...props }) => (
+    <motion.h2
+      className={`text-[36px] leading-[44px] lg:text-[48px] lg:leading-[56px] font-bold ${className}`}
+      {...props}
+    >
+      {children}
+    </motion.h2>
+  ),
   Header3: ({ children, className, ...props }) => (
     <motion.h3
       className={`text-[24px] leading-[36px] lg:text-[30px] lg:leading-[40px] font-bold ${className}`}

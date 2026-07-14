@@ -18,13 +18,13 @@ const BoximSection = ({ sectionRef }) => (
       id="boxim-container"
       className="container mx-auto h-full flex flex-col p-6 lg:p-12 justify-center gap-12 lg:gap-24"
     >
-      <Text.Header1
+      <Text.SectionTitle
         initial={{ y: 50, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5, ease: "easeInOut" }}
       >
         동네방네를 만드는 사람들은 이미 시장에서 유명합니다
-      </Text.Header1>
+      </Text.SectionTitle>
       <div className="flex flex-col lg:flex-row gap-6">
         {boximStats.map((stat, index) => (
           <motion.div
@@ -38,7 +38,7 @@ const BoximSection = ({ sectionRef }) => (
               delay: index * 0.1,
             }}
           >
-            <Text.Header2>{stat.value}</Text.Header2>
+            <Text.Header3>{stat.value}</Text.Header3>
             <Text.Header5 className="font-normal">
               {stat.label}
             </Text.Header5>

@@ -17,7 +17,7 @@ const ReviewSection = ({ sectionRef }) => (
         id="review-container"
         className="container mx-auto flex flex-col px-6 lg:px-12 py-16 lg:py-24 justify-center gap-12 lg:gap-24 overflow-visible"
       >
-        <Text.Header1
+        <Text.SectionTitle
           initial={{ y: 50, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.5, ease: "easeInOut" }}
@@ -25,7 +25,7 @@ const ReviewSection = ({ sectionRef }) => (
           동네방네 이용자의
           <br />
           실제 후기
-        </Text.Header1>
+        </Text.SectionTitle>
         <Marquee style={{ height: "360px", overflow: "visible" }}>
           {reviewDataRow1.map((data) => (
             <ReviewCard key={data.name} {...data} />

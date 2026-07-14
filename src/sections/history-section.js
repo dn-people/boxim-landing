@@ -18,7 +18,7 @@ const HistorySection = ({ sectionRef }) => (
       id="history-container"
       className="container mx-auto flex flex-col px-6 lg:px-12 py-16 lg:py-24 justify-center gap-12 lg:gap-24"
     >
-      <Text.Header1
+      <Text.SectionTitle
         initial={{ y: 50, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5, ease: "easeInOut" }}
@@ -26,7 +26,7 @@ const HistorySection = ({ sectionRef }) => (
         가계 통신비 절감에 진심인 사람들이 모여
         <br />
         약정폰 위주의 기존 통신시장에 새로운 변화를 만듭니다
-      </Text.Header1>
+      </Text.SectionTitle>
       <div className="flex flex-col gap-6">
         {historyEntries.map((entry, index) => (
           <motion.div

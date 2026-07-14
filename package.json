@@ -11,7 +11,9 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "prebuild": "node scripts/generate-rss.js",
     "build": "react-scripts build",
+    "verify:aeo": "node scripts/verify-aeo.js",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
