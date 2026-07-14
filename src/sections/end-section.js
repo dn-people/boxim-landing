@@ -21,7 +21,7 @@ const EndSection = ({ sectionRef }) => (
       id="end-container"
       className="container mx-auto flex flex-col items-center p-6 lg:p-12 gap-3 lg:gap-6 justify-center text-white font-bold"
     >
-      <Text.Header1
+      <Text.SectionTitle
         initial={{ y: 50 }}
         whileInView={{ y: 0 }}
         transition={{ duration: 0.5, ease: "easeInOut", delay: 0.2 }}
@@ -30,7 +30,7 @@ const EndSection = ({ sectionRef }) => (
         동네방네로 쉽고 편리하게
         <br />
         통신비 SAVE 하자
-      </Text.Header1>
+      </Text.SectionTitle>
       <Button
         initial={{ y: 50, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}

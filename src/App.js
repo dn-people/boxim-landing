@@ -1,12 +1,14 @@
 import { useEffect, useState } from "react";
 
 import Header from "./components/header";
+import Footer from "./components/footer";
 import useActiveSection from "./hooks/use-active-section";
 import BoximSection from "./sections/boxim-section";
 import ConceptSection from "./sections/concept-section";
 import EndSection from "./sections/end-section";
 import HeroSection from "./sections/hero-section";
 import HistorySection from "./sections/history-section";
+import GuideSection from "./sections/guide-section";
 import IntroSection from "./sections/intro-section";
 import MissionSection from "./sections/mission-section";
 import ReviewSection from "./sections/review-section";
@@ -51,16 +53,20 @@ const App = () => {
   return (
     <>
       <Header section={section} />
-      <HeroSection />
-      <IntroSection sectionRef={refs.intro} />
-      <ConceptSection sectionRef={refs.concept} />
-      <MissionSection sectionRef={refs.mission} mission1Hide={mission1Hide} />
-      <WhySection sectionRef={refs.why} />
-      <TypeSection sectionRef={refs.type} />
-      <BoximSection sectionRef={refs.boxim} />
-      <HistorySection sectionRef={refs.history} />
-      <ReviewSection sectionRef={refs.review} />
-      <EndSection sectionRef={refs.end} />
+      <main>
+        <HeroSection />
+        <IntroSection sectionRef={refs.intro} />
+        <ConceptSection sectionRef={refs.concept} />
+        <MissionSection sectionRef={refs.mission} mission1Hide={mission1Hide} />
+        <WhySection sectionRef={refs.why} />
+        <TypeSection sectionRef={refs.type} />
+        <BoximSection sectionRef={refs.boxim} />
+        <HistorySection sectionRef={refs.history} />
+        <ReviewSection sectionRef={refs.review} />
+        <GuideSection />
+        <EndSection sectionRef={refs.end} />
+      </main>
+      <Footer />
     </>
   );
 };

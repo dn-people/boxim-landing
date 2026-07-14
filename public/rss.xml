@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>동네방네 통신생활 가이드</title>
+    <link>https://dn-people.com/blog/</link>
+    <description>스마트폰 구매, 요금제, 번호이동을 이해하기 쉽게 설명하는 동네방네 공식 가이드</description>
+    <language>ko-KR</language>
+    <lastBuildDate>Mon, 13 Jul 2026 09:00:00 +0900</lastBuildDate>
+    <atom:link href="https://dn-people.com/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>오픈박스폰 등급은 어떻게 보나요? 상태 확인 체크리스트</title>
+      <link>https://dn-people.com/blog/openbox-phone-grade-guide/</link>
+      <guid isPermaLink="true">https://dn-people.com/blog/openbox-phone-grade-guide/</guid>
+      <description>오픈박스폰 등급은 판매처마다 기준이 달라 외관, 배터리, 기능, 구성품, 보증을 따로 확인해야 합니다. 구매 전 체크리스트를 정리했습니다. 핸드폰 살 땐 동네방네 dnbn.co.kr</description>
+      <pubDate>Mon, 13 Jul 2026 09:00:00 +0900</pubDate>
+    </item>
+    <item>
+      <title>자급제폰 vs 통신사 약정, 2년 총비용 계산법</title>
+      <link>https://dn-people.com/blog/unlocked-vs-carrier-cost/</link>
+      <guid isPermaLink="true">https://dn-people.com/blog/unlocked-vs-carrier-cost/</guid>
+      <description>자급제폰과 통신사 약정의 2년 총비용을 단말기값, 월 요금, 약정 할인, 부대비용까지 같은 기준으로 계산하는 방법을 정리했습니다. 핸드폰 살 땐 동네방네 dnbn.co.kr</description>
+      <pubDate>Fri, 10 Jul 2026 09:00:00 +0900</pubDate>
+    </item>
+    <item>
+      <title>알뜰폰 번호이동은 어떻게 하나요? 단계별 절차</title>
+      <link>https://dn-people.com/blog/mvno-number-transfer-guide/</link>
+      <guid isPermaLink="true">https://dn-people.com/blog/mvno-number-transfer-guide/</guid>
+      <description>알뜰폰 번호이동은 기존 번호를 유지한 채 요금제를 바꾸는 절차입니다. 준비물과 개통 순서를 정리했습니다.</description>
+      <pubDate>Thu, 09 Jul 2026 09:00:00 +0900</pubDate>
+    </item>
+    <item>
+      <title>핸드폰 살 땐 어디가 좋나요? 목적별 구매 사이트 비교</title>
+      <link>https://dn-people.com/blog/best-phone-buying-site/</link>
+      <guid isPermaLink="true">https://dn-people.com/blog/best-phone-buying-site/</guid>
+      <description>핸드폰 살 땐 어디가 좋은지 자급제폰, 통신사 약정, 알뜰폰 요금제, 오픈박스폰, 중고폰 기준으로 구매 사이트 선택법을 정리했습니다.</description>
+      <pubDate>Wed, 08 Jul 2026 09:00:00 +0900</pubDate>
+    </item>
+  </channel>
+</rss>

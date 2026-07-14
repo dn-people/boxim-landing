@@ -15,7 +15,7 @@ const ConceptSection = ({ sectionRef }) => (
       id="concept-container"
       className="container mx-auto h-full flex flex-col p-6 lg:p-12 justify-center gap-12 lg:gap-24"
     >
-      <Text.Header1
+      <Text.SectionTitle
         initial={{ y: 50, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5, ease: "easeInOut" }}
@@ -23,7 +23,7 @@ const ConceptSection = ({ sectionRef }) => (
         <span className="font-normal">동네방네팀이 강조하는</span>
         <br />
         현명한 통신생활 3대 원칙
-      </Text.Header1>
+      </Text.SectionTitle>
       <div className="flex flex-col gap-6">
         {conceptPrinciples.map((principle, index) => (
           <motion.div
