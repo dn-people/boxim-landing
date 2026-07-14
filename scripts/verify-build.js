@@ -1,18 +1,33 @@
 const fs = require("fs");
 const path = require("path");
 
-const buildDir = path.join(__dirname, "..", "build");
+const projectDir = path.join(__dirname, "..");
+const buildDir = path.join(projectDir, "build");
+const publicBlogDir = path.join(projectDir, "public", "blog");
 let failed = false;
 const fail = (msg) => { console.error("FAIL: " + msg); failed = true; };
 const read = (p) => fs.readFileSync(path.join(buildDir, p), "utf8");
 // CRA 번들은 한글을 \uXXXX로 이스케이프하므로 디코드 후 검색한다
 const decode = (s) => s.replace(/\\u([0-9a-fA-F]{4})/g, (_, h) => String.fromCharCode(parseInt(h, 16)));
+const escapeRegExp = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+
+let blogSlugs = [];
+if (!fs.existsSync(publicBlogDir)) {
+  fail("public/blog directory missing");
+} else {
+  blogSlugs = fs.readdirSync(publicBlogDir, { withFileTypes: true })
+    .filter((entry) => entry.isDirectory()
+      && fs.existsSync(path.join(publicBlogDir, entry.name, "index.html")))
+    .map((entry) => entry.name)
+    .sort();
+}
+if (blogSlugs.length === 0) fail("no blog article slugs discovered");
 
 // 1. 필수 산출물 존재
 const mustExist = [
   "index.html", "CNAME", "robots.txt", "sitemap.xml",
   "blog/index.html", "blog/best-phone-buying-site/index.html",
-  "hero.jpeg", "end.jpeg", "history.jpeg", "boxim-wallpaper.jpeg", "ogImage.jpg",
+  "hero.jpeg", "end.jpeg", "history.jpeg", "dnbn-wallpaper.jpeg", "ogImage.jpg",
   "intro-1.jpeg", "intro-2.jpeg", "intro-3.jpeg",
   "mission-1.png", "mission-2.png", "why-1.png", "why-2.png", "why-3.png",
   "icon-phone.png", "icon-box.png", "icon-tablet.png", "icon-watch.png",
@@ -20,6 +35,9 @@ const mustExist = [
   "favicon.ico", "favicon-16x16.png", "favicon-32x32.png",
   "logo-dnbn.svg",
 ];
+for (const slug of blogSlugs) {
+  mustExist.push(`blog/${slug}/index.html`, `blog/assets/${slug}.png`);
+}
 for (const f of mustExist)
   if (!fs.existsSync(path.join(buildDir, f))) fail(`missing build file: ${f}`);
 
@@ -38,7 +56,7 @@ else {
     "현명한 통신생활 3대 원칙",
     "저렴하고, 간편하고, 쉬울까요?",
     "동네방네 이용자의",
-    "https://boxim.io",
+    "https://dnbn.co.kr",
     "ark****",
     "ddin****",
     "누적 매출액",
@@ -83,9 +101,158 @@ if (html.includes('content="summary"') && !html.includes("summary_large_image"))
 if (!html.includes('"@type": "Organization"') && !html.includes('"@type":"Organization"'))
   fail("homepage JSON-LD Organization missing");
 
-// R19: 블로그 썸네일 자가 호스팅 (외부 핫링크 제거)
-for (const f of ["blog/index.html", "blog/best-phone-buying-site/index.html"])
-  if (read(f).includes("shopby-images")) fail(`external hotlink remains in ${f}`);
+// R19: 모든 블로그 글의 배포 필수 항목 및 이미지 자가 호스팅 검증
+const getAttribute = (tag, name) => {
+  const attribute = escapeRegExp(name);
+  const quoted = tag.match(new RegExp(
+    `(?:^|\\s)${attribute}\\s*=\\s*(["'])([\\s\\S]*?)\\1`,
+    "i",
+  ));
+  if (quoted) return quoted[2];
+  const unquoted = tag.match(new RegExp(
+    `(?:^|\\s)${attribute}\\s*=\\s*([^\\s"'=<>]+)`,
+    "i",
+  ));
+  return unquoted ? unquoted[1] : null;
+};
+const isExternalUrl = (value) => {
+  const url = value.trim().replace(/&amp;/g, "&");
+  if (!/^(?:https?:)?\/\//i.test(url)) return false;
+  try {
+    const parsed = new URL(url.startsWith("//") ? `https:${url}` : url);
+    return parsed.hostname.toLowerCase() !== "dn-people.com";
+  } catch {
+    return true;
+  }
+};
+const collectJsonLdImageUrls = (value, urls, imageContext = false) => {
+  if (typeof value === "string") {
+    if (imageContext) urls.push(value);
+    return;
+  }
+  if (Array.isArray(value)) {
+    for (const item of value) collectJsonLdImageUrls(item, urls, imageContext);
+    return;
+  }
+  if (!value || typeof value !== "object") return;
+
+  const type = value["@type"];
+  const isImageObject = imageContext || type === "ImageObject"
+    || (Array.isArray(type) && type.includes("ImageObject"));
+  for (const [key, child] of Object.entries(value)) {
+    const normalizedKey = key.toLowerCase();
+    const childIsImage = ["image", "images", "thumbnailurl", "contenturl"].includes(normalizedKey)
+      || (isImageObject && ["@id", "url", "contenturl"].includes(normalizedKey));
+    collectJsonLdImageUrls(child, urls, childIsImage);
+  }
+};
+const findExternalImageUrls = (document, jsonLdValues = []) => {
+  const imageUrls = [];
+
+  for (const match of document.matchAll(/<(?:img|source)\b[^>]*>/gi)) {
+    const tag = match[0];
+    for (const attribute of ["src", "data-src", "srcset", "data-srcset"]) {
+      const value = getAttribute(tag, attribute);
+      if (!value) continue;
+      if (attribute.endsWith("srcset")) {
+        for (const candidate of value.split(",")) {
+          const candidateUrl = candidate.trim().split(/\s+/)[0];
+          if (candidateUrl) imageUrls.push(candidateUrl);
+        }
+      } else {
+        imageUrls.push(value);
+      }
+    }
+  }
+
+  for (const match of document.matchAll(/url\(\s*(["']?)(.*?)\1\s*\)/gi)) {
+    imageUrls.push(match[2]);
+  }
+
+  for (const match of document.matchAll(/<meta\b[^>]*>/gi)) {
+    const tag = match[0];
+    const kind = (getAttribute(tag, "property") || getAttribute(tag, "name") || "").toLowerCase();
+    if (["og:image", "og:image:url", "twitter:image", "twitter:image:src"].includes(kind)) {
+      const content = getAttribute(tag, "content");
+      if (content) imageUrls.push(content);
+    }
+  }
+
+  for (const value of jsonLdValues) collectJsonLdImageUrls(value, imageUrls);
+  return [...new Set(imageUrls.filter(isExternalUrl))];
+};
+
+const blogListingRel = "blog/index.html";
+const blogListing = fs.existsSync(path.join(buildDir, blogListingRel)) ? read(blogListingRel) : "";
+const blogDocuments = blogListing ? [{ rel: blogListingRel, html: blogListing, jsonLd: [] }] : [];
+
+for (const slug of blogSlugs) {
+  const articleRel = `blog/${slug}/index.html`;
+  const assetRel = `blog/assets/${slug}.png`;
+  const expectedHref = `/blog/${slug}/`;
+  const expectedSitemapPath = `/blog/${slug}/`;
+
+  if (!fs.existsSync(path.join(publicBlogDir, "assets", `${slug}.png`)))
+    fail(`matching public blog thumbnail missing: ${assetRel}`);
+  if (!fs.existsSync(path.join(buildDir, assetRel)))
+    fail(`matching build blog thumbnail missing: ${assetRel}`);
+  if (fs.existsSync(path.join(publicBlogDir, "assets", `${slug}.png`))) {
+    const png = fs.readFileSync(path.join(publicBlogDir, "assets", `${slug}.png`));
+    const signature = png.subarray(0, 8).toString("hex");
+    if (png.length < 24 || signature !== "89504e470d0a1a0a")
+      fail(`invalid PNG thumbnail: ${assetRel}`);
+    else if (png.readUInt32BE(16) === 0 || png.readUInt32BE(20) === 0)
+      fail(`invalid PNG dimensions: ${assetRel}`);
+  }
+
+  const listingHasHref = [...blogListing.matchAll(/<a\b[^>]*>/gi)]
+    .some((match) => getAttribute(match[0], "href") === expectedHref);
+  if (!listingHasHref) fail(`blog listing href missing: ${expectedHref}`);
+  if (!locs.includes(expectedSitemapPath)) fail(`blog sitemap URL missing: ${expectedSitemapPath}`);
+
+  if (!fs.existsSync(path.join(buildDir, articleRel))) continue;
+  const article = read(articleRel);
+  if (article.includes("{{")) fail(`unresolved template placeholder remains in ${articleRel}`);
+
+  const canonicalTags = [...article.matchAll(/<link\b[^>]*>/gi)]
+    .filter((match) => {
+      const rel = getAttribute(match[0], "rel");
+      return rel && rel.toLowerCase().split(/\s+/).includes("canonical");
+    });
+  if (canonicalTags.length !== 1)
+    fail(`${articleRel} must contain exactly one canonical link (found ${canonicalTags.length})`);
+  else if (getAttribute(canonicalTags[0][0], "href") !== `https://dn-people.com/blog/${slug}/`)
+    fail(`${articleRel} canonical must match its slug`);
+
+  if (!article.includes(`/blog/assets/${slug}.png`))
+    fail(`${articleRel} does not reference its matching thumbnail`);
+
+  const h1Count = (article.match(/<h1\b[^>]*>/gi) || []).length;
+  if (h1Count !== 1) fail(`${articleRel} must contain exactly one h1 (found ${h1Count})`);
+
+  const jsonLdBlocks = [...article.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script\s*>/gi)]
+    .filter((match) => (getAttribute(match[1], "type") || "").toLowerCase() === "application/ld+json");
+  const jsonLdValues = [];
+  if (jsonLdBlocks.length === 0) fail(`application/ld+json missing in ${articleRel}`);
+  for (const [index, block] of jsonLdBlocks.entries()) {
+    try {
+      jsonLdValues.push(JSON.parse(block[2].trim()));
+    } catch (error) {
+      fail(`invalid application/ld+json in ${articleRel} block ${index + 1}: ${error.message}`);
+    }
+  }
+
+  blogDocuments.push({ rel: articleRel, html: article, jsonLd: jsonLdValues });
+}
+
+for (const document of blogDocuments) {
+  // 기존에 사용되던 외부 이미지 호스트도 명시적으로 계속 차단한다.
+  if (document.html.includes("shopby-images"))
+    fail(`external hotlink remains in ${document.rel}`);
+  const externalImages = findExternalImageUrls(document.html, document.jsonLd);
+  if (externalImages.length > 0)
+    fail(`external image hotlink remains in ${document.rel}: ${externalImages.join(", ")}`);
+}
 if (!fs.existsSync(path.join(buildDir, "blog/assets/best-phone-buying-site.png")))
   fail("self-hosted blog thumbnail missing");
 

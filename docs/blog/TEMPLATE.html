@@ -98,6 +98,30 @@
             }
           },
           {
+            "@type": "BreadcrumbList",
+            "@id": "https://dn-people.com/blog/{{SLUG}}/#breadcrumb",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "홈",
+                "item": "https://dn-people.com/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "블로그",
+                "item": "https://dn-people.com/blog/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "{{TITLE}}",
+                "item": "https://dn-people.com/blog/{{SLUG}}/"
+              }
+            ]
+          },
+          {
             "@type": "FAQPage",
             "@id": "https://dn-people.com/blog/{{SLUG}}/#faq",
             "inLanguage": "ko-KR",
@@ -116,7 +140,7 @@
         <nav class="nav" aria-label="주요 메뉴">
           <a href="/#hero-section">홈</a>
           <a href="/#intro-section">소개</a>
-          <a href="/#boxim-section">회사</a>
+          <a href="/#dnbn-section">회사</a>
           <a href="/#review-section">후기</a>
           <a class="active" href="/blog/">블로그</a>
         </nav>

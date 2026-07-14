@@ -1,0 +1,4 @@
+interface:
+  display_name: "동네방네 블로그 발행"
+  short_description: "블로그 작성부터 PR·머지·배포 검증까지 자동화"
+  default_prompt: "Use $publish-dnbn-blog to publish at most one verified blog post, merge only after checks pass, and confirm the production deployment."

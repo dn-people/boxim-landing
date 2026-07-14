@@ -2,7 +2,7 @@ import { motion } from "motion/react";
 
 import Button from "../components/button";
 import Text from "../components/text";
-import { BOXIM_URL } from "../constants";
+import { dnbn_URL } from "../constants";
 
 const EndSection = ({ sectionRef }) => (
   <section
@@ -35,7 +35,7 @@ const EndSection = ({ sectionRef }) => (
         initial={{ y: 50, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5, delay: 0.3 }}
-        onClick={() => window.open(BOXIM_URL, "_blank")}
+        onClick={() => window.open(dnbn_URL, "_blank")}
       >
         바로가기
       </Button>

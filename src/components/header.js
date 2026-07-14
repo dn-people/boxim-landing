@@ -6,7 +6,7 @@ const Header = ({ section }) => {
   useEffect(() => {
     switch (section) {
       case "hero":
-      case "boxim":
+      case "dnbn":
       case "history":
       case "end":
         setIsLight(false);
@@ -49,8 +49,8 @@ const Header = ({ section }) => {
             </Nav>
             <Nav
               isLight={isLight}
-              href="/#boxim-section"
-              isActive={section === "boxim" || section === "history"}
+              href="/#dnbn-section"
+              isActive={section === "dnbn" || section === "history"}
             >
               회사
             </Nav>

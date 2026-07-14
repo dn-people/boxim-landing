@@ -26,8 +26,8 @@ const useActiveSection = (scroll) => {
   const isTypeSection = useInView(typeSectionRef, {
     margin: SECTION_IN_VIEW_MARGIN,
   });
-  const boximSectionRef = useRef(null);
-  const isBoximSection = useInView(boximSectionRef, {
+  const dnbnSectionRef = useRef(null);
+  const isdnbnSection = useInView(dnbnSectionRef, {
     margin: SECTION_IN_VIEW_MARGIN,
   });
   const historySectionRef = useRef(null);
@@ -50,8 +50,8 @@ const useActiveSection = (scroll) => {
       setSection("review");
     } else if (isHistorySection) {
       setSection("history");
-    } else if (isBoximSection) {
-      setSection("boxim");
+    } else if (isdnbnSection) {
+      setSection("dnbn");
     } else if (isTypeSection) {
       setSection("type");
     } else if (isWhySection) {
@@ -76,7 +76,7 @@ const useActiveSection = (scroll) => {
       mission: missionSectionRef,
       why: whySectionRef,
       type: typeSectionRef,
-      boxim: boximSectionRef,
+      dnbn: dnbnSectionRef,
       history: historySectionRef,
       review: reviewSectionRef,
       end: endSectionRef,

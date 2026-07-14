@@ -8,6 +8,9 @@
 1. `docs/blog/TOPICS.md`(토픽 원장)를 읽는다.
 2. `docs/blog/TEMPLATE.html`을 읽는다. 새 글은 반드시 이 템플릿 구조를 따른다.
 3. `public/sitemap.xml`과 `public/blog/index.html`의 현재 상태를 읽는다.
+4. Asia/Seoul 기준 오늘 이미 발행한 글이 있거나 열린 블로그 발행 PR이 있으면 새 글을 만들지 않는다.
+5. 요금·제도·법령·가입 조건·절차처럼 변할 수 있는 사실은 발행 당일 공식 1차 출처를 검색해 확인한다.
+6. 운영 블로그에 `main`에 없는 최신 글이 있으면 소스 불일치로 보고하고 새 글을 만들지 않는다.
 
 ## 1. 주제 선정 — 중복 방지 3중 체크
 후보 주제는 TOPICS.md의 "후보 백로그"에서 고르거나, 아래 필러(pillar) 안에서 새로 만든다:
@@ -30,7 +33,7 @@
 - **내부 링크**: 기존 블로그 글 중 관련 글 1개 이상 + 블로그 목록(/blog/) 링크.
 - **외부 링크**: 공신력 있는 공식 사이트만(알뜰폰허브, 스마트초이스, imei.kr, wiseuser.go.kr 등),
   `target="_blank" rel="noopener"`.
-- **이미지**: 자가 호스팅(`/blog/assets/<slug>.png`)만 사용. 외부 핫링크 금지.
+- **이미지**: 직접 생성한 1200×630 PNG를 자가 호스팅(`/blog/assets/<slug>.png`)한다. 외부 핫링크 금지.
   alt는 이미지 내용을 문장으로 설명(키워드 나열 금지).
 - **canonical**: `https://dn-people.com/blog/<slug>/` 정확히 한 개.
 
@@ -53,17 +56,20 @@
 ## 5. 발행 절차 (순서 고정)
 1. `docs/blog/TEMPLATE.html`을 복사해 `public/blog/<slug>/index.html` 생성, 모든 `{{플레이스홀더}}` 치환.
    치환 누락 검사: 파일 내 `{{` 문자열이 0건이어야 함.
-2. `public/blog/index.html`의 `.post-grid` **맨 앞**에 새 글 카드 추가
+2. `public/blog/assets/<slug>.png`에 1200×630 썸네일을 생성한다. 외부 이미지 다운로드나 핫링크는 금지한다.
+3. `public/blog/index.html`의 `.post-grid` **맨 앞**에 새 글 카드 추가
    (기존 카드 마크업 구조 복사: post-card > post-thumb(aria-label) + post-meta + post-title + post-desc + tag-row 태그 3개).
-3. `public/sitemap.xml`에 `<url>` 추가: loc=`https://dn-people.com/blog/<slug>/`,
+4. `public/sitemap.xml`에 `<url>` 추가: loc=`https://dn-people.com/blog/<slug>/`,
    lastmod=오늘(YYYY-MM-DD), changefreq=monthly, priority=0.8.
    블로그 목록 URL(`/blog/`)의 lastmod도 오늘로 갱신. **다른 URL의 lastmod는 건드리지 않는다.**
-4. `docs/blog/TOPICS.md`의 "발행됨" 표에 한 줄 추가: 날짜 | slug | 제목 | 타깃 키워드 | 검색 의도.
+5. `docs/blog/TOPICS.md`의 "발행됨" 표에 한 줄 추가: 날짜 | slug | 제목 | 타깃 키워드 | 검색 의도.
    백로그에서 소진한 주제는 백로그에서 삭제.
-5. 검증: `npm run build && node scripts/verify-build.js` → `VERIFY OK` 확인.
-   새 글 HTML의 JSON-LD를 JSON.parse로 유효성 확인.
-6. 커밋: `[blog] Add post: <slug>` — 위 4개 파일 변경이 모두 한 커밋에 포함되어야 한다.
-7. 배포(`npm run deploy`)는 사람이 승인한 경우에만 실행한다.
+6. 검증: `npm run build && node scripts/verify-build.js` → `VERIFY OK` 확인 후 `git diff --check`를 통과한다.
+   검증기는 모든 글의 JSON-LD, canonical, h1, 목록·sitemap·이미지 정합성을 확인한다.
+7. 커밋: `[blog] Add post: <slug>` — 위 5개 발행 경로만 한 커밋에 포함한다.
+8. `main` 대상 PR을 만들고 검증 체크가 성공한 경우에만 머지한다. 머지된 `main`의 GitHub Actions가 운영 배포한다.
+9. `npm run deploy`, `main` 직접 push, `gh-pages` 직접 push는 자동 발행 루틴에서 사용하지 않는다.
+10. 머지 후 Actions 성공과 블로그 목록·새 canonical URL의 HTTP 200을 확인해야 발행 완료로 처리한다.
 
 ## 6. 금지 사항
 - 기존 글 수정 금지(오류 발견 시 보고만). React 앱(src/) 수정 금지.
