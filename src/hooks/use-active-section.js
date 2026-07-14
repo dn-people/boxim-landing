@@ -27,7 +27,7 @@ const useActiveSection = (scroll) => {
     margin: SECTION_IN_VIEW_MARGIN,
   });
   const dnbnSectionRef = useRef(null);
-  const isdnbnSection = useInView(dnbnSectionRef, {
+  const isDnbnSection = useInView(dnbnSectionRef, {
     margin: SECTION_IN_VIEW_MARGIN,
   });
   const historySectionRef = useRef(null);
@@ -50,7 +50,7 @@ const useActiveSection = (scroll) => {
       setSection("review");
     } else if (isHistorySection) {
       setSection("history");
-    } else if (isdnbnSection) {
+    } else if (isDnbnSection) {
       setSection("dnbn");
     } else if (isTypeSection) {
       setSection("type");
