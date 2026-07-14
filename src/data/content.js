@@ -28,7 +28,7 @@ export const introSlides = [
   },
 ];
 
-export const boximStats = [
+export const dnbnStats = [
   { value: "200억 +", label: "누적 매출액" },
   { value: "1위", label: "박스폰 판매" },
   { value: "10명중 9명+", label: "고객 만족" },

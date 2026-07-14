@@ -2,20 +2,20 @@ import { motion } from "motion/react";
 
 import Text from "../components/text";
 import { SECTION_SCROLL_MARGIN } from "../constants";
-import { boximStats } from "../data/content";
+import { dnbnStats } from "../data/content";
 
-const BoximSection = ({ sectionRef }) => (
+const dnbnSection = ({ sectionRef }) => (
   <section
-    id="boxim-section"
+    id="dnbn-section"
     ref={sectionRef}
     style={{
-      backgroundImage: "url(./boxim-wallpaper.jpeg)",
+      backgroundImage: "url(./dnbn-wallpaper.jpeg)",
       ...SECTION_SCROLL_MARGIN,
     }}
     className="w-full min-h-160 h-screen max-h-200 bg-cover bg-no-repeat bg-center text-white"
   >
     <div
-      id="boxim-container"
+      id="dnbn-container"
       className="container mx-auto h-full flex flex-col p-6 lg:p-12 justify-center gap-12 lg:gap-24"
     >
       <Text.SectionTitle
@@ -26,7 +26,7 @@ const BoximSection = ({ sectionRef }) => (
         동네방네를 만드는 사람들은 이미 시장에서 유명합니다
       </Text.SectionTitle>
       <div className="flex flex-col lg:flex-row gap-6">
-        {boximStats.map((stat, index) => (
+        {dnbnStats.map((stat, index) => (
           <motion.div
             key={stat.value}
             className="lg:flex-1 flex flex-col gap-3 p-6 rounded-[12px] bg-[rgba(31,41,55,0.75)] backdrop-blur-md"
@@ -49,4 +49,4 @@ const BoximSection = ({ sectionRef }) => (
   </section>
 );
 
-export default BoximSection;
+export default dnbnSection;

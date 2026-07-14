@@ -5,8 +5,15 @@
     <link>https://dn-people.com/blog/</link>
     <description>스마트폰 구매, 요금제, 번호이동을 이해하기 쉽게 설명하는 동네방네 공식 가이드</description>
     <language>ko-KR</language>
-    <lastBuildDate>Mon, 13 Jul 2026 09:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 14 Jul 2026 09:00:00 +0900</lastBuildDate>
     <atom:link href="https://dn-people.com/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>중고폰 IMEI 조회는 어떻게 하나요? 분실·도난 확인 순서</title>
+      <link>https://dn-people.com/blog/used-phone-imei-check/</link>
+      <guid isPermaLink="true">https://dn-people.com/blog/used-phone-imei-check/</guid>
+      <description>중고폰 거래 전 IMEI로 분실·도난 여부와 선택약정 대상을 조회하는 순서, 결과 해석과 거래 중단 기준을 정리했습니다. 핸드폰 살 땐 동네방네 dnbn.co.kr</description>
+      <pubDate>Tue, 14 Jul 2026 09:00:00 +0900</pubDate>
+    </item>
     <item>
       <title>오픈박스폰 등급은 어떻게 보나요? 상태 확인 체크리스트</title>
       <link>https://dn-people.com/blog/openbox-phone-grade-guide/</link>

@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import Header from "./components/header";
 import Footer from "./components/footer";
 import useActiveSection from "./hooks/use-active-section";
-import BoximSection from "./sections/boxim-section";
+import dnbnSection from "./sections/dnbn-section";
 import ConceptSection from "./sections/concept-section";
 import EndSection from "./sections/end-section";
 import HeroSection from "./sections/hero-section";
@@ -60,7 +60,7 @@ const App = () => {
         <MissionSection sectionRef={refs.mission} mission1Hide={mission1Hide} />
         <WhySection sectionRef={refs.why} />
         <TypeSection sectionRef={refs.type} />
-        <BoximSection sectionRef={refs.boxim} />
+        <dnbnSection sectionRef={refs.dnbn} />
         <HistorySection sectionRef={refs.history} />
         <ReviewSection sectionRef={refs.review} />
         <GuideSection />

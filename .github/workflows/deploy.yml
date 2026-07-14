@@ -1,23 +1,20 @@
-name: Deploy to GitHub Pages
+name: Validate and deploy to GitHub Pages
 
 on:
+  pull_request:
+    branches:
+      - main
   push:
     branches:
       - main
-      - refactor/2026-07-landing
   workflow_dispatch:
 
-# gh-pages 브랜치로 빌드 결과를 push하기 위한 권한
 permissions:
-  contents: write
-
-# 배포가 겹치지 않도록 (최신 것만 실행)
-concurrency:
-  group: pages-deploy
-  cancel-in-progress: true
+  contents: read
 
 jobs:
-  build-and-deploy:
+  validate:
+    name: Validate production build
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -34,9 +31,42 @@ jobs:
 
       - name: Build
         run: npm run build
-        env:
-          # CRA는 CI=true면 경고를 에러로 취급 → 배포 실패를 막기 위해 false
-          CI: false
+
+      - name: Verify build output
+        run: node scripts/verify-build.js
+
+      - name: Upload validated build
+        if: >-
+          github.ref == 'refs/heads/main' &&
+          (github.event_name == 'push' || github.event_name == 'workflow_dispatch')
+        uses: actions/upload-artifact@v4
+        with:
+          name: site-build-${{ github.run_id }}-${{ github.run_attempt }}
+          path: build
+          if-no-files-found: error
+          retention-days: 1
+
+  deploy:
+    name: Deploy production site
+    needs: validate
+    if: >-
+      github.ref == 'refs/heads/main' &&
+      (github.event_name == 'push' || github.event_name == 'workflow_dispatch')
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    concurrency:
+      group: production-pages
+      cancel-in-progress: false
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Download validated build
+        uses: actions/download-artifact@v4
+        with:
+          name: site-build-${{ github.run_id }}-${{ github.run_attempt }}
+          path: build
 
       - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v4
@@ -44,5 +74,4 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./build
           publish_branch: gh-pages
-          # 매 배포를 단일 커밋으로 (gh-pages 히스토리 누적 방지)
           force_orphan: true

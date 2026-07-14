@@ -72,7 +72,7 @@ const hasType = (expected) => graph.some((value) => {
   const types = Array.isArray(value["@type"]) ? value["@type"] : [value["@type"]];
   return types.includes(expected);
 });
-for (const type of ["Organization", "WebSite", "WebPage", "Service", "FAQPage", "HowTo"])
+for (const type of ["Organization", "WebSite", "WebPage", "BreadcrumbList", "Service", "FAQPage", "HowTo"])
   if (!hasType(type)) fail(`JSON-LD ${type} missing`);
 
 const webPage = graph.find((value) => {
