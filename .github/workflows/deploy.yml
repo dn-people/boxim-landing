@@ -45,6 +45,7 @@ jobs:
           path: build
           if-no-files-found: error
           retention-days: 1
+          include-hidden-files: true
 
   deploy:
     name: Deploy production site
