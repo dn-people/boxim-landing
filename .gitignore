@@ -21,3 +21,6 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# local automation scratch (rehearsal workspaces, npm cache, snapshots)
+/.automation/
