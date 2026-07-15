@@ -1,0 +1,43 @@
+{
+  "version": 1,
+  "timezone": "Asia/Seoul",
+  "manualReview": {
+    "requiredPublishedPosts": 5,
+    "baselinePublishedSlugs": [
+      "best-phone-buying-site",
+      "mvno-number-transfer-guide",
+      "unlocked-vs-carrier-cost",
+      "openbox-phone-grade-guide",
+      "used-phone-imei-check",
+      "internet-tv-bundle-guide"
+    ]
+  },
+  "officialSourceDomains": [
+    "data.go.kr",
+    "gwanbo.go.kr",
+    "kasa.go.kr",
+    "kasi.re.kr",
+    "law.go.kr",
+    "mois.go.kr",
+    "mpm.go.kr",
+    "msit.go.kr",
+    "kcc.go.kr",
+    "kca.go.kr",
+    "korea.kr",
+    "nec.go.kr",
+    "smartchoice.or.kr",
+    "mvnohub.kr",
+    "wiseuser.go.kr",
+    "kait.or.kr",
+    "ktoa.or.kr",
+    "imei.kr",
+    "sktelecom.com",
+    "tworld.co.kr",
+    "kt.com",
+    "lguplus.com",
+    "samsung.com",
+    "apple.com",
+    "dnbn.co.kr",
+    "dn-people.com"
+  ]
+}
