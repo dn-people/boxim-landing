@@ -266,9 +266,7 @@ const changedFiles = (projectDir, baseRef) => {
   });
 };
 
-const validateChangedPublication = async ({ projectDir = PROJECT_DIR, baseRef }) => {
-  if (!baseRef) return { skipped: true, message: "no base ref supplied" };
-  const changes = changedFiles(projectDir, baseRef);
+const validatePublicationDiff = async ({ projectDir = PROJECT_DIR, changes }) => {
   const articles = changes.filter(({ status, path: changedPath }) =>
     status.startsWith("A") && /^public\/blog\/([a-z0-9-]+)\/index\.html$/.test(changedPath));
   if (articles.length === 0) return { skipped: true, message: "no new blog article in diff" };
@@ -293,6 +291,11 @@ const validateChangedPublication = async ({ projectDir = PROJECT_DIR, baseRef })
   const result = await validatePublicationFiles({ projectDir, slug });
   errors.push(...result.errors);
   return { errors, metadata: result.metadata, slug };
+};
+
+const validateChangedPublication = async ({ projectDir = PROJECT_DIR, baseRef }) => {
+  if (!baseRef) return { skipped: true, message: "no base ref supplied" };
+  return validatePublicationDiff({ projectDir, changes: changedFiles(projectDir, baseRef) });
 };
 
 if (require.main === module) {
@@ -323,5 +326,6 @@ module.exports = {
   normalizeText,
   validateArticle,
   validateChangedPublication,
+  validatePublicationDiff,
   validatePublicationFiles,
 };

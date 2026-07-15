@@ -13,7 +13,11 @@ const {
   parsePublishedRows,
 } = require("../check-blog-run-gates");
 const { generateThumbnail } = require("../generate-blog-thumbnail");
-const { validateArticle, validatePublicationFiles } = require("../verify-blog");
+const {
+  validateArticle,
+  validatePublicationDiff,
+  validatePublicationFiles,
+} = require("../verify-blog");
 
 const policy = JSON.parse(fs.readFileSync(
   path.join(projectDir, "docs", "blog", "AUTOMATION_POLICY.json"),
@@ -23,6 +27,37 @@ const calendar = JSON.parse(fs.readFileSync(
   path.join(projectDir, "docs", "blog", "holidays", "2026.json"),
   "utf8",
 ));
+const publicationSlug = "internet-tv-bundle-guide";
+
+const createPublicationFixture = () => {
+  const fixtureDir = fs.mkdtempSync(path.join(os.tmpdir(), "dnbn-publication-"));
+  const copy = (relativePath) => {
+    const source = path.join(projectDir, relativePath);
+    const destination = path.join(fixtureDir, relativePath);
+    fs.mkdirSync(path.dirname(destination), { recursive: true });
+    fs.copyFileSync(source, destination);
+  };
+
+  [
+    "docs/blog/AUTOMATION_POLICY.json",
+    "docs/blog/TOPICS.md",
+    "public/blog/index.html",
+    `public/blog/${publicationSlug}/index.html`,
+    `public/blog/assets/${publicationSlug}.png`,
+    "public/sitemap.xml",
+    "public/rss.xml",
+  ].forEach(copy);
+  return fixtureDir;
+};
+
+const publicationChanges = () => [
+  { status: "A", path: `public/blog/${publicationSlug}/index.html` },
+  { status: "A", path: `public/blog/assets/${publicationSlug}.png` },
+  { status: "M", path: "public/blog/index.html" },
+  { status: "M", path: "public/sitemap.xml" },
+  { status: "M", path: "docs/blog/TOPICS.md" },
+  { status: "M", path: "public/rss.xml" },
+];
 
 test("run gate distinguishes weekends, holidays, and business days", () => {
   assert.equal(evaluateDate("2026-07-18", calendar).status, "SKIPPED_WEEKEND");
@@ -76,9 +111,48 @@ test("deterministic thumbnail fallback creates an exact PNG", async () => {
 test("current automated article satisfies the new blog validator", async () => {
   const result = await validatePublicationFiles({
     projectDir,
-    slug: "internet-tv-bundle-guide",
+    slug: publicationSlug,
   });
   assert.deepEqual(result.errors, []);
+});
+
+test("publication validation rejects a non-1200x630 thumbnail", async () => {
+  const fixtureDir = createPublicationFixture();
+  const imageFile = path.join(fixtureDir, "public", "blog", "assets", `${publicationSlug}.png`);
+  try {
+    fs.rmSync(imageFile);
+    await sharp({
+      create: { width: 1200, height: 629, channels: 4, background: "#0159fb" },
+    }).png().toFile(imageFile);
+    const result = await validatePublicationFiles({ projectDir: fixtureDir, slug: publicationSlug });
+    assert.ok(result.errors.some((error) => error.includes("1200x630 PNG")));
+  } finally {
+    fs.rmSync(fixtureDir, { recursive: true, force: true });
+  }
+});
+
+test("publication validation rejects an unexpected changed file", async () => {
+  const fixtureDir = createPublicationFixture();
+  try {
+    const result = await validatePublicationDiff({
+      projectDir: fixtureDir,
+      changes: [...publicationChanges(), { status: "A", path: "docs/blog/unexpected.md" }],
+    });
+    assert.ok(result.errors.some((error) => error.includes("unexpected publication paths")));
+  } finally {
+    fs.rmSync(fixtureDir, { recursive: true, force: true });
+  }
+});
+
+test("publication validation rejects multiple new articles", async () => {
+  const result = await validatePublicationDiff({
+    projectDir,
+    changes: [
+      { status: "A", path: `public/blog/${publicationSlug}/index.html` },
+      { status: "A", path: "public/blog/second-topic-guide/index.html" },
+    ],
+  });
+  assert.deepEqual(result.errors, ["publication diff adds 2 articles; expected one"]);
 });
 
 test("FAQ JSON-LD mismatch is rejected", () => {
@@ -86,7 +160,7 @@ test("FAQ JSON-LD mismatch is rejected", () => {
     projectDir,
     "public",
     "blog",
-    "internet-tv-bundle-guide",
+    publicationSlug,
     "index.html",
   );
   const html = fs.readFileSync(articleFile, "utf8");
