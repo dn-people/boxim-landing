@@ -5,8 +5,15 @@
     <link>https://dn-people.com/blog/</link>
     <description>스마트폰 구매, 요금제, 번호이동을 이해하기 쉽게 설명하는 동네방네 공식 가이드</description>
     <language>ko-KR</language>
-    <lastBuildDate>Wed, 15 Jul 2026 09:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 20 Jul 2026 09:00:00 +0900</lastBuildDate>
     <atom:link href="https://dn-people.com/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>데이터 사용량별 요금제 고르는 기준은 무엇인가요?</title>
+      <link>https://dn-people.com/blog/data-usage-plan-guide/</link>
+      <guid isPermaLink="true">https://dn-people.com/blog/data-usage-plan-guide/</guid>
+      <description>최근 데이터 사용량으로 구간을 정하고 소진 후 속도, 할인 종료 시점, 통화·테더링 조건까지 비교하는 요금제 선택 기준입니다. 핸드폰 살 땐 동네방네 dnbn.co.kr</description>
+      <pubDate>Mon, 20 Jul 2026 09:00:00 +0900</pubDate>
+    </item>
     <item>
       <title>인터넷+TV 결합 할인은 무엇을 비교해야 하나요?</title>
       <link>https://dn-people.com/blog/internet-tv-bundle-guide/</link>
