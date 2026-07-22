@@ -5,8 +5,15 @@
     <link>https://dn-people.com/blog/</link>
     <description>스마트폰 구매, 요금제, 번호이동을 이해하기 쉽게 설명하는 동네방네 공식 가이드</description>
     <language>ko-KR</language>
-    <lastBuildDate>Tue, 21 Jul 2026 09:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 22 Jul 2026 09:00:00 +0900</lastBuildDate>
     <atom:link href="https://dn-people.com/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>가족 통신비는 어떻게 줄이나요? 회선 구성 순서</title>
+      <link>https://dn-people.com/blog/family-mobile-cost-plan/</link>
+      <guid isPermaLink="true">https://dn-people.com/blog/family-mobile-cost-plan/</guid>
+      <description>가족별 사용량·할인·약정을 정리하고 결합 유지안과 일부 회선 전환안의 총액을 비교하는 순서입니다. 핸드폰 살 땐 동네방네 dnbn.co.kr</description>
+      <pubDate>Wed, 22 Jul 2026 09:00:00 +0900</pubDate>
+    </item>
     <item>
       <title>유심기변과 확정기변 차이는 무엇이고 언제 필요한가요?</title>
       <link>https://dn-people.com/blog/usim-change-device-registration/</link>
