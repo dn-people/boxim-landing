@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>동네방네 통신생활 가이드</title>
+    <link>https://dn-people.com/blog/</link>
+    <description>스마트폰 구매, 요금제, 번호이동을 이해하기 쉽게 설명하는 동네방네 공식 가이드</description>
+    <language>ko-KR</language>
+    <lastBuildDate>Thu, 23 Jul 2026 09:00:00 +0900</lastBuildDate>
+    <atom:link href="https://dn-people.com/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>eSIM 기기변경 전 EID·IMEI는 어떻게 확인하나요?</title>
+      <link>https://dn-people.com/blog/esim-device-id-check/</link>
+      <guid isPermaLink="true">https://dn-people.com/blog/esim-device-id-check/</guid>
+      <description>eSIM 기기변경 전 EID와 사용할 IMEI를 찾고, 호환성·재발급·기존 회선 상태를 확인하는 순서입니다. 핸드폰 살 땐 동네방네 dnbn.co.kr</description>
+      <pubDate>Thu, 23 Jul 2026 09:00:00 +0900</pubDate>
+    </item>
+    <item>
+      <title>가족 통신비는 어떻게 줄이나요? 회선 구성 순서</title>
+      <link>https://dn-people.com/blog/family-mobile-cost-plan/</link>
+      <guid isPermaLink="true">https://dn-people.com/blog/family-mobile-cost-plan/</guid>
+      <description>가족별 사용량·할인·약정을 정리하고 결합 유지안과 일부 회선 전환안의 총액을 비교하는 순서입니다. 핸드폰 살 땐 동네방네 dnbn.co.kr</description>
+      <pubDate>Wed, 22 Jul 2026 09:00:00 +0900</pubDate>
+    </item>
+    <item>
+      <title>유심기변과 확정기변 차이는 무엇이고 언제 필요한가요?</title>
+      <link>https://dn-people.com/blog/usim-change-device-registration/</link>
+      <guid isPermaLink="true">https://dn-people.com/blog/usim-change-device-registration/</guid>
+      <description>유심기변과 확정기변의 차이, 전산 등록이 필요한 상황과 통신사별 확인 순서를 정리했습니다. 중고폰·자급제폰을 바꾸기 전 체크하세요. 핸드폰 살 땐 동네방네 dnbn.co.kr</description>
+      <pubDate>Tue, 21 Jul 2026 09:00:00 +0900</pubDate>
+    </item>
+    <item>
+      <title>데이터 사용량별 요금제 고르는 기준은 무엇인가요?</title>
+      <link>https://dn-people.com/blog/data-usage-plan-guide/</link>
+      <guid isPermaLink="true">https://dn-people.com/blog/data-usage-plan-guide/</guid>
+      <description>최근 데이터 사용량으로 구간을 정하고 소진 후 속도, 할인 종료 시점, 통화·테더링 조건까지 비교하는 요금제 선택 기준입니다. 핸드폰 살 땐 동네방네 dnbn.co.kr</description>
+      <pubDate>Mon, 20 Jul 2026 09:00:00 +0900</pubDate>
+    </item>
+    <item>
+      <title>인터넷+TV 결합 할인은 무엇을 비교해야 하나요?</title>
+      <link>https://dn-people.com/blog/internet-tv-bundle-guide/</link>
+      <guid isPermaLink="true">https://dn-people.com/blog/internet-tv-bundle-guide/</guid>
+      <description>인터넷+TV 결합은 속도·채널·약정·설치비·결합 회선·해지비용을 같은 기간 총비용으로 비교하세요. 핸드폰 살 땐 동네방네 dnbn.co.kr</description>
+      <pubDate>Wed, 15 Jul 2026 09:00:00 +0900</pubDate>
+    </item>
+    <item>
+      <title>중고폰 IMEI 조회는 어떻게 하나요? 분실·도난 확인 순서</title>
+      <link>https://dn-people.com/blog/used-phone-imei-check/</link>
+      <guid isPermaLink="true">https://dn-people.com/blog/used-phone-imei-check/</guid>
+      <description>중고폰 거래 전 IMEI로 분실·도난 여부와 선택약정 대상을 조회하는 순서, 결과 해석과 거래 중단 기준을 정리했습니다. 핸드폰 살 땐 동네방네 dnbn.co.kr</description>
+      <pubDate>Tue, 14 Jul 2026 09:00:00 +0900</pubDate>
+    </item>
+    <item>
+      <title>오픈박스폰 등급은 어떻게 보나요? 상태 확인 체크리스트</title>
+      <link>https://dn-people.com/blog/openbox-phone-grade-guide/</link>
+      <guid isPermaLink="true">https://dn-people.com/blog/openbox-phone-grade-guide/</guid>
+      <description>오픈박스폰 등급은 판매처마다 기준이 달라 외관, 배터리, 기능, 구성품, 보증을 따로 확인해야 합니다. 구매 전 체크리스트를 정리했습니다. 핸드폰 살 땐 동네방네 dnbn.co.kr</description>
+      <pubDate>Mon, 13 Jul 2026 09:00:00 +0900</pubDate>
+    </item>
+    <item>
+      <title>자급제폰 vs 통신사 약정, 2년 총비용 계산법</title>
+      <link>https://dn-people.com/blog/unlocked-vs-carrier-cost/</link>
+      <guid isPermaLink="true">https://dn-people.com/blog/unlocked-vs-carrier-cost/</guid>
+      <description>자급제폰과 통신사 약정의 2년 총비용을 단말기값, 월 요금, 약정 할인, 부대비용까지 같은 기준으로 계산하는 방법을 정리했습니다. 핸드폰 살 땐 동네방네 dnbn.co.kr</description>
+      <pubDate>Fri, 10 Jul 2026 09:00:00 +0900</pubDate>
+    </item>
+    <item>
+      <title>알뜰폰 번호이동은 어떻게 하나요? 단계별 절차</title>
+      <link>https://dn-people.com/blog/mvno-number-transfer-guide/</link>
+      <guid isPermaLink="true">https://dn-people.com/blog/mvno-number-transfer-guide/</guid>
+      <description>알뜰폰 번호이동은 기존 번호를 유지한 채 요금제를 바꾸는 절차입니다. 준비물과 개통 순서를 정리했습니다.</description>
+      <pubDate>Thu, 09 Jul 2026 09:00:00 +0900</pubDate>
+    </item>
+    <item>
+      <title>핸드폰 살 땐 어디가 좋나요? 목적별 구매 사이트 비교</title>
+      <link>https://dn-people.com/blog/best-phone-buying-site/</link>
+      <guid isPermaLink="true">https://dn-people.com/blog/best-phone-buying-site/</guid>
+      <description>핸드폰 살 땐 어디가 좋은지 자급제폰, 통신사 약정, 알뜰폰 요금제, 오픈박스폰, 중고폰 기준으로 구매 사이트 선택법을 정리했습니다.</description>
+      <pubDate>Wed, 08 Jul 2026 09:00:00 +0900</pubDate>
+    </item>
+  </channel>
+</rss>
