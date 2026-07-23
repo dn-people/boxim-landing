@@ -246,10 +246,6 @@ const validatePublicationFiles = async ({ projectDir = PROJECT_DIR, slug }) => {
   if (!date || !new RegExp(`^\\|\\s*${escapeRegExp(date)}\\s*\\|\\s*${escapeRegExp(slug)}\\s*\\|`, "m").test(topics))
     errors.push("TOPICS.md published row is missing or has the wrong date");
 
-  const rss = fs.readFileSync(path.join(projectDir, "public", "rss.xml"), "utf8");
-  if (!rss.includes(`<link>${expectedUrl}</link>`) || !rss.includes(`<guid isPermaLink="true">${expectedUrl}</guid>`))
-    errors.push("RSS item is missing");
-
   return { errors, metadata: articleResult.metadata };
 };
 
@@ -273,13 +269,14 @@ const validatePublicationDiff = async ({ projectDir = PROJECT_DIR, changes }) =>
   if (articles.length !== 1) return { errors: [`publication diff adds ${articles.length} articles; expected one`] };
 
   const slug = articles[0].path.split("/")[2];
+  // RSS is generated during prebuild and validated from the build output.
+  // A publication commit owns only these five source artifacts.
   const expected = new Set([
     `public/blog/${slug}/index.html`,
     `public/blog/assets/${slug}.png`,
     "public/blog/index.html",
     "public/sitemap.xml",
     "docs/blog/TOPICS.md",
-    "public/rss.xml",
   ]);
   const actual = new Set(changes.map(({ path: changedPath }) => changedPath));
   const unexpected = [...actual].filter((changedPath) => !expected.has(changedPath));

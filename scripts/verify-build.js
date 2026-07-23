@@ -25,7 +25,7 @@ if (blogSlugs.length === 0) fail("no blog article slugs discovered");
 
 // 1. 필수 산출물 존재
 const mustExist = [
-  "index.html", "CNAME", "robots.txt", "sitemap.xml",
+  "index.html", "CNAME", "robots.txt", "sitemap.xml", "rss.xml",
   "blog/index.html", "blog/best-phone-buying-site/index.html",
   "hero.jpeg", "end.jpeg", "history.jpeg", "dnbn-wallpaper.jpeg", "ogImage.jpg",
   "intro-1.jpeg", "intro-2.jpeg", "intro-3.jpeg",
@@ -81,6 +81,18 @@ if (locs.length < 3) fail("sitemap must list at least 3 URLs");
 for (const loc of locs) {
   const rel = loc === "/" ? "index.html" : loc.replace(/^\//, "").replace(/\/$/, "") + "/index.html";
   if (!fs.existsSync(path.join(buildDir, rel))) fail(`sitemap URL has no file: ${loc}`);
+}
+
+// Source publications intentionally omit public/rss.xml from their five-file diff.
+// The prebuild-generated RSS must still contain every article before deployment.
+if (fs.existsSync(path.join(buildDir, "rss.xml"))) {
+  const rss = read("rss.xml");
+  for (const slug of blogSlugs) {
+    const expectedUrl = `https://dn-people.com/blog/${slug}/`;
+    if (!rss.includes(`<link>${expectedUrl}</link>`)
+      || !rss.includes(`<guid isPermaLink="true">${expectedUrl}</guid>`))
+      fail(`RSS missing blog item: ${slug}`);
+  }
 }
 
 // 5. index.html 기본 무결성

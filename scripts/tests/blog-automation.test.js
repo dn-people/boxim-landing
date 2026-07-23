@@ -27,7 +27,7 @@ const calendar = JSON.parse(fs.readFileSync(
   path.join(projectDir, "docs", "blog", "holidays", "2026.json"),
   "utf8",
 ));
-const publicationSlug = "internet-tv-bundle-guide";
+const publicationSlug = "esim-device-id-check";
 
 const createPublicationFixture = () => {
   const fixtureDir = fs.mkdtempSync(path.join(os.tmpdir(), "dnbn-publication-"));
@@ -45,7 +45,6 @@ const createPublicationFixture = () => {
     `public/blog/${publicationSlug}/index.html`,
     `public/blog/assets/${publicationSlug}.png`,
     "public/sitemap.xml",
-    "public/rss.xml",
   ].forEach(copy);
   return fixtureDir;
 };
@@ -56,7 +55,6 @@ const publicationChanges = () => [
   { status: "M", path: "public/blog/index.html" },
   { status: "M", path: "public/sitemap.xml" },
   { status: "M", path: "docs/blog/TOPICS.md" },
-  { status: "M", path: "public/rss.xml" },
 ];
 
 test("run gate distinguishes weekends, holidays, and business days", () => {
@@ -116,6 +114,33 @@ test("current automated article satisfies the new blog validator", async () => {
   assert.deepEqual(result.errors, []);
 });
 
+test("publication validation accepts exactly five controlled artifacts", async () => {
+  const fixtureDir = createPublicationFixture();
+  try {
+    const result = await validatePublicationDiff({
+      projectDir: fixtureDir,
+      changes: publicationChanges(),
+    });
+    assert.deepEqual(result.errors, []);
+  } finally {
+    fs.rmSync(fixtureDir, { recursive: true, force: true });
+  }
+});
+
+test("publication validation rejects a committed source RSS change", async () => {
+  const fixtureDir = createPublicationFixture();
+  try {
+    const result = await validatePublicationDiff({
+      projectDir: fixtureDir,
+      changes: [...publicationChanges(), { status: "M", path: "public/rss.xml" }],
+    });
+    assert.ok(result.errors.some((error) =>
+      error.includes("unexpected publication paths: public/rss.xml")));
+  } finally {
+    fs.rmSync(fixtureDir, { recursive: true, force: true });
+  }
+});
+
 test("publication validation rejects a non-1200x630 thumbnail", async () => {
   const fixtureDir = createPublicationFixture();
   const imageFile = path.join(fixtureDir, "public", "blog", "assets", `${publicationSlug}.png`);
@@ -165,9 +190,10 @@ test("FAQ JSON-LD mismatch is rejected", () => {
   );
   const html = fs.readFileSync(articleFile, "utf8");
   const broken = html.replace(
-    '"text": "항상 그런 것은 아닙니다.',
-    '"text": "본문과 다른 답변입니다.',
+    '"text":"EID만으로 항상 신청이 끝나는 것은 아닙니다.',
+    '"text":"본문과 다른 답변입니다.',
   );
-  const result = validateArticle({ html: broken, slug: "internet-tv-bundle-guide", policy });
+  assert.notEqual(broken, html);
+  const result = validateArticle({ html: broken, slug: publicationSlug, policy });
   assert.ok(result.errors.some((error) => error.includes("FAQ JSON-LD mismatch")));
 });
