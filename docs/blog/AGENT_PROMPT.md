@@ -72,9 +72,11 @@
 3. `public/blog/index.html`의 `.post-grid` 맨 앞에 기존 구조와 같은 카드 하나를 추가한다.
 4. `public/sitemap.xml`에 글 URL을 추가하고 `/blog/`의 lastmod만 오늘로 갱신한다.
 5. `docs/blog/TOPICS.md` 발행 표에 한 줄을 추가하고 소진한 백로그를 제거한다. 필요하면 후보를 보충한다.
-6. `node scripts/generate-rss.js`로 `public/rss.xml`을 갱신한다.
 
-위 여섯 경로만 게시물 커밋에 포함한다. 기존 글, `src/`, 템플릿, 워크플로, CNAME은 수정하지 않는다.
+위 다섯 경로만 게시물 커밋에 포함한다. `public/rss.xml`은 발행 산출물이 아니다 — 빌드(`prebuild`의
+`scripts/generate-rss.js`)가 자동 재생성하고 `verify-build.js`가 빌드 산출물에서 검증하므로,
+`npm run build` 후 수정된 상태로 보이더라도 직접 만들거나 스테이징하지 않는다(`verify:blog`가
+`public/rss.xml`을 포함한 커밋을 거부한다). 기존 글, `src/`, 템플릿, 워크플로, CNAME은 수정하지 않는다.
 
 ## 6. 검증과 PR
 

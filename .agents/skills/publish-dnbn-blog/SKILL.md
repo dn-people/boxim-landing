@@ -1,6 +1,6 @@
 ---
 name: publish-dnbn-blog
-description: Publish at most one SEO/AEO blog post for dn-people/boxim-landing from safe trend research through six controlled repository artifacts, deterministic validation, a pull request, guarded merge, GitHub Pages deployment, and live verification. Use for scheduled business-day or one-off 동네방네 blog publication; do not use for landing-page edits, existing-post rewrites, or direct production pushes.
+description: Publish at most one SEO/AEO blog post for dn-people/boxim-landing from safe trend research through five controlled repository artifacts, deterministic validation, a pull request, guarded merge, GitHub Pages deployment, and live verification. Use for scheduled business-day or one-off 동네방네 blog publication; do not use for landing-page edits, existing-post rewrites, or direct production pushes.
 ---
 
 # Publish dnbn Blog
@@ -33,7 +33,7 @@ Read `docs/blog/AGENT_PROMPT.md`, `docs/blog/TOPICS.md`, `docs/blog/TEMPLATE.htm
 
 Use three explicit passes in the same Codex run:
 
-1. **Create:** research the topic and produce the six artifacts.
+1. **Create:** research the topic and produce the five source artifacts.
 2. **Evaluate:** re-read only the resulting artifacts and sources, then score the editorial,
    SEO/AEO, factual, duplication, and legal-advertising rubric. Revise before approval.
 3. **Manage:** run deterministic gates, inspect the complete diff, and decide whether the PR may
@@ -54,7 +54,7 @@ These are quality-control roles, not claims that different external models are b
 - When fewer than five backlog candidates remain, add distinct researched candidates to
   `TOPICS.md` while keeping that file as one controlled artifact.
 
-## Create exactly six artifacts
+## Create exactly five artifacts
 
 Create `automation/blog-YYYY-MM-DD-<slug>` from `origin/main`, using a lowercase 3–5-word
 kebab-case slug. Create or modify only:
@@ -64,7 +64,11 @@ kebab-case slug. Create or modify only:
 3. `public/blog/index.html`
 4. `public/sitemap.xml`
 5. `docs/blog/TOPICS.md`
-6. `public/rss.xml`
+
+`public/rss.xml` is not a publication artifact. The build regenerates it during `prebuild`
+(`scripts/generate-rss.js`) and `verify-build.js` validates it from the build output, so it will
+appear modified after `npm run build`. Never stage or commit it; the deterministic gate
+`verify:blog` rejects any commit that includes `public/rss.xml`.
 
 For the thumbnail, try the available image-generation capability first. Do not download or
 hotlink third-party images and do not render text into the image. Validate an AI result with:
@@ -79,9 +83,8 @@ If image generation is unavailable or validation fails, create the deterministic
 npm run generate:blog-thumbnail -- --slug <slug> --pillar <pillar> --output public/blog/assets/<slug>.png
 ```
 
-Generate `public/rss.xml` from the finished article with `node scripts/generate-rss.js`. Do not
-modify `src/`, an existing article, shared template structure, `CNAME`, workflow files, deployment
-configuration, or unrelated files during a publication run.
+Do not modify `src/`, an existing article, shared template structure, `CNAME`, workflow files,
+deployment configuration, or unrelated files during a publication run.
 
 ## Validate and publish
 
@@ -96,8 +99,8 @@ npm run verify:blog -- --base-ref origin/main
 git diff --check
 ```
 
-Confirm the full diff contains only the six expected artifacts. Stage only those paths and commit
-as `[blog] Add post: <slug>`. Push without force and open a ready PR to `main` with sources and
+Confirm the committed diff contains only the five expected artifacts and that the build-regenerated
+`public/rss.xml` is left unstaged. Stage only those paths and commit as `[blog] Add post: <slug>`. Push without force and open a ready PR to `main` with sources and
 validation results.
 
 Read `mergeMode` from `check:blog-gates`:
