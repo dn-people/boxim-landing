@@ -74,13 +74,11 @@ test("run gate detects an already published date", () => {
   assert.equal(result.status, "NO_OP_ALREADY_PUBLISHED");
 });
 
-test("manual review switches after the configured post-rollout publications", () => {
-  const baselineRows = policy.manualReview.baselinePublishedSlugs.map((slug, index) => ({
-    date: `2026-06-${String(index + 1).padStart(2, "0")}`,
-    slug,
-  }));
+test("manual review switches after five post-rollout publications", () => {
+  const topics = fs.readFileSync(path.join(projectDir, "docs", "blog", "TOPICS.md"), "utf8");
+  const baselineRows = parsePublishedRows(topics);
   assert.equal(computeMergeMode(baselineRows, policy).mergeMode, "MANUAL_REVIEW");
-  const newRows = Array.from({ length: policy.manualReview.requiredPublishedPosts }, (_, index) => ({
+  const newRows = Array.from({ length: 5 }, (_, index) => ({
     date: `2026-07-${20 + index}`,
     slug: `new-topic-guide-${index}`,
   }));
