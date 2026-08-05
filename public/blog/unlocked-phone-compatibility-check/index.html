@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>자급제폰은 통신사와 바로 호환되나요? 확인 기준 | 동네방네</title>
+    <meta name="description" content="자급제폰 구매 전 통신사 호환을 확인하는 방법을 정리했습니다. 유심·eSIM, IMEI, 모델명, 주파수와 서비스 제한을 순서대로 점검하세요. 핸드폰 살 땐 동네방네 dnbn.co.kr" />
+    <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1" />
+    <link rel="canonical" href="https://dn-people.com/blog/unlocked-phone-compatibility-check/" />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="ko_KR" />
+    <meta property="og:site_name" content="동네방네" />
+    <meta property="og:title" content="자급제폰은 통신사와 바로 호환되나요? 확인 기준 | 동네방네" />
+    <meta property="og:description" content="유심·eSIM, IMEI, 모델명, 주파수와 서비스 제한을 순서대로 점검하는 자급제폰 호환 확인 가이드입니다." />
+    <meta property="og:url" content="https://dn-people.com/blog/unlocked-phone-compatibility-check/" />
+    <meta property="og:image" content="https://dn-people.com/blog/assets/unlocked-phone-compatibility-check.png" />
+    <meta property="article:published_time" content="2026-08-05" />
+    <meta property="article:modified_time" content="2026-08-05" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="자급제폰은 통신사와 바로 호환되나요? 확인 기준 | 동네방네" />
+    <meta name="twitter:description" content="유심·eSIM, IMEI, 모델명, 주파수와 서비스 제한을 순서대로 점검하는 자급제폰 호환 확인 가이드입니다." />
+    <meta name="twitter:image" content="https://dn-people.com/blog/assets/unlocked-phone-compatibility-check.png" />
+    <link rel="icon" href="/favicon.ico" />
+    <link
+      rel="stylesheet"
+      crossorigin
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css"
+    />
+    <style>
+      *{box-sizing:border-box}
+      html{scroll-behavior:smooth}
+      body{margin:0;font-family:"Pretendard","Apple SD Gothic Neo",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#111827;background:#fff;line-height:1.75;word-break:keep-all}
+      a{color:#0159fb;text-decoration:underline;text-underline-offset:3px}
+      .site-header{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.88);backdrop-filter:blur(14px);border-bottom:1px solid #e5e7eb}
+      .header-inner{max-width:1120px;margin:0 auto;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+      .brand{font-size:20px;font-weight:900;letter-spacing:0;color:#111827;text-decoration:none}
+      .nav{display:flex;align-items:center;gap:4px;flex-wrap:wrap;justify-content:flex-end}
+      .nav a{display:flex;align-items:center;justify-content:center;padding:10px 12px;border-radius:4px;font-size:15px;line-height:1;font-weight:800;color:#6b7280;text-decoration:none}
+      .nav a.active{background:#3b82f6;color:#fff}
+      .article-wrap{max-width:900px;margin:0 auto;padding:52px 20px 80px}
+      .breadcrumb{display:flex;gap:8px;align-items:center;margin-bottom:22px;color:#6b7280;font-size:15px;font-weight:700}
+      .breadcrumb a{color:#6b7280;text-decoration:none}
+      h1{font-size:40px;line-height:1.32;margin:0 0 16px;font-weight:900;color:#111827;letter-spacing:0}
+      .post-meta{margin:0 0 26px;color:#6b7280;font-size:15px;font-weight:700}
+      .hero-image{display:block;width:100%;height:auto;border-radius:8px;margin:0 auto 30px}
+      h2{font-size:25px;line-height:1.45;margin:46px 0 16px;font-weight:900;color:#0159fb;letter-spacing:0}
+      h3{font-size:19px;line-height:1.5;margin:24px 0 10px;font-weight:900;color:#111827;letter-spacing:0}
+      p{font-size:17px;margin:0 0 16px}
+      ul,ol{margin:0 0 20px 22px;padding:0}
+      li{font-size:17px;margin:6px 0}
+      .summary-box{background:#f5f8ff;border-left:5px solid #0159fb;padding:18px 20px;margin:0 0 32px}
+      .note-box{background:#fafafa;border:1px solid #e6eaf2;border-radius:8px;padding:18px 20px;margin:24px 0}
+      .table-scroll{width:100%;overflow-x:auto;margin:18px 0 28px}
+      table{width:100%;min-width:680px;border-collapse:collapse;border-top:2px solid #0159fb}
+      th,td{font-size:16px;text-align:left;vertical-align:top;border-bottom:1px solid #e6eaf2;padding:13px 12px}
+      th{background:#f5f8ff;font-weight:900;color:#111827}
+      .check-list{background:#fff;border:1px solid #e6eaf2;border-radius:8px;padding:18px 20px;margin:20px 0 28px}
+      .check-list ol{margin-bottom:0}
+      .faq-item{border-top:1px solid #e6eaf2;padding:18px 0}
+      .faq-item:last-child{border-bottom:1px solid #e6eaf2}
+      .faq-item h3{margin:0 0 8px;color:#0159fb}
+      .source-list{background:#fafafa;border-radius:8px;padding:18px 20px;margin:18px 0 30px}
+      .source-list ul{margin-bottom:0}
+      .brand-cta{background:#0159fb;color:#fff;padding:22px 24px;border-radius:8px;font-size:20px;font-weight:900;text-align:center;margin-top:34px}
+      .brand-cta a{color:#fff;text-decoration:underline}
+      .small{font-size:15px;color:#555}
+      .divider{height:1px;background:#e6eaf2;margin:36px 0}
+      .footer{border-top:1px solid #e5e7eb;background:#fafafa}
+      .footer-inner{max-width:900px;margin:0 auto;padding:24px 20px;color:#6b7280;font-size:14px}
+      @media(max-width:720px){.header-inner{align-items:flex-start;flex-direction:column}.nav{justify-content:flex-start}.article-wrap{padding:36px 18px 64px}h1{font-size:31px}h2{font-size:22px}p,li{font-size:16px}th,td{font-size:15px;padding:11px 10px}.brand-cta{font-size:18px}}
+    </style>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Article",
+            "@id": "https://dn-people.com/blog/unlocked-phone-compatibility-check/#article",
+            "headline": "자급제폰은 통신사와 바로 호환되나요? 확인 기준",
+            "description": "자급제폰 구매 전 통신사 호환을 확인하는 방법을 정리했습니다. 유심·eSIM, IMEI, 모델명, 주파수와 서비스 제한을 순서대로 점검하세요. 핸드폰 살 땐 동네방네 dnbn.co.kr",
+            "inLanguage": "ko-KR",
+            "datePublished": "2026-08-05",
+            "dateModified": "2026-08-05",
+            "image": "https://dn-people.com/blog/assets/unlocked-phone-compatibility-check.png",
+            "author": {
+              "@type": "Organization",
+              "name": "동네방네",
+              "url": "https://dnbn.co.kr/"
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "동네방네",
+              "url": "https://dnbn.co.kr/"
+            },
+            "mainEntityOfPage": {
+              "@type": "WebPage",
+              "@id": "https://dn-people.com/blog/unlocked-phone-compatibility-check/"
+            }
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://dn-people.com/blog/unlocked-phone-compatibility-check/#breadcrumb",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "홈",
+                "item": "https://dn-people.com/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "블로그",
+                "item": "https://dn-people.com/blog/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "자급제폰은 통신사와 바로 호환되나요? 확인 기준",
+                "item": "https://dn-people.com/blog/unlocked-phone-compatibility-check/"
+              }
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "@id": "https://dn-people.com/blog/unlocked-phone-compatibility-check/#faq",
+            "inLanguage": "ko-KR",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "자급제폰이면 모든 통신사에서 무조건 사용할 수 있나요?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "무조건이라고 단정할 수는 없습니다. KAIT는 국가별·통신사별 주파수 대역과 서비스 제한 여부를 미리 확인해야 한다고 안내합니다. 사용할 통신사에 단말 모델명과 IMEI를 알려 서비스 이용 가능 여부를 확인하세요."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "쓰던 유심은 새 자급제폰에 바로 끼워도 되나요?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "KAIT 안내상 사용 중인 유심을 새 단말에 장착해 기존 번호와 통신사를 계속 이용할 수 있습니다. 다만 단말·요금제·부가서비스 조건은 다를 수 있으므로, 통화와 데이터 연결이 되지 않으면 통신사 안내에 따라 개통 상태를 확인해야 합니다."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "해외판 자급제폰은 무엇을 더 확인해야 하나요?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "해외 출시 단말기는 국내 사용 주파수 대역과 서비스 제한 여부를 먼저 확인해야 합니다. KAIT는 외국 출시 단말기나 일부 자급제 단말기는 IMEI 사전등록이 필요할 수 있다고 안내하므로, 구매 전에 등록 필요 여부도 함께 점검하세요."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "IMEI와 모델명은 왜 둘 다 확인해야 하나요?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "모델명은 단말의 통신 규격과 eSIM 지원 같은 사양을 확인하는 출발점이고, IMEI는 개별 단말을 식별하는 번호입니다. 특히 중고·해외구매 단말은 IMEI로 분실·도난 여부와 사전등록 관련 상태를 확인하는 것이 좋습니다."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "eSIM을 쓰려면 어떤 정보를 확인해야 하나요?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "먼저 단말이 eSIM을 지원하는 모델인지와 사용할 요금제가 eSIM 개통을 지원하는지 확인하세요. 그다음 통신사의 eSIM 발급·재발급 절차와 기존 회선 처리 방법을 확인하면 개통 중 번호나 데이터 연결이 끊기는 상황을 줄일 수 있습니다."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="/"><img src="/logo-dnbn.svg" alt="동네방네" style="height:24px;width:auto;display:block" /></a>
+        <nav class="nav" aria-label="주요 메뉴">
+          <a href="/#hero-section">홈</a>
+          <a href="/#intro-section">소개</a>
+          <a href="/#dnbn-section">회사</a>
+          <a href="/#review-section">후기</a>
+          <a class="active" href="/blog/">블로그</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="article-wrap">
+      <div class="breadcrumb">
+        <a href="/">홈</a>
+        <span>/</span>
+        <a href="/blog/">블로그</a>
+      </div>
+
+      <article>
+        <h1>자급제폰은 통신사와 바로 호환되나요? 확인 기준</h1>
+        <p class="post-meta">2026년 8월 5일 · 동네방네 자급제폰 구매 가이드</p>
+
+        <img
+          class="hero-image"
+          src="/blog/assets/unlocked-phone-compatibility-check.png"
+          alt="스마트폰과 유심, eSIM 카드, 통신망 신호와 확인 항목을 배치해 자급제폰 호환성을 점검하는 일러스트"
+          loading="lazy"
+        />
+
+        <div class="summary-box">
+          <p><strong>요약 답변</strong></p>
+          <p>자급제폰은 통신사와 요금제를 자유롭게 선택할 수 있지만, 구매 전에는 사용할 통신사의 서비스 이용 가능 여부를 확인해야 합니다. 유심·eSIM 지원, IMEI·모델명, 해외판의 주파수와 서비스 제한을 차례로 점검하면 개통 뒤의 불편을 줄일 수 있습니다.</p>
+          <p class="small">기준일: 2026년 8월 5일</p>
+        </div>
+
+        <h2>자급제폰은 통신사와 바로 호환되나요?</h2>
+        <p>자급제폰은 통신사와 요금제를 선택해 이용할 수 있지만, 모든 조합을 자동으로 보장하지는 않습니다. 한국정보통신진흥협회(KAIT)는 희망하는 이동통신사에서 서비스 이용이 가능한 휴대폰인지 확인하라고 안내합니다. 특히 해외판, 중고 단말, 듀얼심 단말은 구매 전에 한 번 더 확인하는 편이 안전합니다.</p>
+        <p>여기서 말하는 호환은 단순히 전원이 켜지는지만 뜻하지 않습니다. 통화와 데이터 연결, 유심 또는 eSIM 개통, 5G·LTE 이용, 통신사별 서비스 조건까지 함께 맞는지 보는 과정입니다. 자급제라는 판매 방식과 단말의 실제 통신 사양은 구분해서 확인하세요.</p>
+
+        <h2>통신망 호환은 무엇부터 확인해야 하나요?</h2>
+        <p>통신망 호환은 단말의 정확한 모델명과 사용할 통신사를 먼저 정한 뒤 확인하는 것이 가장 빠릅니다. 같은 제품명이라도 국내판과 해외판의 통신 규격이 다를 수 있으므로, 판매 페이지의 모델명만 보지 말고 제조사 사양과 통신사 안내를 함께 보세요.</p>
+        <div class="table-scroll">
+          <table>
+            <thead>
+              <tr>
+                <th>확인 항목</th>
+                <th>확인할 정보</th>
+                <th>구매 전 다음 행동</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>단말 모델</td>
+                <td>국내판·해외판 구분, 정확한 모델명</td>
+                <td>제조사 사양과 통신사 호환 안내를 대조합니다.</td>
+              </tr>
+              <tr>
+                <td>유심·eSIM</td>
+                <td>물리 유심 슬롯, eSIM 지원 여부</td>
+                <td>현재 또는 새 요금제의 개통 방식을 확인합니다.</td>
+              </tr>
+              <tr>
+                <td>통신 규격</td>
+                <td>사용 국가·통신사의 주파수 대역, 서비스 제한</td>
+                <td>해외판이라면 통신사에 모델명으로 문의합니다.</td>
+              </tr>
+              <tr>
+                <td>단말 식별</td>
+                <td>IMEI, 분실·도난 신고 여부, 사전등록 필요 여부</td>
+                <td>공식 IMEI 조회·안내 페이지에서 점검합니다.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>유심과 eSIM은 어떻게 확인하나요?</h2>
+        <p>유심과 eSIM은 단말이 지원하는 방식과 가입하려는 요금제의 개통 방식을 함께 확인해야 합니다. KAIT는 쓰던 유심을 새로 구매한 단말에 장착해 기존 번호와 통신사를 계속 이용할 수 있다고 안내합니다. 다만 이 안내가 모든 단말·요금제의 세부 조건을 대신하지는 않으므로, 연결이 되지 않거나 해외판을 쓰는 경우 통신사에 확인하세요.</p>
+        <p>eSIM은 물리 카드가 없다는 점만 다를 뿐, 단말 지원 여부와 개통 절차 확인이 핵심입니다. 새 단말에서 eSIM을 쓰려면 모델 사양, 가입할 요금제의 eSIM 지원, 기존 eSIM을 옮기거나 다시 발급받는 방법을 순서대로 확인하면 됩니다.</p>
+
+        <h2>IMEI와 모델명은 왜 함께 확인해야 하나요?</h2>
+        <p>IMEI는 개별 휴대폰에 부여된 15자리 식별번호이고, 모델명은 단말 사양을 찾는 기준입니다. KAIT 안내에 따르면 IMEI는 전화 화면에서 <code>*#06#</code>을 입력하거나 설정 메뉴, 포장 상자 등에서 확인할 수 있습니다. 모델명으로는 통신 규격과 eSIM 지원 여부를, IMEI로는 개별 단말의 확인 절차를 시작할 수 있습니다.</p>
+        <p>중고 단말을 고르는 상황이라면 IMEI 확인은 호환 점검과 별개의 안전 절차이기도 합니다. 개통 전에는 <a href="/blog/used-phone-imei-check/">중고폰 IMEI 조회와 분실·도난 확인 순서</a>를 참고해 거래 안전도 함께 점검하세요.</p>
+
+        <h2>해외판 또는 중고폰은 무엇이 다른가요?</h2>
+        <p>해외판 또는 중고폰은 국내 정식 유통 단말보다 확인 항목이 더 많을 수 있습니다. KAIT는 국가별·통신사별로 사용 주파수 대역과 이용 환경이 다르므로 서비스 제한 여부를 사전에 확인해야 한다고 안내합니다. 해외 판매 페이지의 ‘언락’ 표기만으로 국내 모든 서비스 이용을 단정하지 않는 이유입니다.</p>
+        <p>또한 외국에서 출시된 단말기 또는 일부 자급제 단말기는 IMEI가 사전등록되어 있지 않아 등록이 필요할 수 있습니다. 중고 단말은 여기에 분실·도난 신고 여부까지 더해 확인하세요. 판매자에게 IMEI와 모델명을 받아 공식 경로에서 확인한 뒤 구매를 결정하는 편이 좋습니다.</p>
+
+        <h2>서비스·기능 제한은 어디에서 확인하나요?</h2>
+        <p>서비스·기능 제한은 사용할 통신사 또는 알뜰폰 사업자에게 정확한 모델명과 IMEI를 전달해 확인하는 것이 가장 확실합니다. KAIT도 희망하는 이동통신사에서 이용 가능한 휴대폰인지 확인하라고 안내합니다. 통화·문자·데이터 외에 본인이 꼭 쓰는 eSIM, 5G, 듀얼심 같은 기능을 질문 목록에 넣으세요.</p>
+        <div class="note-box">
+          <p><strong>확인할 때 이렇게 물어보세요.</strong></p>
+          <p>“이 모델명과 IMEI의 단말이 현재 요금제에서 유심 또는 eSIM으로 개통 가능한가요? 통화·데이터와 필요한 부가 기능에 제한이 있나요?”처럼 사용 목적을 함께 알려 주면 확인할 범위가 분명해집니다.</p>
+        </div>
+
+        <h2>구매 전에 어떤 순서로 점검하면 되나요?</h2>
+        <p>구매 전에는 판매 방식보다 사용 환경을 먼저 적고, 단말 정보와 통신사 조건을 차례로 맞춰 보세요. 아래 순서대로 확인하면 한 항목을 놓친 채 개통을 시도하는 일을 줄일 수 있습니다.</p>
+        <div class="check-list">
+          <ol>
+            <li>현재 쓸 통신사·알뜰폰 사업자와 유심 또는 eSIM 방식, 필요한 기능을 적습니다.</li>
+            <li>구매하려는 단말의 정확한 모델명과 국내판·해외판 여부를 확인합니다.</li>
+            <li>제조사 사양과 통신사 안내에서 통신 규격·서비스 제한을 대조합니다.</li>
+            <li>IMEI를 확인하고, 해외판·일부 자급제 단말은 사전등록 필요 여부를 확인합니다.</li>
+            <li>중고 단말이면 분실·도난 조회를 마친 뒤 결제하거나 개통을 진행합니다.</li>
+          </ol>
+        </div>
+        <p>자급제폰은 기기와 통신 서비스를 따로 고를 수 있다는 장점이 있습니다. 그래서 구매 가격뿐 아니라 내가 쓸 회선과 기능에 맞는지 확인하는 과정이 중요합니다. 더 많은 구매 전 점검 글은 <a href="/blog/">동네방네 블로그</a>에서 확인할 수 있습니다.</p>
+
+        <div class="divider"></div>
+
+        <h2>자주 묻는 질문</h2>
+
+        <div class="faq-item">
+          <h3>자급제폰이면 모든 통신사에서 무조건 사용할 수 있나요?</h3>
+          <p>무조건이라고 단정할 수는 없습니다. KAIT는 국가별·통신사별 주파수 대역과 서비스 제한 여부를 미리 확인해야 한다고 안내합니다. 사용할 통신사에 단말 모델명과 IMEI를 알려 서비스 이용 가능 여부를 확인하세요.</p>
+        </div>
+        <div class="faq-item">
+          <h3>쓰던 유심은 새 자급제폰에 바로 끼워도 되나요?</h3>
+          <p>KAIT 안내상 사용 중인 유심을 새 단말에 장착해 기존 번호와 통신사를 계속 이용할 수 있습니다. 다만 단말·요금제·부가서비스 조건은 다를 수 있으므로, 통화와 데이터 연결이 되지 않으면 통신사 안내에 따라 개통 상태를 확인해야 합니다.</p>
+        </div>
+        <div class="faq-item">
+          <h3>해외판 자급제폰은 무엇을 더 확인해야 하나요?</h3>
+          <p>해외 출시 단말기는 국내 사용 주파수 대역과 서비스 제한 여부를 먼저 확인해야 합니다. KAIT는 외국 출시 단말기나 일부 자급제 단말기는 IMEI 사전등록이 필요할 수 있다고 안내하므로, 구매 전에 등록 필요 여부도 함께 점검하세요.</p>
+        </div>
+        <div class="faq-item">
+          <h3>IMEI와 모델명은 왜 둘 다 확인해야 하나요?</h3>
+          <p>모델명은 단말의 통신 규격과 eSIM 지원 같은 사양을 확인하는 출발점이고, IMEI는 개별 단말을 식별하는 번호입니다. 특히 중고·해외구매 단말은 IMEI로 분실·도난 여부와 사전등록 관련 상태를 확인하는 것이 좋습니다.</p>
+        </div>
+        <div class="faq-item">
+          <h3>eSIM을 쓰려면 어떤 정보를 확인해야 하나요?</h3>
+          <p>먼저 단말이 eSIM을 지원하는 모델인지와 사용할 요금제가 eSIM 개통을 지원하는지 확인하세요. 그다음 통신사의 eSIM 발급·재발급 절차와 기존 회선 처리 방법을 확인하면 개통 중 번호나 데이터 연결이 끊기는 상황을 줄일 수 있습니다.</p>
+        </div>
+
+        <h2>참고할 공식 사이트</h2>
+        <div class="source-list">
+          <ul>
+            <li><a href="https://www.imei.kr/user/introduce/contents/01_01.do" target="_blank" rel="noopener">이동전화 단말기 자급제 — 단말기 자급제 소개</a></li>
+            <li><a href="https://www.imei.kr/user/cs/bbs/3/bbsArtclList3.do" target="_blank" rel="noopener">이동전화 단말기 자급제 — 자주하는 질문</a></li>
+            <li><a href="https://www.imei.kr/user/etc/contents/05_02.do" target="_blank" rel="noopener">이동전화 단말기 자급제 — IMEI 안내</a></li>
+          </ul>
+        </div>
+
+        <div class="brand-cta">
+          자급제폰, 오픈박스폰, 알뜰폰 요금제까지 한 번에 비교하고 싶다면<br />
+          핸드폰 살 땐 동네방네 <a href="https://dnbn.co.kr/" target="_blank" rel="noopener">dnbn.co.kr</a>
+        </div>
+      </article>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">핸드폰 살 땐 동네방네 dnbn.co.kr</div>
+    </footer>
+  </body>
+</html>
