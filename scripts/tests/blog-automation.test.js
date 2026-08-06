@@ -45,6 +45,7 @@ const createPublicationFixture = () => {
     `public/blog/${publicationSlug}/index.html`,
     `public/blog/assets/${publicationSlug}.png`,
     "public/sitemap.xml",
+    "public/rss.xml",
   ].forEach(copy);
   return fixtureDir;
 };
@@ -55,6 +56,7 @@ const publicationChanges = () => [
   { status: "M", path: "public/blog/index.html" },
   { status: "M", path: "public/sitemap.xml" },
   { status: "M", path: "docs/blog/TOPICS.md" },
+  { status: "M", path: "public/rss.xml" },
 ];
 
 test("run gate distinguishes weekends, holidays, and business days", () => {
@@ -116,7 +118,7 @@ test("current automated article satisfies the new blog validator", async () => {
   assert.deepEqual(result.errors, []);
 });
 
-test("publication validation accepts exactly five controlled artifacts", async () => {
+test("publication validation accepts exactly six controlled artifacts", async () => {
   const fixtureDir = createPublicationFixture();
   try {
     const result = await validatePublicationDiff({
@@ -129,15 +131,15 @@ test("publication validation accepts exactly five controlled artifacts", async (
   }
 });
 
-test("publication validation rejects a committed source RSS change", async () => {
+test("publication validation requires the published source RSS change", async () => {
   const fixtureDir = createPublicationFixture();
   try {
     const result = await validatePublicationDiff({
       projectDir: fixtureDir,
-      changes: [...publicationChanges(), { status: "M", path: "public/rss.xml" }],
+      changes: publicationChanges().filter(({ path: changedPath }) => changedPath !== "public/rss.xml"),
     });
     assert.ok(result.errors.some((error) =>
-      error.includes("unexpected publication paths: public/rss.xml")));
+      error.includes("missing publication paths: public/rss.xml")));
   } finally {
     fs.rmSync(fixtureDir, { recursive: true, force: true });
   }

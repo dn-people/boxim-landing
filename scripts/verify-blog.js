@@ -269,14 +269,15 @@ const validatePublicationDiff = async ({ projectDir = PROJECT_DIR, changes }) =>
   if (articles.length !== 1) return { errors: [`publication diff adds ${articles.length} articles; expected one`] };
 
   const slug = articles[0].path.split("/")[2];
-  // RSS is generated during prebuild and validated from the build output.
-  // A publication commit owns only these five source artifacts.
+  // RSS is generated from the finished article and committed with the other
+  // publication artifacts so feeds stay in sync with the blog index.
   const expected = new Set([
     `public/blog/${slug}/index.html`,
     `public/blog/assets/${slug}.png`,
     "public/blog/index.html",
     "public/sitemap.xml",
     "docs/blog/TOPICS.md",
+    "public/rss.xml",
   ]);
   const actual = new Set(changes.map(({ path: changedPath }) => changedPath));
   const unexpected = [...actual].filter((changedPath) => !expected.has(changedPath));
