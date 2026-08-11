@@ -5,8 +5,15 @@
     <link>https://dn-people.com/blog/</link>
     <description>스마트폰 구매, 요금제, 번호이동을 이해하기 쉽게 설명하는 동네방네 공식 가이드</description>
     <language>ko-KR</language>
-    <lastBuildDate>Mon, 10 Aug 2026 09:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 11 Aug 2026 09:00:00 +0900</lastBuildDate>
     <atom:link href="https://dn-people.com/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>인터넷 신규 설치 전 주소·설치 가능 여부 확인 순서</title>
+      <link>https://dn-people.com/blog/internet-installation-check/</link>
+      <guid isPermaLink="true">https://dn-people.com/blog/internet-installation-check/</guid>
+      <description>인터넷 신규 설치 전 주소 조회, 건물·현장 환경, 속도·장비 조건과 방문 일정을 확인하는 순서입니다. 핸드폰 살 땐 동네방네 dnbn.co.kr</description>
+      <pubDate>Tue, 11 Aug 2026 09:00:00 +0900</pubDate>
+    </item>
     <item>
       <title>미성년자 휴대폰 개통, 법정대리인 준비물 확인 순서</title>
       <link>https://dn-people.com/blog/minor-phone-opening/</link>
