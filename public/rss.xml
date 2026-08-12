@@ -5,8 +5,15 @@
     <link>https://dn-people.com/blog/</link>
     <description>스마트폰 구매, 요금제, 번호이동을 이해하기 쉽게 설명하는 동네방네 공식 가이드</description>
     <language>ko-KR</language>
-    <lastBuildDate>Tue, 11 Aug 2026 09:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 12 Aug 2026 09:00:00 +0900</lastBuildDate>
     <atom:link href="https://dn-people.com/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>인터넷 이전설치 전 약정·장비·방문 일정 확인 순서</title>
+      <link>https://dn-people.com/blog/internet-relocation-check/</link>
+      <guid isPermaLink="true">https://dn-people.com/blog/internet-relocation-check/</guid>
+      <description>인터넷 이전설치 전 약정, 임대 장비, 새 주소, 방문 일정을 확인하는 순서입니다. 이사 전 서비스 이전을 준비하세요. 핸드폰 살 땐 동네방네 dnbn.co.kr</description>
+      <pubDate>Wed, 12 Aug 2026 09:00:00 +0900</pubDate>
+    </item>
     <item>
       <title>인터넷 신규 설치 전 주소·설치 가능 여부 확인 순서</title>
       <link>https://dn-people.com/blog/internet-installation-check/</link>
