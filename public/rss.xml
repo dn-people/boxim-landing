@@ -5,8 +5,15 @@
     <link>https://dn-people.com/blog/</link>
     <description>스마트폰 구매, 요금제, 번호이동을 이해하기 쉽게 설명하는 동네방네 공식 가이드</description>
     <language>ko-KR</language>
-    <lastBuildDate>Fri, 14 Aug 2026 09:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 18 Aug 2026 09:00:00 +0900</lastBuildDate>
     <atom:link href="https://dn-people.com/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>내 명의 휴대폰 개통, 의심될 때 확인 순서</title>
+      <link>https://dn-people.com/blog/phone-identity-check/</link>
+      <guid isPermaLink="true">https://dn-people.com/blog/phone-identity-check/</guid>
+      <description>내 명의로 모르는 휴대폰이나 통신서비스가 개통된 것 같다면 가입사실현황을 먼저 확인하고, 통신사 신고와 가입제한까지 순서대로 점검하세요. 핸드폰 살 땐 동네방네 dnbn.co.kr</description>
+      <pubDate>Tue, 18 Aug 2026 09:00:00 +0900</pubDate>
+    </item>
     <item>
       <title>휴대폰 분실 신고 뒤 새 기기 사용 전 확인 순서</title>
       <link>https://dn-people.com/blog/phone-loss-report-next-steps/</link>
