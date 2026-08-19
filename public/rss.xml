@@ -5,8 +5,15 @@
     <link>https://dn-people.com/blog/</link>
     <description>스마트폰 구매, 요금제, 번호이동을 이해하기 쉽게 설명하는 동네방네 공식 가이드</description>
     <language>ko-KR</language>
-    <lastBuildDate>Tue, 18 Aug 2026 09:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 19 Aug 2026 09:00:00 +0900</lastBuildDate>
     <atom:link href="https://dn-people.com/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>통신 미환급액, 조회와 환급 신청 순서는?</title>
+      <link>https://dn-people.com/blog/telecom-refund-check/</link>
+      <guid isPermaLink="true">https://dn-people.com/blog/telecom-refund-check/</guid>
+      <description>통신 미환급액 조회 대상과 준비 정보, 환급 신청·입금 확인 순서를 공식 안내로 정리했습니다. 핸드폰 살 땐 동네방네 dnbn.co.kr</description>
+      <pubDate>Wed, 19 Aug 2026 09:00:00 +0900</pubDate>
+    </item>
     <item>
       <title>내 명의 휴대폰 개통, 의심될 때 확인 순서</title>
       <link>https://dn-people.com/blog/phone-identity-check/</link>
