@@ -23,7 +23,7 @@ const DnbnSection = ({ sectionRef }) => (
         whileInView={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5, ease: "easeInOut" }}
       >
-        동네방네를 만드는 사람들은 이미 시장에서 유명합니다
+        동네사람들은 이미 시장에서 유명합니다
       </Text.SectionTitle>
       <div className="flex flex-col lg:flex-row gap-6">
         {dnbnStats.map((stat, index) => (
