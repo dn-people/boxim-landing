@@ -68,8 +68,8 @@ else {
     // R12: 데이터화된 hero/intro/stats/history 카피 보존
     "스마트폰 구매",
     "유심 구매",
-    "200억 +",
-    "2024년",
+    "300억 +",
+    "2025년",
   ];
   for (const s of mustContain) if (!bundle.includes(s)) fail(`bundle missing copy: ${s}`);
 }
