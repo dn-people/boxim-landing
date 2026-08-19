@@ -29,7 +29,7 @@ export const introSlides = [
 ];
 
 export const dnbnStats = [
-  { value: "200억 +", label: "누적 매출액" },
+  { value: "300억 +", label: "누적 매출액" },
   { value: "1위", label: "박스폰 판매" },
   { value: "10명중 9명+", label: "고객 만족" },
 ];
@@ -44,7 +44,7 @@ export const historyEntries = [
     ],
   },
   {
-    year: "2024년",
+    year: "2025년",
     items: [
       "• 미디어로그 공식 입찰협력사 선정",
       "• 민팃 공식 입찰협력사 선정",
