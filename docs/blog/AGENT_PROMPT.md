@@ -42,8 +42,14 @@
   1개 이상을 포함한다.
 - **내부 링크:** 기존 관련 글 1개 이상과 `/blog/` 링크를 넣는다.
 - **외부 링크:** 공식 사이트만 사용하고 `target="_blank" rel="noopener"`를 붙인다.
-- **이미지:** 직접 생성한 1200×630 PNG를 `/blog/assets/<slug>.png`에 자가 호스팅한다.
-  외부 다운로드·핫링크와 이미지 안의 글자는 금지한다. alt는 이미지 내용을 문장으로 설명한다.
+- **이미지:** 직접 생성한 1200×630 PNG 썸네일을 `/blog/assets/<slug>.png`에 자가 호스팅하고, 본문에는
+  각기 다른 설명 역할을 하는 1200×675 PNG 2장을 `/blog/assets/<slug>-<role>.png`에 자가 호스팅한다.
+  본문 이미지는 관련 h2의 설명이 끝난 뒤 서로 떨어진 지점에 `<figure class="article-figure">`와
+  `<img class="article-inline-image">`로 넣으며, 요약 상자·FAQ·출처 목록 안에는 넣지 않는다. 외부
+  다운로드·핫링크와 이미지 안의 글자는 금지하고, alt는 이미지 내용을 문장으로 설명한다.
+- **썸네일 품질:** 썸네일은 제목의 핵심 판단 또는 행동을 한눈에 이해하게 하는 구체적 장면이어야 한다.
+  관련 물체를 세 가지 이상 조합해 시각적 위계·깊이·맥락을 만들고, 단순 로고 카드·브랜드 배경·추상 도형
+  만으로 끝내지 않는다. 생성 뒤에는 사람 눈으로 주제 적합성, 글자·로고·워터마크 부재, 크롭을 확인한다.
 - **canonical:** `https://dn-people.com/blog/<slug>/`을 정확히 한 번 사용하고 og:url과 일치시킨다.
 
 ## 3. AEO 작성 규칙
@@ -66,15 +72,18 @@
 ## 5. 발행 산출물과 순서
 
 1. `docs/blog/TEMPLATE.html`을 사용해 `public/blog/<slug>/index.html`을 만들고 `{{`가 남지 않게 한다.
-2. AI 이미지 도구가 있으면 원본 썸네일을 시도한 뒤 `--validate-only`로 검사한다. 사용할 수 없거나
-   실패하면 `npm run generate:blog-thumbnail -- --slug <slug> --pillar <필러> --output
-   public/blog/assets/<slug>.png`로 결정론적 브랜드 이미지를 만든다.
+2. AI 이미지 도구로 썸네일 1장과 본문 보조 이미지 2장을 각각 생성한다. 썸네일은
+   `--validate-only`로 1200×630 PNG를 검사하고, 본문 이미지는 1200×675 PNG인지 검사한다. 생성 결과가
+   규격만 맞지 않으면 주제를 훼손하지 않는 범위에서 리사이즈·크롭 후 다시 검사한다. 생성 도구를 쓸 수
+   없으면 `npm run generate:blog-thumbnail -- --slug <slug> --pillar <필러> --output
+   public/blog/assets/<slug>.png`로 썸네일을 만들되, 본문 이미지 요건을 충족할 수 없으면 발행하지 않는다.
 3. `public/blog/index.html`의 `.post-grid` 맨 앞에 기존 구조와 같은 카드 하나를 추가한다.
 4. `public/sitemap.xml`에 글 URL을 추가하고 `/blog/`의 lastmod만 오늘로 갱신한다.
 5. `docs/blog/TOPICS.md` 발행 표에 한 줄을 추가하고 소진한 백로그를 제거한다. 필요하면 후보를 보충한다.
 6. `node scripts/generate-rss.js`로 `public/rss.xml`을 갱신한다.
 
-위 여섯 경로만 게시물 커밋에 포함한다. 기존 글, `src/`, 템플릿, 워크플로, CNAME은 수정하지 않는다.
+게시물 커밋에는 여섯 핵심 경로와 `public/blog/assets/<slug>-<role>.png` 본문 이미지 2장만 포함한다.
+기존 글, `src/`, 템플릿, 워크플로, CNAME은 수정하지 않는다.
 
 ## 6. 검증과 PR
 

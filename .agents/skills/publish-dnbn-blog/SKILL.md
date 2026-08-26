@@ -54,7 +54,7 @@ These are quality-control roles, not claims that different external models are b
 - When fewer than five backlog candidates remain, add distinct researched candidates to
   `TOPICS.md` while keeping that file as one controlled artifact.
 
-## Create exactly six artifacts
+## Create six core artifacts and two inline visuals
 
 Create `automation/blog-YYYY-MM-DD-<slug>` from `origin/main`, using a lowercase 3–5-word
 kebab-case slug. Create or modify only:
@@ -66,20 +66,30 @@ kebab-case slug. Create or modify only:
 5. `docs/blog/TOPICS.md`
 6. `public/rss.xml`
 
+Also add exactly two self-hosted explanatory PNGs named
+`public/blog/assets/<slug>-<role>.png`. They must appear in separate `<figure class="article-figure">`
+blocks in the article body, after the relevant explanation and outside the summary box, FAQ, and source list.
+Each must be 1200x675 PNG with a descriptive alt. These are required content visuals, not decorative dividers.
+
 For the thumbnail, try the available image-generation capability first. Do not download or
-hotlink third-party images and do not render text into the image. Validate an AI result with:
+hotlink third-party images and do not render text into the image. Make the thumbnail a concrete,
+topic-specific scene with at least three relevant objects and clear visual hierarchy; never use a
+logo card, plain branded background, or abstract shapes as the finished thumbnail. Validate an AI result with:
 
 ```bash
 npm run generate:blog-thumbnail -- --validate-only --output public/blog/assets/<slug>.png
 ```
 
-If image generation is unavailable or validation fails, create the deterministic branded fallback:
+If image generation is unavailable, create the deterministic branded fallback only for the thumbnail:
 
 ```bash
 npm run generate:blog-thumbnail -- --slug <slug> --pillar <pillar> --output public/blog/assets/<slug>.png
 ```
 
-Generate `public/rss.xml` from the finished article with `node scripts/generate-rss.js`. Do not
+If generated files only need size normalization, crop or resize them without changing the topic-specific
+scene, then inspect all three visual assets before committing. If the two in-article visuals cannot be
+created and checked, stop the publication run rather than shipping a text-only article. Generate
+`public/rss.xml` from the finished article with `node scripts/generate-rss.js`. Do not
 modify `src/`, an existing article, shared template structure, `CNAME`, workflow files, deployment
 configuration, or unrelated files during a publication run.
 
@@ -96,7 +106,7 @@ npm run verify:blog -- --base-ref origin/main
 git diff --check
 ```
 
-Confirm the full diff contains only the six expected artifacts. Stage only those paths and commit
+Confirm the full diff contains the six core artifacts plus exactly two allowed inline image assets. Stage only those paths and commit
 as `[blog] Add post: <slug>`. Push without force and open a ready PR to `main` with sources and
 validation results.
 
