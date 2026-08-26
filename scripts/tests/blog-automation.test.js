@@ -27,7 +27,7 @@ const calendar = JSON.parse(fs.readFileSync(
   path.join(projectDir, "docs", "blog", "holidays", "2026.json"),
   "utf8",
 ));
-const publicationSlug = "esim-device-id-check";
+const publicationSlug = "used-iphone-activation-lock";
 
 const createPublicationFixture = () => {
   const fixtureDir = fs.mkdtempSync(path.join(os.tmpdir(), "dnbn-publication-"));
@@ -44,6 +44,8 @@ const createPublicationFixture = () => {
     "public/blog/index.html",
     `public/blog/${publicationSlug}/index.html`,
     `public/blog/assets/${publicationSlug}.png`,
+    `public/blog/assets/${publicationSlug}-setup.png`,
+    `public/blog/assets/${publicationSlug}-checklist.png`,
     "public/sitemap.xml",
     "public/rss.xml",
   ].forEach(copy);
@@ -53,6 +55,8 @@ const createPublicationFixture = () => {
 const publicationChanges = () => [
   { status: "A", path: `public/blog/${publicationSlug}/index.html` },
   { status: "A", path: `public/blog/assets/${publicationSlug}.png` },
+  { status: "A", path: `public/blog/assets/${publicationSlug}-setup.png` },
+  { status: "A", path: `public/blog/assets/${publicationSlug}-checklist.png` },
   { status: "M", path: "public/blog/index.html" },
   { status: "M", path: "public/sitemap.xml" },
   { status: "M", path: "docs/blog/TOPICS.md" },
@@ -114,11 +118,12 @@ test("current automated article satisfies the new blog validator", async () => {
   const result = await validatePublicationFiles({
     projectDir,
     slug: publicationSlug,
+    requireInlineImages: true,
   });
   assert.deepEqual(result.errors, []);
 });
 
-test("publication validation accepts exactly six controlled artifacts", async () => {
+test("publication validation accepts six core artifacts and two inline visuals", async () => {
   const fixtureDir = createPublicationFixture();
   try {
     const result = await validatePublicationDiff({
@@ -194,7 +199,7 @@ test("FAQ JSON-LD mismatch is rejected", () => {
   );
   const html = fs.readFileSync(articleFile, "utf8");
   const broken = html.replace(
-    '"text":"EID만으로 항상 신청이 끝나는 것은 아닙니다.',
+    '"text":"아니요. 나의 찾기로 활성화 잠금이 켜진 기기는 단순히 지워도 이전 소유자의 계정 연결이 남을 수 있습니다.',
     '"text":"본문과 다른 답변입니다.',
   );
   assert.notEqual(broken, html);

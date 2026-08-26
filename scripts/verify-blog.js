@@ -6,6 +6,8 @@ const sharp = require("sharp");
 const PROJECT_DIR = path.join(__dirname, "..");
 const EXPECTED_WIDTH = 1200;
 const EXPECTED_HEIGHT = 630;
+const INLINE_IMAGE_WIDTH = 1200;
+const INLINE_IMAGE_HEIGHT = 675;
 
 const parseArgs = (argv) => {
   const args = {};
@@ -49,6 +51,10 @@ const getAttribute = (tag, name) => {
   return unquoted ? unquoted[1] : null;
 };
 
+const hasClass = (tag, className) => (getAttribute(tag, "class") || "")
+  .split(/\s+/)
+  .includes(className);
+
 const extractTagTexts = (html, tag) => [...html.matchAll(
   new RegExp(`<${tag}\\b[^>]*>([\\s\\S]*?)<\\/${tag}>`, "gi"),
 )].map((match) => normalizeText(match[1]));
@@ -90,7 +96,7 @@ const domainAllowed = (hostname, domains) => domains.some(
   (domain) => hostname === domain || hostname.endsWith(`.${domain}`),
 );
 
-const validateArticle = ({ html, slug, policy }) => {
+const validateArticle = ({ html, slug, policy, requireInlineImages = false }) => {
   const errors = [];
   const expectedUrl = `https://dn-people.com/blog/${slug}/`;
   if (!/^[a-z0-9]+(?:-[a-z0-9]+){2,4}$/.test(slug)) errors.push("slug must contain 3-5 kebab-case words");
@@ -118,6 +124,29 @@ const validateArticle = ({ html, slug, policy }) => {
     errors.push(`article visible text must be 2500-4000 characters (found ${compactArticleLength})`);
   if (!/<table\b/i.test(articleMatch?.[1] || "")) errors.push("article comparison table is missing");
   if (!/<ol\b/i.test(articleMatch?.[1] || "")) errors.push("article ordered checklist is missing");
+
+  const articleBody = articleMatch?.[1] || "";
+  const inlineFigures = [...articleBody.matchAll(
+    /<figure\b[^>]*class=["'][^"']*\barticle-figure\b[^"']*["'][^>]*>([\s\S]*?)<\/figure>/gi,
+  )];
+  const inlineImages = inlineFigures.flatMap((figure) => [...figure[1].matchAll(/<img\b[^>]*>/gi)]
+    .map((image) => image[0])
+    .filter((image) => hasClass(image, "article-inline-image")));
+  const inlineImageSources = inlineImages
+    .map((image) => getAttribute(image, "src"))
+    .filter(Boolean);
+  if (requireInlineImages) {
+    if (inlineFigures.length !== 2) errors.push(`article needs exactly 2 inline image figures (found ${inlineFigures.length})`);
+    if (inlineImages.length !== 2) errors.push(`article needs exactly 2 inline images (found ${inlineImages.length})`);
+    const inlineImagePattern = new RegExp(`^/blog/assets/${escapeRegExp(slug)}-[a-z0-9]+(?:-[a-z0-9]+)*\\.png$`);
+    inlineImages.forEach((image, index) => {
+      const source = getAttribute(image, "src") || "";
+      if (!inlineImagePattern.test(source)) errors.push(`inline image ${index + 1} must use a self-hosted slug-role PNG`);
+      if (!getAttribute(image, "alt")) errors.push(`inline image ${index + 1} needs descriptive alt text`);
+    });
+    if (new Set(inlineImageSources).size !== inlineImageSources.length)
+      errors.push("inline images must use distinct assets");
+  }
 
   const questionHeadings = extractTagTexts(articleMatch?.[1] || "", "h2")
     .filter((heading) => /[?？]$/.test(heading));
@@ -200,6 +229,7 @@ const validateArticle = ({ html, slug, policy }) => {
       datePublished: articleJson?.datePublished,
       faqCount: faqItems.length,
       headline,
+      inlineImageSources,
       questionHeadingCount: questionHeadings.length,
     },
   };
@@ -210,12 +240,17 @@ const readPolicy = (projectDir = PROJECT_DIR) => JSON.parse(fs.readFileSync(
   "utf8",
 ));
 
-const validatePublicationFiles = async ({ projectDir = PROJECT_DIR, slug }) => {
+const validatePublicationFiles = async ({ projectDir = PROJECT_DIR, slug, requireInlineImages = false }) => {
   const errors = [];
   const articleFile = path.join(projectDir, "public", "blog", slug, "index.html");
   if (!fs.existsSync(articleFile)) return { errors: [`article missing: ${articleFile}`], metadata: {} };
   const html = fs.readFileSync(articleFile, "utf8");
-  const articleResult = validateArticle({ html, slug, policy: readPolicy(projectDir) });
+  const articleResult = validateArticle({
+    html,
+    slug,
+    policy: readPolicy(projectDir),
+    requireInlineImages,
+  });
   errors.push(...articleResult.errors);
 
   const imageFile = path.join(projectDir, "public", "blog", "assets", `${slug}.png`);
@@ -227,6 +262,23 @@ const validatePublicationFiles = async ({ projectDir = PROJECT_DIR, slug }) => {
         errors.push(`new thumbnail must be ${EXPECTED_WIDTH}x${EXPECTED_HEIGHT} PNG`);
     } catch (error) {
       errors.push(`thumbnail cannot be read: ${error.message}`);
+    }
+  }
+
+  if (requireInlineImages) {
+    for (const source of articleResult.metadata.inlineImageSources) {
+      const inlineImageFile = path.join(projectDir, "public", source.slice(1));
+      if (!fs.existsSync(inlineImageFile)) {
+        errors.push(`inline image is missing: ${source}`);
+        continue;
+      }
+      try {
+        const image = await sharp(inlineImageFile).metadata();
+        if (image.format !== "png" || image.width !== INLINE_IMAGE_WIDTH || image.height !== INLINE_IMAGE_HEIGHT)
+          errors.push(`inline image must be ${INLINE_IMAGE_WIDTH}x${INLINE_IMAGE_HEIGHT} PNG: ${source}`);
+      } catch (error) {
+        errors.push(`inline image cannot be read: ${source} (${error.message})`);
+      }
     }
   }
 
@@ -279,14 +331,23 @@ const validatePublicationDiff = async ({ projectDir = PROJECT_DIR, changes }) =>
     "docs/blog/TOPICS.md",
     "public/rss.xml",
   ]);
+  const inlineAssetPattern = new RegExp(
+    `^public/blog/assets/${escapeRegExp(slug)}-[a-z0-9]+(?:-[a-z0-9]+)*\\.png$`,
+  );
+  const inlineAssets = changes.filter(({ path: changedPath }) => inlineAssetPattern.test(changedPath));
   const actual = new Set(changes.map(({ path: changedPath }) => changedPath));
-  const unexpected = [...actual].filter((changedPath) => !expected.has(changedPath));
+  const unexpected = [...actual].filter((changedPath) =>
+    !expected.has(changedPath) && !inlineAssetPattern.test(changedPath));
   const missing = [...expected].filter((expectedPath) => !actual.has(expectedPath));
   const errors = [];
   if (unexpected.length) errors.push(`unexpected publication paths: ${unexpected.join(", ")}`);
   if (missing.length) errors.push(`missing publication paths: ${missing.join(", ")}`);
+  if (inlineAssets.length !== 2)
+    errors.push(`publication needs exactly 2 inline image assets (found ${inlineAssets.length})`);
+  if (inlineAssets.some(({ status }) => !status.startsWith("A")))
+    errors.push("inline image assets must be added with the new article");
 
-  const result = await validatePublicationFiles({ projectDir, slug });
+  const result = await validatePublicationFiles({ projectDir, slug, requireInlineImages: true });
   errors.push(...result.errors);
   return { errors, metadata: result.metadata, slug };
 };
