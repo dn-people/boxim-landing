@@ -1,5 +1,9 @@
 const fs = require("fs");
 const path = require("path");
+const {
+  parsePublishedRows,
+  validateCategoryPlan,
+} = require("./blog-categories");
 
 const PROJECT_DIR = path.join(__dirname, "..");
 
@@ -56,10 +60,6 @@ const evaluateDate = (date, calendar) => {
   return { status: "ELIGIBLE_BUSINESS_DAY", date };
 };
 
-const parsePublishedRows = (topics) => [...topics.matchAll(
-  /^\|\s*(\d{4}-\d{2}-\d{2})\s*\|\s*([a-z0-9-]+)\s*\|/gm,
-)].map((match) => ({ date: match[1], slug: match[2] }));
-
 const computeMergeMode = (publishedRows, policy) => {
   const baseline = new Set(policy.manualReview.baselinePublishedSlugs);
   const publishedSinceRollout = publishedRows.filter(({ slug }) => !baseline.has(slug)).length;
@@ -100,7 +100,16 @@ const loadRunGate = ({ projectDir = PROJECT_DIR, date = seoulDate() } = {}) => {
   const dateGate = evaluateDate(date, calendar);
   if (dateGate.status !== "ELIGIBLE_BUSINESS_DAY") return dateGate;
 
-  const publishedRows = parsePublishedRows(fs.readFileSync(topicsFile, "utf8"));
+  const topics = fs.readFileSync(topicsFile, "utf8");
+  const publishedRows = parsePublishedRows(topics);
+  const categoryPlan = validateCategoryPlan({ topics, policy });
+  if (categoryPlan.errors.length) {
+    return {
+      status: "BLOCKED",
+      date,
+      reason: `category plan invalid: ${categoryPlan.errors.join("; ")}`,
+    };
+  }
   if (publishedRows.some((row) => row.date === date)) {
     return { status: "NO_OP_ALREADY_PUBLISHED", date, reason: "TOPICS.md already has today's post" };
   }
@@ -108,6 +117,8 @@ const loadRunGate = ({ projectDir = PROJECT_DIR, date = seoulDate() } = {}) => {
   return {
     ...dateGate,
     ...computeMergeMode(publishedRows, policy),
+    categoryDiversity: categoryPlan.diversity,
+    categoryBacklog: categoryPlan.backlogCounts,
     holidayCalendarVerifiedAt: calendar.verifiedAt,
     requiresLiveTemporaryHolidayCheck: Boolean(calendar.requiresLiveTemporaryHolidayCheck),
     officialHolidaySources: calendar.sources,

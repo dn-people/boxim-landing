@@ -12,6 +12,12 @@ const {
   loadRunGate,
   parsePublishedRows,
 } = require("../check-blog-run-gates");
+const {
+  computeCategoryDiversity,
+  parseBacklogRows,
+  parsePublishedRows: parseCategorizedRows,
+  validateCategoryPlan,
+} = require("../blog-categories");
 const { generateThumbnail } = require("../generate-blog-thumbnail");
 const {
   validateArticle,
@@ -49,6 +55,19 @@ const createPublicationFixture = () => {
     "public/sitemap.xml",
     "public/rss.xml",
   ].forEach(copy);
+  const articleFile = path.join(fixtureDir, "public", "blog", publicationSlug, "index.html");
+  const originalArticle = fs.readFileSync(articleFile, "utf8");
+  const categorizedArticle = originalArticle
+    .replace(
+      '<meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1" />',
+      '<meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1" />\n    <meta name="dnbn:category" content="it-tech" />',
+    )
+    .replace(
+      '"image":"https://dn-people.com/blog/assets/used-iphone-activation-lock.png",',
+      '"image":"https://dn-people.com/blog/assets/used-iphone-activation-lock.png",\n            "articleSection":"IT·테크",',
+    );
+  assert.notEqual(categorizedArticle, originalArticle);
+  fs.writeFileSync(articleFile, categorizedArticle);
   return fixtureDir;
 };
 
@@ -78,6 +97,57 @@ test("run gate fails closed when an annual calendar is missing", () => {
 test("run gate detects an already published date", () => {
   const result = loadRunGate({ projectDir, date: "2026-07-15" });
   assert.equal(result.status, "NO_OP_ALREADY_PUBLISHED");
+});
+
+test("category plan covers every published card and keeps two backlog topics per category", () => {
+  const topics = fs.readFileSync(path.join(projectDir, "docs", "blog", "TOPICS.md"), "utf8");
+  const listing = fs.readFileSync(path.join(projectDir, "public", "blog", "index.html"), "utf8");
+  const result = validateCategoryPlan({ topics, listing, policy });
+  assert.deepEqual(result.errors, []);
+  assert.equal(result.publishedRows.length, 33);
+  assert.deepEqual(result.backlogCounts, {
+    "it-tech": 2,
+    "carrier-issues": 2,
+    rental: 2,
+    "product-reviews": 2,
+    "buying-guides": 2,
+  });
+});
+
+test("category diversity prioritizes rental and product reviews in the current window", () => {
+  const topics = fs.readFileSync(path.join(projectDir, "docs", "blog", "TOPICS.md"), "utf8");
+  const rows = parseCategorizedRows(topics);
+  const diversity = computeCategoryDiversity(rows, policy);
+  assert.deepEqual(diversity.counts, {
+    "it-tech": 3,
+    "carrier-issues": 4,
+    rental: 0,
+    "product-reviews": 0,
+    "buying-guides": 3,
+  });
+  assert.deepEqual(diversity.recommendedCategories, ["rental", "product-reviews"]);
+  assert.equal(diversity.nextCategory, "rental");
+  assert.equal(parseBacklogRows(topics, policy).length, 10);
+});
+
+test("category diversity excludes a category after two consecutive publications", () => {
+  const rows = [
+    { slug: "latest-rental-guide", category: "rental" },
+    { slug: "previous-rental-guide", category: "rental" },
+    { slug: "older-buying-guide", category: "buying-guides" },
+  ];
+  const diversity = computeCategoryDiversity(rows, policy);
+  assert.equal(diversity.consecutiveCount, 2);
+  assert.ok(!diversity.recommendedCategories.includes("rental"));
+});
+
+test("category plan rejects a listing card assigned to a different category", () => {
+  const topics = fs.readFileSync(path.join(projectDir, "docs", "blog", "TOPICS.md"), "utf8");
+  const listing = fs.readFileSync(path.join(projectDir, "public", "blog", "index.html"), "utf8")
+    .replace('data-category="it-tech" href="/blog/galaxy-battery-self-check/"',
+      'data-category="rental" href="/blog/galaxy-battery-self-check/"');
+  const result = validateCategoryPlan({ topics, listing, policy });
+  assert.ok(result.errors.some((error) => error.includes("galaxy-battery-self-check")));
 });
 
 test("manual review switches after the configured post-rollout publications", () => {

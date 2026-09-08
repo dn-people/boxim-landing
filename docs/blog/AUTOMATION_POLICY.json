@@ -1,6 +1,41 @@
 {
-  "version": 1,
+  "version": 2,
   "timezone": "Asia/Seoul",
+  "categories": {
+    "it-tech": {
+      "name": "IT·테크",
+      "description": "기기 기능, 운영체제, 앱, 보안, 관리와 문제 해결을 다룹니다."
+    },
+    "carrier-issues": {
+      "name": "통신사 이슈",
+      "description": "통신사 공지, 제도 변경, 결제·명의·개통 문제와 대응 절차를 다룹니다."
+    },
+    "rental": {
+      "name": "렌탈",
+      "description": "가전 렌탈의 계약, 월요금, 관리, 설치, 반납과 해지 조건을 다룹니다."
+    },
+    "product-reviews": {
+      "name": "제품 리뷰",
+      "description": "공식 사양과 확인 가능한 사용 조건을 바탕으로 제품을 비교하고 선택 기준을 제시합니다."
+    },
+    "buying-guides": {
+      "name": "구매·요금 가이드",
+      "description": "단말기, 요금제, 인터넷·TV의 비용과 구매·가입 기준을 다룹니다."
+    }
+  },
+  "contentDiversity": {
+    "windowSize": 10,
+    "targetPerCategory": 2,
+    "maxConsecutive": 2,
+    "minimumBacklogPerCategory": 2,
+    "priorityOrder": [
+      "rental",
+      "product-reviews",
+      "carrier-issues",
+      "it-tech",
+      "buying-guides"
+    ]
+  },
   "manualReview": {
     "requiredPublishedPosts": 5,
     "baselinePublishedSlugs": [
@@ -37,6 +72,7 @@
     "lguplus.com",
     "samsung.com",
     "apple.com",
+    "lge.co.kr",
     "dnbn.co.kr",
     "dn-people.com"
   ]
