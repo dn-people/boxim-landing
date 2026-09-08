@@ -6,6 +6,7 @@
     <title>{{TITLE}} | 동네방네</title>
     <meta name="description" content="{{DESCRIPTION}}" />
     <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1" />
+    <meta name="dnbn:category" content="{{CATEGORY_SLUG}}" />
     <link rel="canonical" href="https://dn-people.com/blog/{{SLUG}}/" />
     <meta property="og:type" content="article" />
     <meta property="og:locale" content="ko_KR" />
@@ -84,6 +85,7 @@
             "datePublished": "{{PUBLISHED_DATE}}",
             "dateModified": "{{PUBLISHED_DATE}}",
             "image": "{{THUMB_URL}}",
+            "articleSection": "{{CATEGORY_NAME}}",
             "author": {
               "@type": "Organization",
               "name": "동네방네",
@@ -158,7 +160,10 @@
 
       <article>
         <h1>{{TITLE}}</h1>
-        <p class="post-meta">{{PUBLISHED_DATE_KR}} · 동네방네 {{CATEGORY}}</p>
+        <p class="post-meta">
+          {{PUBLISHED_DATE_KR}} ·
+          <a href="/blog/?category={{CATEGORY_SLUG}}">{{CATEGORY_NAME}}</a>
+        </p>
 
         <img
           class="hero-image"

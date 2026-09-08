@@ -2,6 +2,10 @@ const fs = require("fs");
 const path = require("path");
 const { execFileSync } = require("child_process");
 const sharp = require("sharp");
+const {
+  parsePublishedRows,
+  validateCategoryPlan,
+} = require("./blog-categories");
 
 const PROJECT_DIR = path.join(__dirname, "..");
 const EXPECTED_WIDTH = 1200;
@@ -96,7 +100,14 @@ const domainAllowed = (hostname, domains) => domains.some(
   (domain) => hostname === domain || hostname.endsWith(`.${domain}`),
 );
 
-const validateArticle = ({ html, slug, policy, requireInlineImages = false }) => {
+const validateArticle = ({
+  html,
+  slug,
+  policy,
+  requireInlineImages = false,
+  requireCategoryMetadata = false,
+  expectedCategory,
+}) => {
   const errors = [];
   const expectedUrl = `https://dn-people.com/blog/${slug}/`;
   if (!/^[a-z0-9]+(?:-[a-z0-9]+){2,4}$/.test(slug)) errors.push("slug must contain 3-5 kebab-case words");
@@ -180,6 +191,19 @@ const validateArticle = ({ html, slug, policy, requireInlineImages = false }) =>
     }
   }
 
+  if (requireCategoryMetadata) {
+    const categoryId = findMeta(html, "name", "dnbn:category");
+    if (!expectedCategory) errors.push("published category is missing from TOPICS.md");
+    else {
+      if (categoryId !== expectedCategory.id) {
+        errors.push(`dnbn:category must equal ${expectedCategory.id}`);
+      }
+      if (normalizeText(articleJson?.articleSection) !== expectedCategory.name) {
+        errors.push(`Article articleSection must equal ${expectedCategory.name}`);
+      }
+    }
+  }
+
   const faqItems = [...html.matchAll(
     /<div\b[^>]*class=["'][^"']*\bfaq-item\b[^"']*["'][^>]*>([\s\S]*?)<\/div>/gi,
   )].map((match) => ({
@@ -240,16 +264,31 @@ const readPolicy = (projectDir = PROJECT_DIR) => JSON.parse(fs.readFileSync(
   "utf8",
 ));
 
-const validatePublicationFiles = async ({ projectDir = PROJECT_DIR, slug, requireInlineImages = false }) => {
+const validatePublicationFiles = async ({
+  projectDir = PROJECT_DIR,
+  slug,
+  requireInlineImages = false,
+  requireCategoryMetadata = false,
+}) => {
   const errors = [];
   const articleFile = path.join(projectDir, "public", "blog", slug, "index.html");
   if (!fs.existsSync(articleFile)) return { errors: [`article missing: ${articleFile}`], metadata: {} };
   const html = fs.readFileSync(articleFile, "utf8");
+  const policy = readPolicy(projectDir);
+  const topics = fs.readFileSync(path.join(projectDir, "docs", "blog", "TOPICS.md"), "utf8");
+  const publishedRows = parsePublishedRows(topics);
+  const topicRows = publishedRows.filter((row) => row.slug === slug);
+  const topicRow = topicRows[0];
+  const expectedCategory = topicRow && policy.categories?.[topicRow.category]
+    ? { id: topicRow.category, name: policy.categories[topicRow.category].name }
+    : undefined;
   const articleResult = validateArticle({
     html,
     slug,
-    policy: readPolicy(projectDir),
+    policy,
     requireInlineImages,
+    requireCategoryMetadata,
+    expectedCategory,
   });
   errors.push(...articleResult.errors);
 
@@ -285,20 +324,33 @@ const validatePublicationFiles = async ({ projectDir = PROJECT_DIR, slug, requir
   const expectedPath = `/blog/${slug}/`;
   const expectedUrl = `https://dn-people.com${expectedPath}`;
   const listing = fs.readFileSync(path.join(projectDir, "public", "blog", "index.html"), "utf8");
-  const listingLinks = [...listing.matchAll(/<a\b[^>]*>/gi)].map((match) => getAttribute(match[0], "href"));
-  if (listingLinks.filter((href) => href === expectedPath).length !== 1)
+  const listingCards = [...listing.matchAll(/<a\b[^>]*>/gi)]
+    .filter((match) => hasClass(match[0], "post-card") && getAttribute(match[0], "href") === expectedPath);
+  if (listingCards.length !== 1)
     errors.push("blog listing must contain exactly one new-post link");
+  else if (!expectedCategory || getAttribute(listingCards[0][0], "data-category") !== expectedCategory.id)
+    errors.push("blog listing category does not match TOPICS.md");
 
   const sitemap = fs.readFileSync(path.join(projectDir, "public", "sitemap.xml"), "utf8");
   if ((sitemap.match(new RegExp(`<loc>${escapeRegExp(expectedUrl)}</loc>`, "g")) || []).length !== 1)
     errors.push("sitemap must contain exactly one new-post URL");
 
   const date = articleResult.metadata.datePublished;
-  const topics = fs.readFileSync(path.join(projectDir, "docs", "blog", "TOPICS.md"), "utf8");
   if (!date || !new RegExp(`^\\|\\s*${escapeRegExp(date)}\\s*\\|\\s*${escapeRegExp(slug)}\\s*\\|`, "m").test(topics))
     errors.push("TOPICS.md published row is missing or has the wrong date");
+  if (topicRows.length !== 1) errors.push("TOPICS.md must contain exactly one published row for the slug");
 
-  return { errors, metadata: articleResult.metadata };
+  const categoryPlan = validateCategoryPlan({ topics, listing, policy });
+  errors.push(...categoryPlan.errors);
+
+  return {
+    errors,
+    metadata: {
+      ...articleResult.metadata,
+      category: topicRow?.category,
+      categoryDiversity: categoryPlan.diversity,
+    },
+  };
 };
 
 const changedFiles = (projectDir, baseRef) => {
@@ -347,7 +399,12 @@ const validatePublicationDiff = async ({ projectDir = PROJECT_DIR, changes }) =>
   if (inlineAssets.some(({ status }) => !status.startsWith("A")))
     errors.push("inline image assets must be added with the new article");
 
-  const result = await validatePublicationFiles({ projectDir, slug, requireInlineImages: true });
+  const result = await validatePublicationFiles({
+    projectDir,
+    slug,
+    requireInlineImages: true,
+    requireCategoryMetadata: true,
+  });
   errors.push(...result.errors);
   return { errors, metadata: result.metadata, slug };
 };
