@@ -35,5 +35,6 @@
 
 ## Optional
 
+- [핸드폰 구매처 비교 가이드](https://dn-people.com/blog/best-phone-buying-site/): 자급제, 통신사 약정, 알뜰폰, 오픈박스, 중고폰을 총비용과 계약 조건으로 비교하는 방법
 - [오픈박스폰 등급 확인 가이드](https://dn-people.com/blog/openbox-phone-grade-guide/): 외관, 배터리, 기능, 구성품, 보증 기준
 - [자급제폰과 통신사 약정 총비용 비교](https://dn-people.com/blog/unlocked-vs-carrier-cost/): 단말기값과 월 요금을 같은 기준으로 비교하는 방법
