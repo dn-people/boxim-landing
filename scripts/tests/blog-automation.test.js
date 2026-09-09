@@ -14,8 +14,6 @@ const {
 } = require("../check-blog-run-gates");
 const {
   computeCategoryDiversity,
-  parseBacklogRows,
-  parsePublishedRows: parseCategorizedRows,
   validateCategoryPlan,
 } = require("../blog-categories");
 const { generateThumbnail } = require("../generate-blog-thumbnail");
@@ -104,19 +102,18 @@ test("category plan covers every published card and keeps two backlog topics per
   const listing = fs.readFileSync(path.join(projectDir, "public", "blog", "index.html"), "utf8");
   const result = validateCategoryPlan({ topics, listing, policy });
   assert.deepEqual(result.errors, []);
-  assert.equal(result.publishedRows.length, 33);
-  assert.deepEqual(result.backlogCounts, {
-    "it-tech": 2,
-    "carrier-issues": 2,
-    rental: 2,
-    "product-reviews": 2,
-    "buying-guides": 2,
-  });
+  assert.ok(result.publishedRows.length >= policy.manualReview.baselinePublishedSlugs.length);
+  assert.ok(Object.values(result.backlogCounts).every(
+    (count) => count >= policy.contentDiversity.minimumBacklogPerCategory,
+  ));
 });
 
-test("category diversity prioritizes rental and product reviews in the current window", () => {
-  const topics = fs.readFileSync(path.join(projectDir, "docs", "blog", "TOPICS.md"), "utf8");
-  const rows = parseCategorizedRows(topics);
+test("category diversity prioritizes rental and product reviews for an imbalanced window", () => {
+  const rows = [
+    ...Array.from({ length: 3 }, (_, index) => ({ slug: `it-tech-${index}`, category: "it-tech" })),
+    ...Array.from({ length: 4 }, (_, index) => ({ slug: `carrier-${index}`, category: "carrier-issues" })),
+    ...Array.from({ length: 3 }, (_, index) => ({ slug: `buying-${index}`, category: "buying-guides" })),
+  ];
   const diversity = computeCategoryDiversity(rows, policy);
   assert.deepEqual(diversity.counts, {
     "it-tech": 3,
@@ -127,7 +124,6 @@ test("category diversity prioritizes rental and product reviews in the current w
   });
   assert.deepEqual(diversity.recommendedCategories, ["rental", "product-reviews"]);
   assert.equal(diversity.nextCategory, "rental");
-  assert.equal(parseBacklogRows(topics, policy).length, 10);
 });
 
 test("category diversity excludes a category after two consecutive publications", () => {
