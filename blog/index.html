@@ -1,0 +1,838 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>동네방네 블로그 | IT·테크·통신·렌탈 가이드</title>
+    <meta
+      name="description"
+      content="IT·테크, 통신사 이슈, 렌탈, 제품 리뷰와 스마트폰·요금제 구매 기준을 정리한 동네방네 블로그입니다."
+    />
+    <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1" />
+    <link rel="canonical" href="https://dn-people.com/blog/" />
+    <link rel="alternate" type="application/rss+xml" title="동네방네 통신생활 가이드 RSS" href="https://dn-people.com/rss.xml" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="ko_KR" />
+    <meta property="og:site_name" content="동네방네" />
+    <meta property="og:title" content="동네방네 블로그 | IT·테크·통신·렌탈 가이드" />
+    <meta
+      property="og:description"
+      content="IT·테크, 통신사 이슈, 렌탈, 제품 리뷰와 스마트폰·요금제 구매 기준을 정리한 동네방네 블로그입니다."
+    />
+    <meta property="og:url" content="https://dn-people.com/blog/" />
+    <meta property="og:image" content="https://dn-people.com/ogImage.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="동네방네 블로그 | IT·테크·통신·렌탈 가이드" />
+    <meta
+      name="twitter:description"
+      content="IT·테크, 통신사 이슈, 렌탈, 제품 리뷰와 스마트폰·요금제 구매 기준을 정리한 동네방네 블로그입니다."
+    />
+    <meta name="twitter:image" content="https://dn-people.com/ogImage.jpg" />
+    <link rel="icon" href="/favicon.ico" />
+    <link
+      rel="stylesheet"
+      as="style"
+      crossorigin
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css"
+    />
+    <style>
+      *{box-sizing:border-box}
+      html{scroll-behavior:smooth}
+      body{margin:0;font-family:"Pretendard","Apple SD Gothic Neo",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#111827;background:#f9fafb;line-height:1.65;word-break:keep-all}
+      a{color:inherit;text-decoration:none}
+      .site-header{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.86);backdrop-filter:blur(14px);border-bottom:1px solid #e5e7eb}
+      .header-inner{max-width:1120px;margin:0 auto;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+      .brand{font-size:20px;font-weight:900;letter-spacing:0;color:#111827}
+      .nav{display:flex;align-items:center;gap:4px;flex-wrap:wrap;justify-content:flex-end}
+      .nav a{display:flex;align-items:center;justify-content:center;padding:10px 12px;border-radius:4px;font-size:15px;font-weight:800;color:#6b7280}
+      .nav a.active{background:#3b82f6;color:#fff}
+      .hero{background:#111827;color:#fff}
+      .hero-inner{max-width:1120px;margin:0 auto;padding:96px 20px 72px}
+      .eyebrow{margin:0 0 12px;color:#93c5fd;font-size:15px;font-weight:800}
+      h1{margin:0;font-size:42px;line-height:1.25;letter-spacing:0}
+      .lead{max-width:720px;margin:18px 0 0;color:#d1d5db;font-size:18px}
+      .content{max-width:1120px;margin:0 auto;padding:56px 20px 80px}
+      .section-title{display:flex;align-items:end;justify-content:space-between;gap:16px;margin-bottom:20px}
+      h2{margin:0;font-size:28px;line-height:1.35;letter-spacing:0}
+      .category-nav{display:flex;align-items:center;gap:20px;overflow-x:auto;margin:0 0 30px;padding:0 0 12px;border-bottom:1px solid #d1d5db;scrollbar-width:thin}
+      .category-button{flex:0 0 auto;padding:0 0 8px;border:0;border-bottom:2px solid transparent;background:transparent;color:#6b7280;font:inherit;font-size:15px;font-weight:800;cursor:pointer;white-space:nowrap}
+      .category-button:hover{color:#111827}
+      .category-button[aria-pressed="true"]{border-bottom-color:#0159fb;color:#0159fb}
+      .category-count{font-size:12px;color:#9ca3af}
+      .post-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+      .post-card{display:flex;flex-direction:column;min-height:260px;background:#fff;border:1px solid #e5e7eb;border-radius:8px;overflow:hidden;transition:transform .15s ease,box-shadow .15s ease}
+      .post-card[hidden]{display:none}
+      .post-card:hover{transform:translateY(-2px);box-shadow:0 16px 34px rgba(15,23,42,.08)}
+      .post-thumb{height:150px;background-image:url("/blog/assets/best-phone-buying-site.png");background-size:cover;background-position:center}
+      .post-body{display:flex;flex-direction:column;gap:10px;padding:20px}
+      .post-meta{font-size:14px;color:#6b7280;font-weight:700}
+      .post-title{margin:0;font-size:21px;line-height:1.4;font-weight:900;letter-spacing:0}
+      .post-desc{margin:0;color:#4b5563;font-size:16px}
+      .tag-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:6px}
+      .tag{display:inline-flex;padding:5px 8px;border-radius:4px;background:#eff6ff;color:#1d4ed8;font-size:13px;font-weight:800}
+      .empty-state{margin:18px 0 0;padding:28px 20px;border:1px solid #e5e7eb;background:#fff;color:#4b5563;text-align:center}
+      .footer{border-top:1px solid #e5e7eb;background:#fff}
+      .footer-inner{max-width:1120px;margin:0 auto;padding:24px 20px;color:#6b7280;font-size:14px}
+      @media(max-width:720px){.header-inner{align-items:flex-start;flex-direction:column}.nav{justify-content:flex-start}.hero-inner{padding:72px 20px 52px}h1{font-size:32px}.lead{font-size:17px}.content{padding-top:40px}}
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="/"><img src="/logo-dnbn.svg" alt="동네방네" style="height:24px;width:auto;display:block" /></a>
+        <nav class="nav" aria-label="주요 메뉴">
+          <a href="/#hero-section">홈</a>
+          <a href="/#intro-section">소개</a>
+          <a href="/#dnbn-section">회사</a>
+          <a href="/#review-section">후기</a>
+          <a class="active" href="/blog/">블로그</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-inner">
+          <p class="eyebrow">동네방네 블로그</p>
+          <h1>핸드폰 살 때 헷갈리는 기준을<br />짧고 정확하게 정리합니다</h1>
+          <p class="lead">
+            IT·테크, 통신사 이슈, 렌탈, 제품 리뷰와 스마트폰·요금제 구매 기준을
+            공식 자료를 바탕으로 정리합니다.
+          </p>
+        </div>
+      </section>
+
+      <section class="content">
+        <div class="section-title">
+          <h2 id="post-list-title">전체 글</h2>
+        </div>
+        <nav class="category-nav" aria-label="블로그 카테고리">
+          <button class="category-button" type="button" data-filter="all" aria-pressed="true">전체 <span class="category-count"></span></button>
+          <button class="category-button" type="button" data-filter="it-tech" aria-pressed="false">IT·테크 <span class="category-count"></span></button>
+          <button class="category-button" type="button" data-filter="carrier-issues" aria-pressed="false">통신사 이슈 <span class="category-count"></span></button>
+          <button class="category-button" type="button" data-filter="rental" aria-pressed="false">렌탈 <span class="category-count"></span></button>
+          <button class="category-button" type="button" data-filter="product-reviews" aria-pressed="false">제품 리뷰 <span class="category-count"></span></button>
+          <button class="category-button" type="button" data-filter="buying-guides" aria-pressed="false">구매·요금 가이드 <span class="category-count"></span></button>
+        </nav>
+        <div class="post-grid">
+          <a class="post-card" data-category="buying-guides" href="/blog/mvno-promo-benefit-guide/">
+            <div class="post-thumb" style="background-image:url('/blog/assets/mvno-promo-benefit-guide.png')" role="img" aria-label="스마트폰과 유심, 계산기, 영수증과 혜택 토큰을 책상 위에 놓고 알뜰폰 요금제를 비교하는 장면"></div>
+            <div class="post-body">
+              <div class="post-meta">2026.09.11 · 구매·요금 가이드</div>
+              <h3 class="post-title">10원·쿠폰형 알뜰폰, 통신비 아끼는 선택 기준</h3>
+              <p class="post-desc">초저가 특가와 쿠폰·캐시형 혜택을 할인 종료 후 요금, 실제 사용 혜택과 데이터 조건까지 같은 기준으로 비교합니다.</p>
+              <div class="tag-row"><span class="tag">10원알뜰폰</span><span class="tag">쿠폰요금제</span><span class="tag">통신비절약</span></div>
+            </div>
+          </a>
+          <a class="post-card" data-category="product-reviews" href="/blog/galaxy-s26-model-comparison/">
+            <div class="post-thumb" style="background-image:url('/blog/assets/galaxy-s26-model-comparison.png')" role="img" aria-label="크기가 다른 두 스마트폰과 보조배터리, 파우치, 측정 도구를 함께 둔 모델 비교 장면"></div>
+            <div class="post-body">
+              <div class="post-meta">2026.09.10 · 제품 리뷰</div>
+              <h3 class="post-title">갤럭시 S26·S26+ 사양 기반 리뷰와 선택 기준</h3>
+              <p class="post-desc">화면·무게·배터리·카메라 공식 사양을 비교하고 휴대성과 큰 화면 중 무엇을 우선할지 정리했습니다.</p>
+              <div class="tag-row"><span class="tag">갤럭시S26</span><span class="tag">사양비교</span><span class="tag">모델선택</span></div>
+            </div>
+          </a>
+          <a class="post-card" data-category="rental" href="/blog/rental-contract-terms-check/">
+            <div class="post-thumb" style="background-image:url('/blog/assets/rental-contract-terms-check.png')" role="img" aria-label="공기청정기와 정수기 앞에 빈 계약서, 달력, 돋보기와 열쇠를 놓은 렌탈 계약 점검 장면"></div>
+            <div class="post-body">
+              <div class="post-meta">2026.09.09 · 렌탈</div>
+              <h3 class="post-title">가전 렌탈 계약 전 꼭 확인할 조건 6가지</h3>
+              <p class="post-desc">계약기간과 의무사용기간, 소유권 이전, 관리 범위, 추가비용과 중도해지 조건을 계약서에서 확인하는 순서입니다.</p>
+              <div class="tag-row"><span class="tag">렌탈계약</span><span class="tag">의무사용기간</span><span class="tag">소유권</span></div>
+            </div>
+          </a>
+          <a class="post-card" data-category="it-tech" href="/blog/galaxy-battery-self-check/">
+            <div class="post-thumb" style="background-image:url('/blog/assets/galaxy-battery-self-check.png')" role="img" aria-label="배터리 아이콘이 있는 스마트폰과 돋보기, 충전 케이블, 충전기와 시계를 함께 둔 배터리 점검 장면"></div>
+            <div class="post-body">
+              <div class="post-meta">2026.09.08 · IT·테크</div>
+              <h3 class="post-title">갤럭시 배터리 빨리 닳을 때 자가진단 순서</h3>
+              <p class="post-desc">삼성 멤버스 자가진단 결과와 앱 사용량, 충전 상태를 확인하고 서비스센터 점검이 필요한 상황을 정리했습니다.</p>
+              <div class="tag-row"><span class="tag">갤럭시배터리</span><span class="tag">자가진단</span><span class="tag">사용시간</span></div>
+            </div>
+          </a>
+          <a class="post-card" data-category="carrier-issues" href="/blog/mobile-payment-damage-report/">
+            <div class="post-thumb" style="background-image:url('/blog/assets/mobile-payment-damage-report.png')" role="img" aria-label="휴대폰과 결제 증빙 파일, 영수증, 돋보기와 펜을 함께 둔 피해 신고 준비 장면"></div>
+            <div class="post-body">
+              <div class="post-meta">2026.09.07 · 통신사 이슈</div>
+              <h3 class="post-title">휴대폰 결제 피해 신고, 증빙 준비와 접수 순서</h3>
+              <p class="post-desc">피해 거래의 증빙 준비, 결제 유형별 문의처, SKT 신고 서류와 접수 과정, 청구 취소 결과를 확인하는 순서를 정리했습니다.</p>
+              <div class="tag-row"><span class="tag">결제피해신고</span><span class="tag">증빙준비</span><span class="tag">접수확인</span></div>
+            </div>
+          </a>
+          <a class="post-card" data-category="buying-guides" href="/blog/mobile-contract-cost-check/">
+            <div class="post-thumb" style="background-image:url('/blog/assets/mobile-contract-cost-check.png')" role="img" aria-label="스마트폰과 빈 계약서 폴더, 돋보기, 펜, 파란 문서 탭을 책상 위에 둔 계약 확인 장면"></div>
+            <div class="post-body">
+              <div class="post-meta">2026.09.04 · 구매·요금 가이드</div>
+              <h3 class="post-title">휴대폰 계약서에서 지원금·할부금 확인하는 순서</h3>
+              <p class="post-desc">출고가, 지원금·할인 방식, 할부원금과 기간, 요금제·부가서비스 조건을 공식 계약서에서 확인하는 순서를 정리했습니다.</p>
+              <div class="tag-row"><span class="tag">휴대폰계약서</span><span class="tag">지원금</span><span class="tag">할부금</span></div>
+            </div>
+          </a>
+          <a class="post-card" data-category="buying-guides" href="/blog/internet-cancellation-check/">
+            <div class="post-thumb" style="background-image:url('/blog/assets/internet-cancellation-check.png')" role="img" aria-label="공유기와 모뎀, 셋톱박스를 회수 상자에 정리하는 모습"></div>
+            <div class="post-body">
+              <div class="post-meta">2026.09.03 · 구매·요금 가이드</div>
+              <h3 class="post-title">초고속인터넷 해지 전 꼭 확인할 6가지</h3>
+              <p class="post-desc">명의자 해지 접수, 약정·결합 혜택, 임대장비 회수와 반환 확인, 마지막 청구서까지 확인하는 순서를 공식 안내로 정리했습니다.</p>
+              <div class="tag-row"><span class="tag">인터넷해지</span><span class="tag">임대장비</span><span class="tag">요금정산</span></div>
+            </div>
+          </a>
+          <a class="post-card" data-category="carrier-issues" href="/blog/child-mobile-bill-alerts/">
+            <div class="post-thumb" style="background-image:url('/blog/assets/child-mobile-bill-alerts.png')" role="img" aria-label="휴대폰 알림, 달력, 체크 카드와 어린이 가방을 함께 둔 자녀 회선 관리 준비 모습"></div>
+            <div class="post-body">
+              <div class="post-meta">2026.09.02 · 통신사 이슈</div>
+              <h3 class="post-title">자녀 휴대폰 요금 통보 전 확인할 5가지</h3>
+              <p class="post-desc">자녀 명의 회선의 요금 통보 대상, 기준 금액, 이용 제한과의 차이, 법정대리인의 신청·해지 권한을 공식 안내로 정리했습니다.</p>
+              <div class="tag-row"><span class="tag">자녀휴대폰</span><span class="tag">요금통보</span><span class="tag">회선관리</span></div>
+            </div>
+          </a>
+          <a class="post-card" data-category="carrier-issues" href="/blog/overseas-roaming-loss-prep/">
+            <div
+              class="post-thumb"
+              style="background-image:url('/blog/assets/overseas-roaming-loss-prep.png')"
+              role="img"
+              aria-label="휴대폰과 여권 지갑, 충전 케이블, 여행 파우치를 책상 위에 둔 출국 전 준비 모습"
+            ></div>
+            <div class="post-body">
+              <div class="post-meta">2026.08.28 · 통신사 이슈</div>
+              <h3 class="post-title">해외 로밍 전 휴대폰·유심 분실 대비 순서</h3>
+              <p class="post-desc">
+                해외에서 휴대폰이나 유심을 잃어버렸을 때를 대비해 통신사 연락처, 기기 찾기 설정,
+                계정 보호와 대체 연락 수단을 출국 전에 확인하는 순서입니다.
+              </p>
+              <div class="tag-row">
+                <span class="tag">해외로밍</span>
+                <span class="tag">휴대폰분실</span>
+                <span class="tag">유심보호</span>
+              </div>
+            </div>
+          </a>
+          <a class="post-card" data-category="buying-guides" href="/blog/mobile-insurance-claim-guide/">
+            <div
+              class="post-thumb"
+              style="background-image:url('/blog/assets/mobile-insurance-claim-guide.png')"
+              role="img"
+              aria-label="휴대폰과 보호 방패, 달력, 수리 도구를 함께 배치해 보험 가입 전 확인을 표현한 이미지"
+            ></div>
+            <div class="post-body">
+              <div class="post-meta">2026.08.27 · 구매·요금 가이드</div>
+              <h3 class="post-title">휴대폰 분실파손보험, 가입·보상 전 확인할 기준</h3>
+              <p class="post-desc">
+                가입 가능 시점과 단말 조건, 보장 범위, 자기부담금,
+                수리 증빙과 사고 접수 순서를 정리했습니다.
+              </p>
+              <div class="tag-row">
+                <span class="tag">휴대폰보험</span>
+                <span class="tag">분실파손</span>
+                <span class="tag">보상신청</span>
+              </div>
+            </div>
+          </a>
+          <a class="post-card" data-category="it-tech" href="/blog/used-iphone-activation-lock/">
+            <div
+              class="post-thumb"
+              style="background-image:url('/blog/assets/used-iphone-activation-lock.png')"
+              role="img"
+              aria-label="스마트폰과 자물쇠, 확인 표시를 배치해 계정 연결 상태를 점검하는 이미지"
+            ></div>
+            <div class="post-body">
+              <div class="post-meta">2026.08.26 · IT·테크</div>
+              <h3 class="post-title">중고 아이폰 구매 전 활성화 잠금 확인 순서</h3>
+              <p class="post-desc">
+                이전 소유자의 Apple 계정 연결과 잠금 화면을 확인하고,
+                거래를 멈춰야 할 상황을 공식 안내에 따라 정리했습니다.
+              </p>
+              <div class="tag-row">
+                <span class="tag">중고아이폰</span>
+                <span class="tag">활성화잠금</span>
+                <span class="tag">계정확인</span>
+              </div>
+            </div>
+          </a>
+          <a class="post-card" data-category="it-tech" href="/blog/overseas-iphone-repair-check/">
+            <div
+              class="post-thumb"
+              style="background-image:url('/blog/assets/overseas-iphone-repair-check.png')"
+              role="img"
+              aria-label="파란색 배경에서 스마트폰과 여행 서류, 돋보기, 점검 도구를 함께 배치한 이미지"
+            ></div>
+            <div class="post-body">
+              <div class="post-meta">2026.08.25 · IT·테크</div>
+              <h3 class="post-title">해외 구매 아이폰, 국내 수리 전 확인할 4가지</h3>
+              <p class="post-desc">
+                판매 국가와 기기 식별 정보, 보증 조회를 확인한 뒤 국내 서비스 가능 여부를
+                공식 지원 채널에 문의하는 순서를 정리했습니다.
+              </p>
+              <div class="tag-row">
+                <span class="tag">해외구매아이폰</span>
+                <span class="tag">국내수리</span>
+                <span class="tag">보증확인</span>
+              </div>
+            </div>
+          </a>
+          <a class="post-card" data-category="carrier-issues" href="/blog/mobile-payment-limit-check/">
+            <div
+              class="post-thumb"
+              style="background-image:url('/blog/assets/mobile-payment-limit-check.png')"
+              role="img"
+              aria-label="파란색 배경에서 스마트폰과 잠금장치가 있는 방패, 결제 한도를 조절하는 슬라이더를 배치한 이미지"
+            ></div>
+            <div class="post-body">
+              <div class="post-meta">2026.08.24 · 통신사 이슈</div>
+              <h3 class="post-title">휴대폰 소액결제, 차단과 한도 변경 전 확인할 것</h3>
+              <p class="post-desc">
+                휴대폰 결제의 차단 범위, 월 한도, 이용내역과 본인인증 조건을
+                통신사 공식 안내에 따라 확인하는 순서를 정리했습니다.
+              </p>
+              <div class="tag-row">
+                <span class="tag">소액결제</span>
+                <span class="tag">결제차단</span>
+                <span class="tag">이용한도</span>
+              </div>
+            </div>
+          </a>
+          <a class="post-card" data-category="it-tech" href="/blog/phone-repair-warranty-guide/">
+            <div
+              class="post-thumb"
+              style="background-image:url('/blog/assets/phone-repair-warranty-guide.png')"
+              role="img"
+              aria-label="연한 파란 배경에 동네방네 로고와 추상적인 원형 도형을 배치한 휴대폰 수리 준비 가이드 이미지"
+            ></div>
+            <div class="post-body">
+              <div class="post-meta">2026.08.21 · IT·테크</div>
+              <h3 class="post-title">갤럭시·아이폰 수리 전 보증과 구매 증빙 확인 순서</h3>
+              <p class="post-desc">
+                수리 전 보증 기준일, 구매 영수증, 데이터 백업과 공식 접수 경로를
+                차례로 확인하는 방법을 정리했습니다.
+              </p>
+              <div class="tag-row">
+                <span class="tag">휴대폰수리</span>
+                <span class="tag">보증기간</span>
+                <span class="tag">구매증빙</span>
+              </div>
+            </div>
+          </a>
+          <a class="post-card" data-category="it-tech" href="/blog/used-phone-sale-prep/">
+            <div
+              class="post-thumb"
+              style="background-image:url('/blog/assets/used-phone-sale-prep.png')"
+              role="img"
+              aria-label="밝은 파란 배경에 동네방네 로고와 추상적인 원형 도형을 배치한 중고폰 거래 가이드 이미지"
+            ></div>
+            <div class="post-body">
+              <div class="post-meta">2026.08.20 · IT·테크</div>
+              <h3 class="post-title">중고폰 판매 전 초기화·유심·계정 확인 순서</h3>
+              <p class="post-desc">
+                중고폰을 넘기기 전 데이터 백업, 계정 로그아웃, 유심·eSIM 정리,
+                초기화 뒤 상태 확인까지 차례로 점검하는 방법을 정리했습니다.
+              </p>
+              <div class="tag-row">
+                <span class="tag">중고폰판매</span>
+                <span class="tag">휴대폰초기화</span>
+                <span class="tag">유심정리</span>
+              </div>
+            </div>
+          </a>
+          <a class="post-card" data-category="carrier-issues" href="/blog/telecom-refund-check/">
+            <div
+              class="post-thumb"
+              style="background-image:url('/blog/assets/telecom-refund-check.png')"
+              role="img"
+              aria-label="연한 베이지 배경에 동네방네 로고와 추상적인 원형 도형을 배치한 통신비 절약 가이드 이미지"
+            ></div>
+            <div class="post-body">
+              <div class="post-meta">2026.08.19 · 통신사 이슈</div>
+              <h3 class="post-title">통신 미환급액, 조회와 환급 신청 순서는?</h3>
+              <p class="post-desc">
+                해지·번호이동 뒤 남은 미환급액을 조회하고, 본인 명의 계좌로
+                환급을 신청한 뒤 입금까지 확인하는 순서를 정리했습니다.
+              </p>
+              <div class="tag-row">
+                <span class="tag">통신미환급액</span>
+                <span class="tag">환급신청</span>
+                <span class="tag">해지정산</span>
+              </div>
+            </div>
+          </a>
+          <a class="post-card" data-category="carrier-issues" href="/blog/phone-identity-check/">
+            <div
+              class="post-thumb"
+              style="background-image:url('/blog/assets/phone-identity-check.png')"
+              role="img"
+              aria-label="스마트폰과 방패, 돋보기, 유심 카드를 배치해 내 명의 통신서비스 가입 사실을 확인하는 모습"
+            ></div>
+            <div class="post-body">
+              <div class="post-meta">2026.08.18 · 통신사 이슈</div>
+              <h3 class="post-title">내 명의 휴대폰 개통, 의심될 때 확인 순서</h3>
+              <p class="post-desc">
+                모르는 개통 문자나 요금이 보일 때 가입사실현황을 확인하고,
+                통신사 신고와 가입제한까지 점검하는 순서를 정리했습니다.
+              </p>
+              <div class="tag-row">
+                <span class="tag">명의도용</span>
+                <span class="tag">가입사실조회</span>
+                <span class="tag">개통확인</span>
+              </div>
+            </div>
+          </a>
+          <a class="post-card" data-category="carrier-issues" href="/blog/phone-loss-report-next-steps/">
+            <div
+              class="post-thumb"
+              style="background-image:url('/blog/assets/phone-loss-report-next-steps.png')"
+              role="img"
+              aria-label="스마트폰과 유심, 보호 방패, 새 기기로 이어지는 경로를 배치한 휴대폰 분실 뒤 확인 순서 이미지"
+            ></div>
+            <div class="post-body">
+              <div class="post-meta">2026.08.14 · 통신사 이슈</div>
+              <h3 class="post-title">휴대폰 분실 신고 뒤 새 기기 사용 전 확인 순서</h3>
+              <p class="post-desc">
+                분실신고 뒤 회선과 유심을 보호하고, 대체 기기를 쓰거나 찾은 기기를
+                다시 사용하기 전 확인할 순서를 정리했습니다.
+              </p>
+              <div class="tag-row">
+                <span class="tag">휴대폰분실신고</span>
+                <span class="tag">유심보호</span>
+                <span class="tag">대체기기</span>
+              </div>
+            </div>
+          </a>
+          <a class="post-card" data-category="buying-guides" href="/blog/internet-relocation-check/">
+            <div
+              class="post-thumb"
+              style="background-image:url('/blog/assets/internet-relocation-check.png')"
+              role="img"
+              aria-label="공유기와 모뎀, 이삿짐 상자, 달력, 랜 케이블과 열쇠를 함께 배치한 인터넷 이전설치 준비 이미지"
+            ></div>
+            <div class="post-body">
+              <div class="post-meta">2026.08.12 · 구매·요금 가이드</div>
+              <h3 class="post-title">인터넷 이전설치 전 약정·장비·방문 일정 확인 순서</h3>
+              <p class="post-desc">
+                이사 전 새 주소, 기존 약정과 결합, 임대 장비, 방문 일정을
+                차례로 확인하는 인터넷 이전설치 준비 방법을 정리했습니다.
+              </p>
+              <div class="tag-row">
+                <span class="tag">인터넷이전설치</span>
+                <span class="tag">이사준비</span>
+                <span class="tag">방문일정</span>
+              </div>
+            </div>
+          </a>
+          <a class="post-card" data-category="buying-guides" href="/blog/internet-installation-check/">
+            <div
+              class="post-thumb"
+              style="background-image:url('/blog/assets/internet-installation-check.png')"
+              role="img"
+              aria-label="현관과 거실, 공유기와 랜선, 주소 위치 표시가 함께 있는 인터넷 설치 가능 여부 확인 이미지"
+            ></div>
+            <div class="post-body">
+              <div class="post-meta">2026.08.11 · 구매·요금 가이드</div>
+              <h3 class="post-title">인터넷 신규 설치 전 주소·설치 가능 여부 확인 순서</h3>
+              <p class="post-desc">
+                주소 조회 결과와 건물·현장 환경, 속도·장비 조건, 방문 일정을
+                차례로 점검하는 인터넷 신규 설치 방법을 정리했습니다.
+              </p>
+              <div class="tag-row">
+                <span class="tag">인터넷설치</span>
+                <span class="tag">주소조회</span>
+                <span class="tag">설치가능여부</span>
+              </div>
+            </div>
+          </a>
+          <a class="post-card" data-category="carrier-issues" href="/blog/minor-phone-opening/">
+            <div
+              class="post-thumb"
+              style="background-image:url('/blog/assets/minor-phone-opening.png')"
+              role="img"
+              aria-label="법정대리인과 청소년이 신분증과 스마트폰, 가족관계 확인 서류를 함께 점검하는 이미지"
+            ></div>
+            <div class="post-body">
+              <div class="post-meta">2026.08.10 · 통신사 이슈</div>
+              <h3 class="post-title">미성년자 휴대폰 개통, 법정대리인 준비물 확인 순서</h3>
+              <p class="post-desc">
+                법정대리인 신분증과 관계 확인 서류, 온라인·매장 신청 전 점검할 순서를
+                통신사 공식 안내 기준으로 정리했습니다.
+              </p>
+              <div class="tag-row">
+                <span class="tag">미성년자개통</span>
+                <span class="tag">법정대리인</span>
+                <span class="tag">준비서류</span>
+              </div>
+            </div>
+          </a>
+          <a class="post-card" data-category="product-reviews" href="/blog/fold8-series-model-guide/">
+            <div
+              class="post-thumb"
+              style="background-image:url('/blog/assets/fold8-series-model-guide.png')"
+              role="img"
+              aria-label="보라색과 크림색의 접히는 스마트폰 형태, 화면 활용과 휴대성 비교 카드를 함께 배치한 폴더블폰 구매 가이드 일러스트"
+            ></div>
+            <div class="post-body">
+              <div class="post-meta">2026.08.06 · 제품 리뷰</div>
+              <h3 class="post-title">갤럭시 폴더블8 시리즈, 나에게 맞는 모델 고르는 법</h3>
+              <p class="post-desc">
+                폴드8과 플립8을 화면 활용, 휴대성, 저장공간, 구매 총비용 기준으로
+                고르는 방법을 정리했습니다.
+              </p>
+              <div class="tag-row">
+                <span class="tag">폴더블8</span>
+                <span class="tag">폴드8플립8</span>
+                <span class="tag">모델선택</span>
+              </div>
+            </div>
+          </a>
+          <a class="post-card" data-category="it-tech" href="/blog/unlocked-phone-compatibility-check/">
+            <div
+              class="post-thumb"
+              style="background-image:url('/blog/assets/unlocked-phone-compatibility-check.png')"
+              role="img"
+              aria-label="스마트폰과 유심, eSIM 카드, 통신망 신호와 확인 항목을 배치해 자급제폰 호환성을 점검하는 일러스트"
+            ></div>
+            <div class="post-body">
+              <div class="post-meta">2026.08.05 · IT·테크</div>
+              <h3 class="post-title">자급제폰은 통신사와 바로 호환되나요? 확인 기준</h3>
+              <p class="post-desc">
+                유심·eSIM, IMEI와 모델명, 해외판의 주파수와 서비스 제한을
+                순서대로 확인하는 자급제폰 호환 점검 방법을 정리했습니다.
+              </p>
+              <div class="tag-row">
+                <span class="tag">자급제폰</span>
+                <span class="tag">통신사호환</span>
+                <span class="tag">유심eSIM</span>
+              </div>
+            </div>
+          </a>
+          <a class="post-card" data-category="carrier-issues" href="/blog/mobile-bill-checklist/">
+            <div
+              class="post-thumb"
+              style="background-image:url('/blog/assets/mobile-bill-checklist.png')"
+              role="img"
+              aria-label="파란색 그래픽 배경과 동네방네 로고로 구성한 휴대폰 요금고지서 점검 안내 이미지"
+            ></div>
+            <div class="post-body">
+              <div class="post-meta">2026.07.31 · 통신사 이슈</div>
+              <h3 class="post-title">휴대폰 요금고지서에서 할부금·부가서비스 확인하는 순서</h3>
+              <p class="post-desc">
+                요금제, 할인, 단말기 할부금, 부가서비스를 나눠 보며
+                휴대폰 청구내역을 점검하는 순서를 정리했습니다.
+              </p>
+              <div class="tag-row">
+                <span class="tag">요금고지서</span>
+                <span class="tag">할부금</span>
+                <span class="tag">부가서비스</span>
+              </div>
+            </div>
+          </a>
+          <a class="post-card" data-category="buying-guides" href="/blog/mvno-post-discount-cost/">
+            <div
+              class="post-thumb"
+              style="background-image:url('/blog/assets/mvno-post-discount-cost.png')"
+              role="img"
+              aria-label="스마트폰과 두 개의 요금 안내 카드, 할인 종료를 가리키는 화살표, 달력과 계산기를 배치해 월요금 변화를 비교하는 이미지"
+            ></div>
+            <div class="post-body">
+              <div class="post-meta">2026.07.29 · 구매·요금 가이드</div>
+              <h3 class="post-title">알뜰폰 할인 종료 뒤 월요금은 어떻게 비교하나요?</h3>
+              <p class="post-desc">
+                프로모션 기간과 종료 뒤 정상요금, 제공 조건을 같은 기간 총액으로 비교하는
+                순서를 정리했습니다.
+              </p>
+              <div class="tag-row">
+                <span class="tag">알뜰폰</span>
+                <span class="tag">할인종료</span>
+                <span class="tag">월요금비교</span>
+              </div>
+            </div>
+          </a>
+          <a class="post-card" data-category="buying-guides" href="/blog/number-transfer-fee-check/">
+            <div
+              class="post-thumb"
+              style="background-image:url('/blog/assets/number-transfer-fee-check.png')"
+              role="img"
+              aria-label="스마트폰과 청구서, 달력, 돋보기 및 확인 표시로 번호이동 전 비용을 점검하는 이미지"
+            ></div>
+            <div class="post-body">
+              <div class="post-meta">2026.07.27 · 구매·요금 가이드</div>
+              <h3 class="post-title">번호이동 전 약정·할인반환금은 어떻게 확인하나요?</h3>
+              <p class="post-desc">
+                약정 종료일, 할인반환금, 단말기 할부금과 예상 정산액을 확인해
+                번호이동 비용을 비교하는 순서를 정리했습니다.
+              </p>
+              <div class="tag-row">
+                <span class="tag">번호이동</span>
+                <span class="tag">할인반환금</span>
+                <span class="tag">비용확인</span>
+              </div>
+            </div>
+          </a>
+          <a class="post-card" data-category="it-tech" href="/blog/esim-device-id-check/">
+            <div
+              class="post-thumb"
+              style="background-image:url('/blog/assets/esim-device-id-check.png')"
+              role="img"
+              aria-label="두 스마트폰 사이에서 내장형 eSIM을 옮기기 전 단말 식별 정보와 확인 표시를 점검하는 이미지"
+            ></div>
+            <div class="post-body">
+              <div class="post-meta">2026.07.23 · IT·테크</div>
+              <h3 class="post-title">eSIM 기기변경 전 EID·IMEI는 어떻게 확인하나요?</h3>
+              <p class="post-desc">
+                새 휴대폰의 EID와 사용할 IMEI를 구분하고, 재발급 방식과
+                기존 eSIM 삭제 전 확인 순서를 정리했습니다.
+              </p>
+              <div class="tag-row">
+                <span class="tag">eSIM</span>
+                <span class="tag">EID</span>
+                <span class="tag">기기변경</span>
+              </div>
+            </div>
+          </a>
+          <a class="post-card" data-category="buying-guides" href="/blog/family-mobile-cost-plan/">
+            <div
+              class="post-thumb"
+              style="background-image:url('/blog/assets/family-mobile-cost-plan.png')"
+              role="img"
+              aria-label="네 대의 스마트폰과 가족 모형 옆에서 세 가지 빈 요금 구성표를 나란히 비교하는 이미지"
+            ></div>
+            <div class="post-body">
+              <div class="post-meta">2026.07.22 · 구매·요금 가이드</div>
+              <h3 class="post-title">가족 통신비는 어떻게 줄이나요? 회선 구성 순서</h3>
+              <p class="post-desc">
+                가족별 사용량·할인·약정을 정리하고 결합 유지, 일부 회선 전환,
+                전체 재구성의 월 총액을 비교하는 순서를 정리했습니다.
+              </p>
+              <div class="tag-row">
+                <span class="tag">가족통신비</span>
+                <span class="tag">가족결합</span>
+                <span class="tag">요금제구성</span>
+              </div>
+            </div>
+          </a>
+          <a class="post-card" data-category="it-tech" href="/blog/usim-change-device-registration/">
+            <div
+              class="post-thumb"
+              style="background-image:url('/blog/assets/usim-change-device-registration.png')"
+              role="img"
+              aria-label="두 스마트폰 사이로 유심을 옮기는 과정과 통신사 단말 등록 완료 상태를 나누어 보여 주는 이미지"
+            ></div>
+            <div class="post-body">
+              <div class="post-meta">2026.07.21 · IT·테크</div>
+              <h3 class="post-title">유심기변과 확정기변 차이는 무엇이고 언제 필요한가요?</h3>
+              <p class="post-desc">
+                유심을 옮겨 쓰는 방식과 통신사 전산에 단말을 등록하는 절차의 차이,
+                등록 전후 확인 순서를 정리했습니다.
+              </p>
+              <div class="tag-row">
+                <span class="tag">유심기변</span>
+                <span class="tag">확정기변</span>
+                <span class="tag">단말등록</span>
+              </div>
+            </div>
+          </a>
+          <a class="post-card" data-category="buying-guides" href="/blog/data-usage-plan-guide/">
+            <div
+              class="post-thumb"
+              style="background-image:url('/blog/assets/data-usage-plan-guide.png')"
+              role="img"
+              aria-label="스마트폰의 데이터 사용량 그래프와 일정표, 요금제 비교 카드가 놓인 이미지"
+            ></div>
+            <div class="post-body">
+              <div class="post-meta">2026.07.20 · 구매·요금 가이드</div>
+              <h3 class="post-title">데이터 사용량별 요금제 고르는 기준은 무엇인가요?</h3>
+              <p class="post-desc">
+                최근 사용량을 기준으로 데이터 구간을 정하고, 소진 후 속도와 할인 종료 뒤 월정액까지
+                비교하는 방법을 정리했습니다.
+              </p>
+              <div class="tag-row">
+                <span class="tag">데이터사용량</span>
+                <span class="tag">요금제선택</span>
+                <span class="tag">알뜰폰</span>
+              </div>
+            </div>
+          </a>
+          <a class="post-card" data-category="buying-guides" href="/blog/internet-tv-bundle-guide/">
+            <div
+              class="post-thumb"
+              style="background-image:url('/blog/assets/internet-tv-bundle-guide.png')"
+              role="img"
+              aria-label="와이파이 공유기와 TV, 요금·약정·설치·가족결합 항목을 나란히 비교하는 표가 놓인 이미지"
+            ></div>
+            <div class="post-body">
+              <div class="post-meta">2026.07.15 · 구매·요금 가이드</div>
+              <h3 class="post-title">인터넷+TV 결합 할인은 무엇을 비교해야 하나요?</h3>
+              <p class="post-desc">
+                월요금뿐 아니라 속도, 채널, 약정, 설치·장비비, 휴대전화 결합과
+                중도해지 비용을 같은 기간 총지출로 비교하는 기준을 정리했습니다.
+              </p>
+              <div class="tag-row">
+                <span class="tag">인터넷TV</span>
+                <span class="tag">결합할인</span>
+                <span class="tag">총비용비교</span>
+              </div>
+            </div>
+          </a>
+          <a class="post-card" data-category="it-tech" href="/blog/used-phone-imei-check/">
+            <div
+              class="post-thumb"
+              style="background-image:url('/blog/assets/used-phone-imei-check.png')"
+              role="img"
+              aria-label="중고 스마트폰의 IMEI 번호를 돋보기로 확인하고 분실·도난 여부와 선택약정 항목을 점검하는 이미지"
+            ></div>
+            <div class="post-body">
+              <div class="post-meta">2026.07.14 · IT·테크</div>
+              <h3 class="post-title">중고폰 IMEI 조회는 어떻게 하나요? 분실·도난 확인 순서</h3>
+              <p class="post-desc">
+                실제 단말기의 IMEI를 확인하고 분실·도난 여부와 선택약정 대상을
+                조회하는 순서, 결과 해석과 거래 중단 기준을 정리했습니다.
+              </p>
+              <div class="tag-row">
+                <span class="tag">중고폰</span>
+                <span class="tag">IMEI조회</span>
+                <span class="tag">분실도난확인</span>
+              </div>
+            </div>
+          </a>
+          <a class="post-card" data-category="buying-guides" href="/blog/openbox-phone-grade-guide/">
+            <div
+              class="post-thumb"
+              style="background-image:url('/blog/assets/openbox-phone-grade-guide.png')"
+              role="img"
+              aria-label="열린 상자 옆 스마트폰의 화면과 배터리, 카메라, 스피커 상태를 돋보기와 체크표로 확인하는 이미지"
+            ></div>
+            <div class="post-body">
+              <div class="post-meta">2026.07.13 · 구매·요금 가이드</div>
+              <h3 class="post-title">오픈박스폰 등급은 어떻게 보나요? 상태 확인 체크리스트</h3>
+              <p class="post-desc">
+                판매처마다 다른 등급명 대신 외관, 배터리, 기능, 구성품,
+                IMEI와 보증 조건을 확인하는 순서를 정리했습니다.
+              </p>
+              <div class="tag-row">
+                <span class="tag">오픈박스폰</span>
+                <span class="tag">상태확인</span>
+                <span class="tag">구매체크</span>
+              </div>
+            </div>
+          </a>
+          <a class="post-card" data-category="buying-guides" href="/blog/unlocked-vs-carrier-cost/">
+            <div
+              class="post-thumb"
+              style="background-image:url('/blog/assets/unlocked-vs-carrier-cost.png')"
+              role="img"
+              aria-label="자급제폰과 통신사 약정의 24개월 비용을 저울과 계산기로 비교하는 이미지"
+            ></div>
+            <div class="post-body">
+              <div class="post-meta">2026.07.10 · 구매·요금 가이드</div>
+              <h3 class="post-title">자급제폰 vs 통신사 약정, 2년 총비용 계산법</h3>
+              <p class="post-desc">
+                단말기값, 24개월 통신요금, 할부수수료와 의무 유지비까지
+                같은 기준으로 비교하는 계산법을 정리했습니다.
+              </p>
+              <div class="tag-row">
+                <span class="tag">자급제폰</span>
+                <span class="tag">통신사약정</span>
+                <span class="tag">통신비계산</span>
+              </div>
+            </div>
+          </a>
+          <a class="post-card" data-category="buying-guides" href="/blog/mvno-number-transfer-guide/">
+            <div
+              class="post-thumb"
+              style="background-image:url('/blog/assets/mvno-number-transfer-guide.png')"
+              role="img"
+              aria-label="스마트폰과 유심 카드, 체크리스트가 함께 배치된 알뜰폰 번호이동 절차 안내 이미지"
+            ></div>
+            <div class="post-body">
+              <div class="post-meta">2026.07.09 · 구매·요금 가이드</div>
+              <h3 class="post-title">알뜰폰 번호이동은 어떻게 하나요? 단계별 절차</h3>
+              <p class="post-desc">
+                번호는 그대로 쓰면서 알뜰폰으로 옮길 때 필요한 준비물, 신청 순서,
+                유심 개통 전후 체크포인트를 정리했습니다.
+              </p>
+              <div class="tag-row">
+                <span class="tag">알뜰폰</span>
+                <span class="tag">번호이동</span>
+                <span class="tag">유심개통</span>
+              </div>
+            </div>
+          </a>
+          <a class="post-card" data-category="buying-guides" href="/blog/best-phone-buying-site/">
+            <div
+              class="post-thumb"
+              role="img"
+              aria-label="핸드폰 구매 사이트 선택 기준과 자급제폰, 알뜰폰 요금제, 오픈박스폰 비교 방법 안내 이미지"
+            ></div>
+            <div class="post-body">
+              <div class="post-meta">2026.07.08 · 구매·요금 가이드</div>
+              <h3 class="post-title">핸드폰 살 땐 어디가 좋나요? 목적별 구매 사이트 비교</h3>
+              <p class="post-desc">
+                자급제폰, 통신사 약정, 알뜰폰 요금제, 오픈박스폰, 중고폰 기준으로
+                구매처 선택법을 정리했습니다.
+              </p>
+              <div class="tag-row">
+                <span class="tag">자급제폰</span>
+                <span class="tag">알뜰폰</span>
+                <span class="tag">오픈박스폰</span>
+              </div>
+            </div>
+          </a>
+        </div>
+        <p class="empty-state" hidden>이 카테고리의 글을 준비 중입니다.</p>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">핸드폰 살 땐 동네방네 dnbn.co.kr</div>
+    </footer>
+    <script>
+      (() => {
+        const labels = {
+          all: "전체 글",
+          "it-tech": "IT·테크",
+          "carrier-issues": "통신사 이슈",
+          rental: "렌탈",
+          "product-reviews": "제품 리뷰",
+          "buying-guides": "구매·요금 가이드",
+        };
+        const buttons = [...document.querySelectorAll(".category-button")];
+        const cards = [...document.querySelectorAll(".post-card[data-category]")];
+        const title = document.querySelector("#post-list-title");
+        const emptyState = document.querySelector(".empty-state");
+        const validFilters = new Set(Object.keys(labels));
+
+        const countFor = (filter) => filter === "all"
+          ? cards.length
+          : cards.filter((card) => card.dataset.category === filter).length;
+
+        for (const button of buttons) {
+          const count = button.querySelector(".category-count");
+          if (count) count.textContent = ` ${countFor(button.dataset.filter)}`;
+        }
+
+        const applyFilter = (filter, updateUrl = true) => {
+          const selected = validFilters.has(filter) ? filter : "all";
+          let visibleCount = 0;
+          for (const card of cards) {
+            const visible = selected === "all" || card.dataset.category === selected;
+            card.hidden = !visible;
+            if (visible) visibleCount += 1;
+          }
+          for (const button of buttons) {
+            button.setAttribute("aria-pressed", String(button.dataset.filter === selected));
+          }
+          title.textContent = `${labels[selected]} ${visibleCount}`;
+          emptyState.hidden = visibleCount !== 0;
+          if (updateUrl) {
+            const url = new URL(window.location.href);
+            if (selected === "all") url.searchParams.delete("category");
+            else url.searchParams.set("category", selected);
+            window.history.replaceState({}, "", `${url.pathname}${url.search}${url.hash}`);
+          }
+        };
+
+        for (const button of buttons) {
+          button.addEventListener("click", () => applyFilter(button.dataset.filter));
+        }
+        applyFilter(new URL(window.location.href).searchParams.get("category") || "all", false);
+      })();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,392 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>자급제폰 vs 통신사 약정, 2년 총비용 계산법 | 동네방네</title>
+    <meta
+      name="description"
+      content="자급제폰과 통신사 약정의 2년 총비용을 단말기값, 월 요금, 약정 할인, 부대비용까지 같은 기준으로 계산하는 방법을 정리했습니다. 핸드폰 살 땐 동네방네 dnbn.co.kr"
+    />
+    <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1" />
+    <link rel="canonical" href="https://dn-people.com/blog/unlocked-vs-carrier-cost/" />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="ko_KR" />
+    <meta property="og:site_name" content="동네방네" />
+    <meta property="og:title" content="자급제폰 vs 통신사 약정, 2년 총비용 계산법 | 동네방네" />
+    <meta
+      property="og:description"
+      content="월 납부액에 가려진 단말기값과 요금, 할부수수료, 의무 유지비를 24개월 기준으로 비교하는 계산법입니다."
+    />
+    <meta property="og:url" content="https://dn-people.com/blog/unlocked-vs-carrier-cost/" />
+    <meta property="og:image" content="https://dn-people.com/blog/assets/unlocked-vs-carrier-cost.png" />
+    <meta property="article:published_time" content="2026-07-10" />
+    <meta property="article:modified_time" content="2026-07-10" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="자급제폰 vs 통신사 약정, 2년 총비용 계산법 | 동네방네" />
+    <meta
+      name="twitter:description"
+      content="월 납부액에 가려진 단말기값과 요금, 할부수수료, 의무 유지비를 24개월 기준으로 비교하는 계산법입니다."
+    />
+    <meta name="twitter:image" content="https://dn-people.com/blog/assets/unlocked-vs-carrier-cost.png" />
+    <link rel="icon" href="/favicon.ico" />
+    <link
+      rel="stylesheet"
+      crossorigin
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css"
+    />
+    <style>
+      *{box-sizing:border-box}
+      html{scroll-behavior:smooth}
+      body{margin:0;font-family:"Pretendard","Apple SD Gothic Neo",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#111827;background:#fff;line-height:1.75;word-break:keep-all}
+      a{color:#0159fb;text-decoration:underline;text-underline-offset:3px}
+      .site-header{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.88);backdrop-filter:blur(14px);border-bottom:1px solid #e5e7eb}
+      .header-inner{max-width:1120px;margin:0 auto;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+      .brand{font-size:20px;font-weight:900;letter-spacing:0;color:#111827;text-decoration:none}
+      .nav{display:flex;align-items:center;gap:4px;flex-wrap:wrap;justify-content:flex-end}
+      .nav a{display:flex;align-items:center;justify-content:center;padding:10px 12px;border-radius:4px;font-size:15px;line-height:1;font-weight:800;color:#6b7280;text-decoration:none}
+      .nav a.active{background:#3b82f6;color:#fff}
+      .article-wrap{max-width:900px;margin:0 auto;padding:52px 20px 80px}
+      .breadcrumb{display:flex;gap:8px;align-items:center;margin-bottom:22px;color:#6b7280;font-size:15px;font-weight:700}
+      .breadcrumb a{color:#6b7280;text-decoration:none}
+      h1{font-size:40px;line-height:1.32;margin:0 0 16px;font-weight:900;color:#111827;letter-spacing:0}
+      .post-meta{margin:0 0 26px;color:#6b7280;font-size:15px;font-weight:700}
+      .hero-image{display:block;width:100%;height:auto;border-radius:8px;margin:0 auto 30px}
+      h2{font-size:25px;line-height:1.45;margin:46px 0 16px;font-weight:900;color:#0159fb;letter-spacing:0}
+      h3{font-size:19px;line-height:1.5;margin:24px 0 10px;font-weight:900;color:#111827;letter-spacing:0}
+      p{font-size:17px;margin:0 0 16px}
+      ul,ol{margin:0 0 20px 22px;padding:0}
+      li{font-size:17px;margin:6px 0}
+      .summary-box{background:#f5f8ff;border-left:5px solid #0159fb;padding:18px 20px;margin:0 0 32px}
+      .note-box{background:#fafafa;border:1px solid #e6eaf2;border-radius:8px;padding:18px 20px;margin:24px 0}
+      .table-scroll{width:100%;overflow-x:auto;margin:18px 0 28px}
+      table{width:100%;min-width:680px;border-collapse:collapse;border-top:2px solid #0159fb}
+      th,td{font-size:16px;text-align:left;vertical-align:top;border-bottom:1px solid #e6eaf2;padding:13px 12px}
+      th{background:#f5f8ff;font-weight:900;color:#111827}
+      .check-list{background:#fff;border:1px solid #e6eaf2;border-radius:8px;padding:18px 20px;margin:20px 0 28px}
+      .check-list ol{margin-bottom:0}
+      .faq-item{border-top:1px solid #e6eaf2;padding:18px 0}
+      .faq-item:last-child{border-bottom:1px solid #e6eaf2}
+      .faq-item h3{margin:0 0 8px;color:#0159fb}
+      .source-list{background:#fafafa;border-radius:8px;padding:18px 20px;margin:18px 0 30px}
+      .source-list ul{margin-bottom:0}
+      .brand-cta{background:#0159fb;color:#fff;padding:22px 24px;border-radius:8px;font-size:20px;font-weight:900;text-align:center;margin-top:34px}
+      .brand-cta a{color:#fff;text-decoration:underline}
+      .small{font-size:15px;color:#555}
+      .divider{height:1px;background:#e6eaf2;margin:36px 0}
+      .footer{border-top:1px solid #e5e7eb;background:#fafafa}
+      .footer-inner{max-width:900px;margin:0 auto;padding:24px 20px;color:#6b7280;font-size:14px}
+      @media(max-width:720px){.header-inner{align-items:flex-start;flex-direction:column}.nav{justify-content:flex-start}.article-wrap{padding:36px 18px 64px}h1{font-size:31px}h2{font-size:22px}p,li{font-size:16px}th,td{font-size:15px;padding:11px 10px}.brand-cta{font-size:18px}}
+    </style>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Article",
+            "@id": "https://dn-people.com/blog/unlocked-vs-carrier-cost/#article",
+            "headline": "자급제폰 vs 통신사 약정, 2년 총비용 계산법",
+            "description": "자급제폰과 통신사 약정의 2년 총비용을 단말기값, 월 요금, 약정 할인, 부대비용까지 같은 기준으로 계산하는 방법을 정리했습니다. 핸드폰 살 땐 동네방네 dnbn.co.kr",
+            "inLanguage": "ko-KR",
+            "datePublished": "2026-07-10",
+            "dateModified": "2026-07-10",
+            "image": "https://dn-people.com/blog/assets/unlocked-vs-carrier-cost.png",
+            "author": {
+              "@type": "Organization",
+              "name": "동네방네",
+              "url": "https://dnbn.co.kr/"
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "동네방네",
+              "url": "https://dnbn.co.kr/"
+            },
+            "mainEntityOfPage": {
+              "@type": "WebPage",
+              "@id": "https://dn-people.com/blog/unlocked-vs-carrier-cost/"
+            }
+          },
+          {
+            "@type": "FAQPage",
+            "@id": "https://dn-people.com/blog/unlocked-vs-carrier-cost/#faq",
+            "inLanguage": "ko-KR",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "자급제폰은 무조건 알뜰폰 요금제만 써야 하나요?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "자급제폰은 단말기 구매 방식이므로 알뜰폰뿐 아니라 이동통신 3사 요금제에도 가입할 수 있습니다. 선택약정 대상 여부와 요금제 조건을 확인한 뒤 원하는 통신사를 고르면 됩니다."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "통신사에서 지원금과 선택약정을 동시에 받을 수 있나요?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "스마트초이스 안내 기준으로 단말기 지원금과 선택약정 할인은 둘 중 하나를 비교해 선택하는 혜택입니다. 실제 가입 시점의 지원금과 요금 할인 총액을 각각 계산해야 합니다."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "카드 할인도 2년 총비용에서 빼도 되나요?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "평소 소비만으로 전월 실적을 계속 충족할 수 있다면 별도 항목으로 표시해 비교할 수 있습니다. 추가 소비가 필요한 할인이라면 통신비 절감액만 빼지 말고 늘어나는 카드 사용액도 함께 봐야 합니다."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "할부원금이 단말기 실구매가와 같은 뜻인가요?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "할부원금은 할부로 나누어 내는 단말기 원금이며 할부수수료가 빠져 있을 수 있습니다. 현금 선납금이나 별도 혜택까지 반영한 실제 부담액과는 다를 수 있으므로 계약서 항목을 나누어 확인해야 합니다."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "중간에 요금제를 바꾸면 계산은 어떻게 하나요?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "요금제별 이용 개월 수를 나누어 각각 곱한 뒤 합산하면 됩니다. 예를 들어 6개월은 69,000원, 18개월은 55,000원이라면 두 구간의 요금을 따로 계산합니다."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "24개월 뒤 중고 판매가격도 포함해야 하나요?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "두 선택지에서 같은 모델과 같은 상태를 가정한다면 중고 판매가격은 비교 결과에 큰 차이를 만들지 않을 수 있습니다. 모델이나 보상판매 조건이 다르면 예상 판매가를 별도 줄에 적되 확정 금액처럼 빼지는 않는 편이 안전합니다."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="/"><img src="/logo-dnbn.svg" alt="동네방네" style="height:24px;width:auto;display:block" /></a>
+        <nav class="nav" aria-label="주요 메뉴">
+          <a href="/#hero-section">홈</a>
+          <a href="/#intro-section">소개</a>
+          <a href="/#dnbn-section">회사</a>
+          <a href="/#review-section">후기</a>
+          <a class="active" href="/blog/">블로그</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="article-wrap">
+      <div class="breadcrumb">
+        <a href="/">홈</a>
+        <span>/</span>
+        <a href="/blog/">블로그</a>
+      </div>
+
+      <article>
+        <h1>자급제폰 vs 통신사 약정, 2년 총비용 계산법</h1>
+        <p class="post-meta">2026년 7월 10일 · 동네방네 통신비 계산 가이드</p>
+
+        <img
+          class="hero-image"
+          src="/blog/assets/unlocked-vs-carrier-cost.png"
+          alt="자급제폰과 통신사 약정의 24개월 비용을 저울과 계산기로 비교하는 이미지"
+          loading="lazy"
+        />
+
+        <div class="summary-box">
+          <p><strong>요약 답변</strong></p>
+          <p>자급제폰과 통신사 약정은 월 납부액이 아니라 24개월 동안 내는 단말기 실구매가, 통신요금, 할부수수료, 의무 유지비에서 확정 혜택을 뺀 금액으로 비교해야 합니다.</p>
+          <p class="small">기준일: 2026년 7월 10일</p>
+        </div>
+
+        <h2>Q1. 자급제폰과 통신사 약정은 무엇이 다른가요?</h2>
+        <p>자급제폰은 단말기 구매 방식이고, 통신사 약정은 요금이나 단말기 할인 조건을 정한 계약 방식입니다. 둘은 완전히 반대되는 개념이 아닙니다.</p>
+        <p>자급제폰을 산 뒤 알뜰폰 요금제를 쓸 수도 있고, 이동통신 3사 요금제에 가입해 선택약정 할인을 받을 수도 있습니다. 반대로 통신사에서 단말기를 살 때는 단말기 지원금을 받는 방식과 지원금 대신 요금 할인을 받는 방식을 비교하게 됩니다.</p>
+        <p>그래서 비교표에는 구매처 이름보다 실제 단말기 결제액과 24개월 동안 사용할 요금제를 적어야 합니다. 구매 방식과 통신 요금제를 분리해서 보면 어떤 조합이 내 사용량에 맞는지 훨씬 명확해집니다.</p>
+
+        <h2>Q2. 2년 총비용에는 어떤 항목을 넣어야 하나요?</h2>
+        <p>2년 총비용에는 실제 단말기값과 24개월 통신요금, 할부수수료, 유심비, 의무 유지비를 모두 넣어야 합니다. 사은품이나 카드 할인은 조건을 지킬 수 있을 때만 차감합니다.</p>
+        <div class="table-scroll">
+          <table>
+            <thead>
+              <tr>
+                <th>비용 항목</th>
+                <th>계산할 금액</th>
+                <th>놓치기 쉬운 조건</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>단말기</td>
+                <td>출고가가 아닌 쿠폰·지원금 반영 후 실제 부담액</td>
+                <td>선납금과 할부원금이 나뉘어 있는지 확인</td>
+              </tr>
+              <tr>
+                <td>통신요금</td>
+                <td>할인 적용 후 월정액 × 실제 이용 개월 수</td>
+                <td>초기 고가 요금제 유지 기간과 할인 종료 시점</td>
+              </tr>
+              <tr>
+                <td>부대비용</td>
+                <td>할부수수료, 유심·eSIM, 배송비, 가입 부대비용</td>
+                <td>월 청구액에 포함되어 눈에 잘 띄지 않을 수 있음</td>
+              </tr>
+              <tr>
+                <td>의무 조건</td>
+                <td>필수 부가서비스와 결합을 유지하는 동안의 비용</td>
+                <td>무료 기간이 끝난 뒤 자동 유료 전환되는지 확인</td>
+              </tr>
+              <tr>
+                <td>혜택</td>
+                <td>조건이 확정된 즉시 할인, 쿠폰, 현금성 혜택</td>
+                <td>전월 실적이 필요한 카드 할인은 별도 표시</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="note-box">
+          <p><strong>기본 계산식</strong></p>
+          <p>24개월 총비용 = 단말기 실제 부담액 + 구간별 통신요금 + 할부수수료·유심비·의무 유지비 - 확정된 일회성 혜택</p>
+        </div>
+
+        <h2>Q3. 자급제폰 2년 총비용은 어떻게 계산하나요?</h2>
+        <p>자급제폰 총비용은 실제 단말기 결제액에 24개월 요금과 유심비 등 부대비용을 더해 계산합니다. 제조사 출고가가 아니라 결제 화면에서 실제로 지불한 금액을 써야 합니다.</p>
+        <p>예를 들어 단말기 결제액이 1,000,000원이고 월 35,000원 요금제를 24개월 쓰며 유심비가 8,800원이라면 총액은 1,848,800원입니다. 무이자 할부라면 수수료는 0원이지만, 유이자 할부나 리볼빙을 이용한다면 이자도 반드시 더해야 합니다.</p>
+        <p>자급제폰은 특정 요금제와 묶이지 않으므로 요금제를 바꾸기 쉽다는 장점이 있습니다. 다만 할인 프로모션이 몇 개월 뒤 끝나는 요금제라면 프로모션 구간과 정상가 구간을 따로 곱해야 정확합니다.</p>
+
+        <h2>Q4. 통신사 약정 2년 총비용은 어떻게 계산하나요?</h2>
+        <p>통신사 약정 총비용은 지원금 차감 후 단말기값과 구간별 요금, 할부수수료, 의무 유지비를 합산합니다. 매장 안내표의 월 납부액만 24배 하면 선납금이나 할인 종료 후 금액이 빠질 수 있습니다.</p>
+        <p>단말기 지원금을 받았다면 출고가에서 확정 지원금을 뺀 단말기 부담액을 적습니다. 선택약정을 택했다면 단말기 지원금 대신 실제 적용되는 월 요금 할인액을 각 달에 반영합니다. 2026년 7월 스마트초이스 안내는 선택약정을 월정액의 25% 할인으로 설명하지만, 대상 단말기와 가입 조건은 신청 시점에 다시 확인해야 합니다.</p>
+        <p>고가 요금제나 부가서비스를 일정 기간 유지해야 하는 계약이라면 유지 전후를 나눕니다. 예를 들어 69,000원 요금제를 6개월, 55,000원 요금제를 18개월 쓴다면 통신요금은 69,000원 × 6 + 55,000원 × 18로 계산합니다.</p>
+
+        <h2>Q5. 같은 조건으로 비교하는 예시는 어떻게 되나요?</h2>
+        <p>같은 모델과 데이터 사용량을 정한 뒤 세 가지 조합의 24개월 총액을 표에 나란히 놓으면 됩니다. 아래 금액은 계산 방법을 보여 주기 위한 가상 예시이며 실제 판매 조건이 아닙니다.</p>
+        <div class="table-scroll">
+          <table>
+            <thead>
+              <tr>
+                <th>가상 비교 항목</th>
+                <th>자급제 + 알뜰폰</th>
+                <th>통신사 지원금 약정</th>
+                <th>통신사 선택약정</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>단말기 실제 부담액</td>
+                <td>1,000,000원</td>
+                <td>750,000원</td>
+                <td>1,100,000원</td>
+              </tr>
+              <tr>
+                <td>24개월 통신요금</td>
+                <td>35,000원 × 24 = 840,000원</td>
+                <td>69,000원 × 6 + 55,000원 × 18 = 1,404,000원</td>
+                <td>55,000원 × 75% × 24 = 990,000원</td>
+              </tr>
+              <tr>
+                <td>부대비용</td>
+                <td>유심비 8,800원</td>
+                <td>할부수수료·부가서비스 60,000원</td>
+                <td>할부수수료 40,000원</td>
+              </tr>
+              <tr>
+                <td><strong>2년 총비용</strong></td>
+                <td><strong>1,848,800원</strong></td>
+                <td><strong>2,214,000원</strong></td>
+                <td><strong>2,130,000원</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>이 예시에서는 자급제 조합의 총액이 작지만 모든 경우에 같은 결론이 나오는 것은 아닙니다. 단말기 지원금이 크거나 결합 할인을 유지해야 하는 가정이라면 통신사 약정의 결과가 달라질 수 있습니다. 자신의 견적서 숫자로 표를 다시 채우는 과정이 핵심입니다.</p>
+
+        <h2>Q6. 지원금과 선택약정은 어떻게 비교하나요?</h2>
+        <p>지원금과 선택약정은 함께 받는 혜택이 아니므로, 각각의 24개월 절감액을 따로 계산해 큰 쪽을 비교합니다. 스마트초이스에서도 단말기 지원금과 선택약정 할인을 한 가지 선택지로 비교하도록 안내합니다.</p>
+        <p>선택약정 예상 할인액은 할인 대상 월정액 × 25% × 적용 개월 수로 먼저 계산할 수 있습니다. 요금제를 낮출 계획이라면 낮아진 월정액 구간도 따로 계산해야 합니다. 단말기 지원금은 모델, 통신사, 요금제, 시점에 따라 바뀔 수 있으므로 계약 당일 금액을 사용하세요.</p>
+        <p><a href="https://www.smartchoice.or.kr/smc/mobile/dantongList.do" target="_blank" rel="noopener">스마트초이스 단말기 지원금 조회</a>에서 공개 정보를 참고할 수 있지만, 할부수수료와 유심비 같은 부대비용은 별도로 더해야 합니다. 판매점 자체 혜택도 지급 시점과 유지 조건이 문서에 적혀 있는지 확인하는 편이 안전합니다.</p>
+
+        <h2>Q7. 월 납부액만 보면 왜 실제 비용이 달라지나요?</h2>
+        <p>월 납부액은 선수금, 할부기간, 할인 종료 시점에 따라 작아 보일 수 있어 총비용을 그대로 보여주지 않습니다. 특히 24개월 비교인데 단말기 할부를 36개월로 표시하면 처음 2년의 월 부담은 낮아도 할부금이 남습니다.</p>
+        <p>카드 할인도 같은 원리입니다. 원래 쓰던 카드에서 자연스럽게 실적을 채우는 경우와 할인 때문에 소비를 늘리는 경우는 실제 절약액이 다릅니다. 가족 결합이 깨져 다른 회선의 요금이 오르는 경우에는 그 증가분도 새 선택의 비용에 포함해야 합니다.</p>
+        <p>중도 해지 가능성이 있다면 24개월 완주 기준 표와 12개월 해지 기준 표를 따로 만들어 보세요. 약정 할인 반환금과 남은 단말기 할부금은 가입 형태에 따라 달라질 수 있으므로 계약서와 통신사 안내를 기준으로 계산해야 합니다.</p>
+
+        <h2>Q8. 계약 전에 무엇을 확인해야 하나요?</h2>
+        <p>계약 전에는 할인 조건과 유지 기간, 위약금, 할부수수료, 결합 변화까지 문서로 확인해야 합니다. 구두 안내와 신청서 숫자가 다르면 신청서와 최종 결제 화면을 기준으로 다시 질문하세요.</p>
+        <div class="check-list">
+          <ol>
+            <li>같은 단말기 모델과 저장용량으로 견적을 맞춥니다.</li>
+            <li>내 데이터 사용량에 맞는 요금제끼리 비교합니다.</li>
+            <li>단말기 출고가, 선납금, 할부원금, 할부수수료를 나누어 적습니다.</li>
+            <li>요금제와 부가서비스의 의무 유지 기간을 월별로 표시합니다.</li>
+            <li>지원금과 선택약정 할인액을 각각 24개월 기준으로 계산합니다.</li>
+            <li>가족·인터넷 결합이 바뀌며 늘어나는 다른 회선 비용을 더합니다.</li>
+            <li>카드 실적, 반납, 보상판매처럼 조건부인 혜택은 별도 줄에 둡니다.</li>
+            <li>최종 총액과 12개월 중도 해지 예상액을 함께 저장합니다.</li>
+          </ol>
+        </div>
+        <p>구매처의 차이를 먼저 이해하고 싶다면 <a href="/blog/best-phone-buying-site/">핸드폰 살 땐 어디가 좋나요?</a>를 참고하세요. 알뜰폰으로 번호를 옮길 계획이라면 <a href="/blog/mvno-number-transfer-guide/">알뜰폰 번호이동 단계별 절차</a>도 함께 보면 좋습니다. 전체 글은 <a href="/blog/">동네방네 블로그</a>에서 확인할 수 있습니다.</p>
+
+        <div class="divider"></div>
+
+        <h2>자주 묻는 질문</h2>
+
+        <div class="faq-item">
+          <h3>Q. 자급제폰은 무조건 알뜰폰 요금제만 써야 하나요?</h3>
+          <p>자급제폰은 단말기 구매 방식이므로 알뜰폰뿐 아니라 이동통신 3사 요금제에도 가입할 수 있습니다. 선택약정 대상 여부와 요금제 조건을 확인한 뒤 원하는 통신사를 고르면 됩니다.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Q. 통신사에서 지원금과 선택약정을 동시에 받을 수 있나요?</h3>
+          <p>스마트초이스 안내 기준으로 단말기 지원금과 선택약정 할인은 둘 중 하나를 비교해 선택하는 혜택입니다. 실제 가입 시점의 지원금과 요금 할인 총액을 각각 계산해야 합니다.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Q. 카드 할인도 2년 총비용에서 빼도 되나요?</h3>
+          <p>평소 소비만으로 전월 실적을 계속 충족할 수 있다면 별도 항목으로 표시해 비교할 수 있습니다. 추가 소비가 필요한 할인이라면 통신비 절감액만 빼지 말고 늘어나는 카드 사용액도 함께 봐야 합니다.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Q. 할부원금이 단말기 실구매가와 같은 뜻인가요?</h3>
+          <p>할부원금은 할부로 나누어 내는 단말기 원금이며 할부수수료가 빠져 있을 수 있습니다. 현금 선납금이나 별도 혜택까지 반영한 실제 부담액과는 다를 수 있으므로 계약서 항목을 나누어 확인해야 합니다.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Q. 중간에 요금제를 바꾸면 계산은 어떻게 하나요?</h3>
+          <p>요금제별 이용 개월 수를 나누어 각각 곱한 뒤 합산하면 됩니다. 예를 들어 6개월은 69,000원, 18개월은 55,000원이라면 두 구간의 요금을 따로 계산합니다.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Q. 24개월 뒤 중고 판매가격도 포함해야 하나요?</h3>
+          <p>두 선택지에서 같은 모델과 같은 상태를 가정한다면 중고 판매가격은 비교 결과에 큰 차이를 만들지 않을 수 있습니다. 모델이나 보상판매 조건이 다르면 예상 판매가를 별도 줄에 적되 확정 금액처럼 빼지는 않는 편이 안전합니다.</p>
+        </div>
+
+        <h2>참고할 공식 사이트</h2>
+        <div class="source-list">
+          <ul>
+            <li><a href="https://www.smartchoice.or.kr/smc/service/danpageNew.do" target="_blank" rel="noopener">스마트초이스 선택약정할인 안내</a>: 신청 대상과 지원금·요금할인 비교 정보</li>
+            <li><a href="https://www.smartchoice.or.kr/smc/mobile/dantongList.do" target="_blank" rel="noopener">스마트초이스 단말기 지원금 조회</a>: 통신사별 공개 지원금과 월 납부액 계산 참고</li>
+            <li><a href="https://www.wiseuser.go.kr/" target="_blank" rel="noopener">방송통신이용자정보포털</a>: 통신서비스 계약과 이용자 피해 예방 정보</li>
+          </ul>
+        </div>
+
+        <h2>마무리</h2>
+        <p>자급제폰과 통신사 약정 중 하나가 언제나 더 저렴한 것은 아닙니다. 단말기 실구매가, 24개월 통신요금, 유지 조건, 부대비용을 같은 표에 넣어야 내 상황의 답이 나옵니다.</p>
+        <p>동네방네에서 핸드폰과 요금제를 비교할 때도 월 납부액보다 2년 총비용을 먼저 보세요. 2026년 7월 기준 제도와 할인 조건은 바뀔 수 있으므로 최종 계약 전에는 공식 안내와 신청서를 다시 확인해야 합니다.</p>
+
+        <div class="brand-cta">
+          자급제폰, 오픈박스폰, 알뜰폰 요금제까지 한 번에 비교하고 싶다면<br />
+          핸드폰 살 땐 동네방네 <a href="https://dnbn.co.kr/" target="_blank" rel="noopener">dnbn.co.kr</a>
+        </div>
+      </article>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">핸드폰 살 땐 동네방네 dnbn.co.kr</div>
+    </footer>
+  </body>
+</html>
