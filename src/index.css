@@ -1,5 +1,24 @@
+:root {
+  /* 상단 헤더 높이에 맞춘 앵커 여백 (모바일은 로고 전용 바라 더 낮다) */
+  --section-scroll-margin: 76px;
+  /* 모바일 하단 탭바 높이 (safe-area 제외한 실제 바 높이) */
+  --bottom-nav-height: 60px;
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --section-scroll-margin: 96px;
+  }
+}
+
 html {
   scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }
 
 body {
@@ -10,6 +29,16 @@ body {
   color: #030712;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* 한글은 어절 단위로 끊어야 "솔루/션"처럼 단어 중간에서 깨지지 않는다 */
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+/* 하단 고정 탭바가 페이지 마지막 콘텐츠를 가리지 않도록 확보 */
+@media (max-width: 1023px) {
+  body {
+    padding-bottom: calc(var(--bottom-nav-height) + env(safe-area-inset-bottom, 0px));
+  }
 }
 
 #mission-1.hide {

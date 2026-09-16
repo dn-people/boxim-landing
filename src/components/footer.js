@@ -1,7 +1,7 @@
 const Footer = () => (
   <footer className="bg-gray-950 text-gray-300">
     <div className="container mx-auto flex flex-col gap-5 px-6 py-10 lg:px-12">
-      <nav aria-label="하단 메뉴" className="flex flex-wrap gap-x-5 gap-y-3">
+      <nav aria-label="하단 메뉴" className="-my-2 flex flex-wrap gap-x-5 gap-y-0 [&>a]:flex [&>a]:min-h-11 [&>a]:items-center">
         <a href="/" className="font-bold text-white">
           동네방네팀
         </a>

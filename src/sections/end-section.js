@@ -8,7 +8,7 @@ const EndSection = ({ sectionRef }) => (
   <section
     id="end-section"
     ref={sectionRef}
-    className="w-full min-h-screen flex flex-col justify-center relative overflow-hidden"
+    className="w-full min-h-[100svh] flex flex-col justify-center relative overflow-hidden"
   >
     <motion.div
       style={{ backgroundImage: "url(./end.jpeg)" }}
@@ -19,7 +19,7 @@ const EndSection = ({ sectionRef }) => (
     />
     <div
       id="end-container"
-      className="container mx-auto flex flex-col items-center p-6 lg:p-12 gap-3 lg:gap-6 justify-center text-white font-bold"
+      className="container mx-auto flex flex-col items-center px-6 py-20 lg:p-12 gap-6 lg:gap-6 justify-center text-white font-bold"
     >
       <Text.SectionTitle
         initial={{ y: 50 }}
@@ -32,6 +32,7 @@ const EndSection = ({ sectionRef }) => (
         통신비 SAVE 하자
       </Text.SectionTitle>
       <Button
+        className="w-full sm:w-auto"
         initial={{ y: 50, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5, delay: 0.3 }}

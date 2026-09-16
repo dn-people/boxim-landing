@@ -8,12 +8,12 @@ const WhySection = ({ sectionRef }) => (
   <section
     id="why-section"
     ref={sectionRef}
-    className="w-full min-h-screen flex flex-col justify-center bg-gray-100"
+    className="w-full min-h-[100svh] flex flex-col justify-center bg-gray-100"
     style={SECTION_SCROLL_MARGIN}
   >
     <div
       id="why-container"
-      className="container mx-auto flex flex-col px-6 lg:px-12 py-16 lg:py-24 justify-center gap-12 lg:gap-24"
+      className="container mx-auto flex flex-col px-6 lg:px-12 py-20 lg:py-24 justify-center gap-10 lg:gap-24"
     >
       <Text.SectionTitle
         initial={{ y: 50, opacity: 0 }}
@@ -24,11 +24,11 @@ const WhySection = ({ sectionRef }) => (
         <br />
         저렴하고, 간편하고, 쉬울까요?
       </Text.SectionTitle>
-      <div className="flex flex-col lg:flex-row gap-6">
+      <div className="flex flex-col lg:flex-row gap-4 lg:gap-6">
         {whyCards.map((card, index) => (
           <motion.div
             key={card.title}
-            className="lg:flex-1 flex flex-col gap-6 p-6 rounded-[12px] bg-white"
+            className="lg:flex-1 flex flex-col gap-4 lg:gap-6 p-5 lg:p-6 rounded-[12px] bg-white"
             initial={{ y: 50, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             transition={{
@@ -39,7 +39,7 @@ const WhySection = ({ sectionRef }) => (
           >
             <div
               style={{ backgroundImage: `url(${card.image})` }}
-              className={`h-48 rounded-[12px] bg-gray-100 bg-no-repeat ${card.imagePosition} bg-contain`}
+              className={`h-36 lg:h-48 rounded-[12px] bg-gray-100 bg-no-repeat ${card.imagePosition} bg-contain`}
             />
             <Text.Header3>{card.title}</Text.Header3>
             <Text.Header5 className="font-normal">{card.body}</Text.Header5>
