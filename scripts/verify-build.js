@@ -27,7 +27,7 @@ if (blogSlugs.length === 0) fail("no blog article slugs discovered");
 const mustExist = [
   "index.html", "CNAME", "robots.txt", "sitemap.xml", "rss.xml",
   "blog/index.html", "blog/best-phone-buying-site/index.html",
-  "hero.jpeg", "end.jpeg", "history.jpeg", "dnbn-wallpaper.jpeg", "ogImage.jpg",
+  "hero.jpeg", "end.jpeg", "history.jpeg", "dnbn-wallpaper.jpeg", "og-image-dnbn.jpg",
   "intro-1.jpeg", "intro-2.jpeg", "intro-3.jpeg",
   "mission-1.png", "mission-2.png", "why-1.png", "why-2.png", "why-3.png",
   "icon-phone.png", "icon-box.png", "icon-tablet.png", "icon-watch.png",
