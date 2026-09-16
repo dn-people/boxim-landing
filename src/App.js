@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 
+import BottomNav from "./components/bottom-nav";
 import Header from "./components/header";
 import Footer from "./components/footer";
 import useActiveSection from "./hooks/use-active-section";
@@ -15,23 +16,22 @@ import ReviewSection from "./sections/review-section";
 import TypeSection from "./sections/type-section";
 import WhySection from "./sections/why-section";
 
+// 미션 섹션은 300vh 안에서 sticky로 고정되므로, 고정 구간의 약 40% 지점에서 첫 카드를 걷어낸다.
+const MISSION_REVEAL_RATIO = 0.8;
+
 const App = () => {
-  const [screen, setScreen] = useState(0);
+  const [viewportHeight, setViewportHeight] = useState(0);
   const [scroll, setScroll] = useState(0);
 
-  const { section, refs } = useActiveSection(scroll);
+  const { section, refs } = useActiveSection();
 
-  const mission1Hide = scroll > 4 * screen;
+  const missionTop = refs.mission.current?.offsetTop;
+  const mission1Hide =
+    missionTop !== undefined &&
+    scroll > missionTop + viewportHeight * MISSION_REVEAL_RATIO;
 
-  const onUpdateScreen = () => {
-    const height = window.innerHeight;
-    if (height < 640) {
-      setScreen(640);
-    } else if (height > 800) {
-      setScreen(800);
-    } else {
-      setScreen(height);
-    }
+  const onUpdateViewport = () => {
+    setViewportHeight(window.innerHeight);
   };
 
   const onUpdateScroll = () => {
@@ -39,13 +39,13 @@ const App = () => {
   };
 
   useEffect(() => {
-    onUpdateScreen();
+    onUpdateViewport();
     onUpdateScroll();
-    window.addEventListener("resize", onUpdateScreen);
-    window.addEventListener("scroll", onUpdateScroll);
+    window.addEventListener("resize", onUpdateViewport);
+    window.addEventListener("scroll", onUpdateScroll, { passive: true });
 
     return () => {
-      window.removeEventListener("resize", onUpdateScreen);
+      window.removeEventListener("resize", onUpdateViewport);
       window.removeEventListener("scroll", onUpdateScroll);
     };
   }, []);
@@ -63,10 +63,11 @@ const App = () => {
         <DnbnSection sectionRef={refs.dnbn} />
         <HistorySection sectionRef={refs.history} />
         <ReviewSection sectionRef={refs.review} />
-        <GuideSection />
+        <GuideSection sectionRef={refs.guide} />
         <EndSection sectionRef={refs.end} />
       </main>
       <Footer />
+      <BottomNav section={section} />
     </>
   );
 };

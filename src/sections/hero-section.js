@@ -20,7 +20,7 @@ const HeroSection = () => {
   return (
     <section
       id="hero-section"
-      className="w-full min-h-screen flex flex-col justify-center relative overflow-hidden"
+      className="w-full min-h-[100svh] flex flex-col justify-center relative overflow-hidden"
     >
       <motion.div
         style={{ backgroundImage: "url(./hero.jpeg)" }}
@@ -31,16 +31,17 @@ const HeroSection = () => {
       />
       <div
         id="hero-container"
-        className="container mx-auto flex flex-col p-6 lg:p-12 gap-6 lg:gap-12 justify-center text-white font-bold"
+        className="container mx-auto flex flex-col px-6 py-20 lg:p-12 gap-8 lg:gap-12 justify-center text-white font-bold"
       >
-        <div className="flex max-w-3xl flex-col gap-6">
+        <div className="flex max-w-3xl flex-col gap-5 lg:gap-6">
           <Text.Header1
             className="flex flex-col"
             initial={{ y: 50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.5, ease: "easeInOut", delay: 0.2 }}
           >
-            <span className="relative block h-14 w-full overflow-hidden">
+            {/* 회전하는 줄의 높이는 각 브레이크포인트의 line-height와 같아야 줄 간격이 튀지 않는다 */}
+            <span className="relative block h-10 sm:h-11 lg:h-14 w-full overflow-hidden">
               <AnimatePresence>
                 <motion.span
                   key={heroTitles[heroTitle - 1].key}
@@ -58,7 +59,7 @@ const HeroSection = () => {
           </Text.Header1>
           <Text.Body1
             id="aeo-answer"
-            className="max-w-2xl text-[17px] leading-7 font-normal text-white/90 lg:text-[19px] lg:leading-8"
+            className="max-w-2xl text-[16px]! leading-[26px]! font-normal text-white/90 sm:text-[17px]! sm:leading-7! lg:text-[19px]! lg:leading-8!"
             initial={{ y: 50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.4 }}
@@ -71,6 +72,7 @@ const HeroSection = () => {
         </div>
         <div>
           <Button
+            className="w-full sm:w-auto"
             initial={{ y: 50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.5 }}

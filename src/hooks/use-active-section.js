@@ -1,10 +1,12 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { useInView } from "motion/react";
 
 import { SECTION_IN_VIEW_MARGIN } from "../constants";
 
-const useActiveSection = (scroll) => {
-  const [section, setSection] = useState(null);
+// 관찰 결과(IntersectionObserver)는 스크롤 이벤트와 별개로 갱신되므로,
+// 스크롤량이 아니라 in-view 플래그 자체를 의존성으로 삼아야 앵커 점프에도 활성 섹션이 따라온다.
+const useActiveSection = () => {
+  const [section, setSection] = useState("hero");
 
   const introSectionRef = useRef(null);
   const isIntroSection = useInView(introSectionRef, {
@@ -38,6 +40,10 @@ const useActiveSection = (scroll) => {
   const isReviewSection = useInView(reviewSectionRef, {
     margin: SECTION_IN_VIEW_MARGIN,
   });
+  const guideSectionRef = useRef(null);
+  const isGuideSection = useInView(guideSectionRef, {
+    margin: SECTION_IN_VIEW_MARGIN,
+  });
   const endSectionRef = useRef(null);
   const isEndSection = useInView(endSectionRef, {
     margin: SECTION_IN_VIEW_MARGIN,
@@ -46,6 +52,8 @@ const useActiveSection = (scroll) => {
   useEffect(() => {
     if (isEndSection) {
       setSection("end");
+    } else if (isGuideSection) {
+      setSection("guide");
     } else if (isReviewSection) {
       setSection("review");
     } else if (isHistorySection) {
@@ -65,12 +73,21 @@ const useActiveSection = (scroll) => {
     } else {
       setSection("hero");
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [scroll]);
+  }, [
+    isEndSection,
+    isGuideSection,
+    isReviewSection,
+    isHistorySection,
+    isDnbnSection,
+    isTypeSection,
+    isWhySection,
+    isMissionSection,
+    isConceptSection,
+    isIntroSection,
+  ]);
 
-  return {
-    section,
-    refs: {
+  const refs = useMemo(
+    () => ({
       intro: introSectionRef,
       concept: conceptSectionRef,
       mission: missionSectionRef,
@@ -79,9 +96,13 @@ const useActiveSection = (scroll) => {
       dnbn: dnbnSectionRef,
       history: historySectionRef,
       review: reviewSectionRef,
+      guide: guideSectionRef,
       end: endSectionRef,
-    },
-  };
+    }),
+    [],
+  );
+
+  return { section, refs };
 };
 
 export default useActiveSection;

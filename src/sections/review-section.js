@@ -10,12 +10,12 @@ const ReviewSection = ({ sectionRef }) => (
     id="review-section"
     ref={sectionRef}
     style={SECTION_SCROLL_MARGIN}
-    className="w-full min-h-screen flex bg-gray-100"
+    className="w-full min-h-[100svh] flex bg-gray-100"
   >
     <div className="w-full flex flex-col justify-center overflow-hidden">
       <div
         id="review-container"
-        className="container mx-auto flex flex-col px-6 lg:px-12 py-16 lg:py-24 justify-center gap-12 lg:gap-24 overflow-visible"
+        className="container mx-auto flex flex-col px-6 lg:px-12 py-20 lg:py-24 justify-center gap-8 lg:gap-24 overflow-visible"
       >
         <Text.SectionTitle
           initial={{ y: 50, opacity: 0 }}
@@ -26,13 +26,17 @@ const ReviewSection = ({ sectionRef }) => (
           <br />
           실제 후기
         </Text.SectionTitle>
-        <Marquee style={{ height: "360px", overflow: "visible" }}>
+        <Marquee
+          className="h-[280px] lg:h-[360px]"
+          style={{ overflow: "visible" }}
+        >
           {reviewDataRow1.map((data) => (
             <ReviewCard key={data.name} {...data} />
           ))}
         </Marquee>
         <Marquee
-          style={{ height: "360px", overflow: "visible" }}
+          className="h-[280px] lg:h-[360px]"
+          style={{ overflow: "visible" }}
           direction="right"
         >
           {reviewDataRow2.map((data) => (

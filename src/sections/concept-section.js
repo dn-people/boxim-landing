@@ -8,12 +8,12 @@ const ConceptSection = ({ sectionRef }) => (
   <section
     id="concept-section"
     ref={sectionRef}
-    className="w-full min-h-160 h-screen max-h-200 bg-gray-100"
+    className="w-full min-h-[100svh] flex flex-col justify-center bg-gray-100"
     style={SECTION_SCROLL_MARGIN}
   >
     <div
       id="concept-container"
-      className="container mx-auto h-full flex flex-col p-6 lg:p-12 justify-center gap-12 lg:gap-24"
+      className="container mx-auto flex flex-col px-6 py-20 lg:p-12 justify-center gap-10 lg:gap-24"
     >
       <Text.SectionTitle
         initial={{ y: 50, opacity: 0 }}
@@ -24,19 +24,19 @@ const ConceptSection = ({ sectionRef }) => (
         <br />
         현명한 통신생활 3대 원칙
       </Text.SectionTitle>
-      <div className="flex flex-col gap-6">
+      <div className="flex flex-col gap-4 lg:gap-6">
         {conceptPrinciples.map((principle, index) => (
           <motion.div
             key={principle.title}
-            className="flex items-center gap-6 p-6 rounded-[12px] bg-white"
+            className="flex items-start gap-4 lg:gap-6 p-5 lg:p-6 rounded-[12px] bg-white"
             initial={{ y: 50, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.5, ease: "easeInOut" }}
           >
-            <div className="flex-none flex items-center justify-center w-8 h-8 rounded-[4px] bg-blue-100 font-bold text-blue-500">
+            <div className="flex-none flex items-center justify-center w-8 h-8 rounded-[8px] bg-blue-100 font-bold text-blue-500">
               <Text.Body1>{index + 1}</Text.Body1>
             </div>
-            <div className="flex-1 flex flex-col">
+            <div className="flex-1 flex flex-col gap-1">
               <Text.Header5>{principle.title}</Text.Header5>
               {principle.note && (
                 <Text.Body3 className="text-gray-500">

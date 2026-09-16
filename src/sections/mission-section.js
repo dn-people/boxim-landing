@@ -5,12 +5,12 @@ const MissionSection = ({ sectionRef, mission1Hide }) => (
   <section
     id="mission-section"
     ref={sectionRef}
-    className="w-full min-h-480 h-[300vh] bg-white"
+    className="w-full h-[300svh] bg-white"
     style={SECTION_SCROLL_MARGIN}
   >
     <div
       id="mission-container"
-      className="container mx-auto min-h-160 h-screen flex flex-col p-6 lg:p-12 justify-center gap-12 lg:gap-24 sticky top-0"
+      className="container mx-auto h-[100svh] flex flex-col px-6 py-20 lg:p-12 justify-center gap-8 lg:gap-24 sticky top-0"
     >
       <Text.SectionTitle
         initial={{ y: 50, opacity: 0 }}
@@ -23,14 +23,14 @@ const MissionSection = ({ sectionRef, mission1Hide }) => (
           통신 시장의 현실을 바꿀 수 있을까요?
         </span>
       </Text.SectionTitle>
-      <div className="w-full h-120 relative">
+      <div className="w-full h-[380px] sm:h-[440px] lg:h-120 relative">
         <div
           id="mission-1"
           className={`absolute top-0 left-0 right-0 bottom-0 bg-gray-100 z-2 flex flex-col lg:items-center justify-center lg:flex-row rounded-[16px] transition-all duration-500 ${
             mission1Hide ? "hide" : ""
           }`}
         >
-          <div className="lg:flex-1 flex flex-col justify-center items-center gap-2 lg:gap-3 p-12 ">
+          <div className="lg:flex-1 flex flex-col justify-center items-center gap-2 lg:gap-3 p-6 lg:p-12">
             <Text.Header3 className="text-center">
               어차피 알려줘도 아무도 안해요.
             </Text.Header3>
@@ -48,7 +48,7 @@ const MissionSection = ({ sectionRef, mission1Hide }) => (
           id="mission-2"
           className="absolute top-0 left-0 right-0 bottom-0 bg-gray-100 z-1 flex flex-col lg:items-center justify-center lg:flex-row rounded-[16px]"
         >
-          <div className="flex-1 flex flex-col justify-center items-center gap-2 lg:gap-3 p-6 lg:p-12 ">
+          <div className="flex-1 flex flex-col justify-center items-center gap-2 lg:gap-3 p-6 lg:p-12">
             <Text.Header3 className="text-center">
               왜 그럴까요?
             </Text.Header3>
