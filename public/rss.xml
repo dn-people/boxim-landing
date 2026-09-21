@@ -5,8 +5,15 @@
     <link>https://dn-people.com/blog/</link>
     <description>스마트폰 구매, 요금제, 번호이동을 이해하기 쉽게 설명하는 동네방네 공식 가이드</description>
     <language>ko-KR</language>
-    <lastBuildDate>Fri, 18 Sep 2026 09:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 21 Sep 2026 09:00:00 +0900</lastBuildDate>
     <atom:link href="https://dn-people.com/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>갤럭시 AI 사용 전 개인정보 설정 확인 순서</title>
+      <link>https://dn-people.com/blog/galaxy-ai-privacy-settings/</link>
+      <guid isPermaLink="true">https://dn-people.com/blog/galaxy-ai-privacy-settings/</guid>
+      <description>갤럭시 AI를 켜기 전 데이터 처리 방식, 앱 권한, 지원 범위와 입력 내용을 확인하는 개인정보 설정 순서입니다. 핸드폰 살 땐 동네방네 dnbn.co.kr</description>
+      <pubDate>Mon, 21 Sep 2026 09:00:00 +0900</pubDate>
+    </item>
     <item>
       <title>휴대폰 불공정 판매 신고 전 준비할 증빙 5가지</title>
       <link>https://dn-people.com/blog/mobile-unfair-sales-report/</link>
