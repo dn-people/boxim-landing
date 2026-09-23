@@ -5,8 +5,15 @@
     <link>https://dn-people.com/blog/</link>
     <description>스마트폰 구매, 요금제, 번호이동을 이해하기 쉽게 설명하는 동네방네 공식 가이드</description>
     <language>ko-KR</language>
-    <lastBuildDate>Tue, 22 Sep 2026 09:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 23 Sep 2026 09:00:00 +0900</lastBuildDate>
     <atom:link href="https://dn-people.com/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>LLM 3사와 글로벌 AI 정책, 어떻게 비교할까?</title>
+      <link>https://dn-people.com/blog/global-llm-policy-guide/</link>
+      <guid isPermaLink="true">https://dn-people.com/blog/global-llm-policy-guide/</guid>
+      <description>GPT-6 Astra와 Claude Fable 5.1, Gemini 4 발표 여부를 확인하고 주요 LLM사와 국가별 AI 정책을 비교합니다. 동네방네 dnbn.co.kr</description>
+      <pubDate>Wed, 23 Sep 2026 09:00:00 +0900</pubDate>
+    </item>
     <item>
       <title>휴대폰 유료 부가서비스 청구, 확인·해지 전 순서</title>
       <link>https://dn-people.com/blog/mobile-addon-charge-check/</link>
