@@ -7,6 +7,7 @@
 ## 발행됨
 | 날짜 | slug | 제목 | 타깃 키워드 | 검색 의도 | 카테고리 |
 |---|---|---|---|---|---|
+| 2026-09-23 | global-llm-policy-guide | GPT-6 Astra·Claude Fable·Gemini 4, LLM 시장과 정책 비교 | GPT-6 Astra Claude Fable Gemini 4, LLM 시장 정책 | 공식 발표 구분·대표 LLM사 비교·국가별 AI 정책과 업무용 선택 기준 | buying-guides |
 | 2026-09-22 | mobile-addon-charge-check | 휴대폰 유료 부가서비스 청구, 확인·해지 전 순서 | 휴대폰 유료 부가서비스 청구, 부가서비스 해지 확인 | 낯선 청구 항목의 가입·해지 조건 확인과 이의제기 증빙 정리 | carrier-issues |
 | 2026-09-21 | galaxy-ai-privacy-settings | 갤럭시 AI 사용 전 개인정보 설정 확인 순서 | 갤럭시 AI 개인정보 설정, 갤럭시 AI 보안 설정 | AI 기능 사용 전 데이터 처리 방식·앱 권한·입력 정보 점검 | it-tech |
 | 2026-09-18 | mobile-unfair-sales-report | 휴대폰 불공정 판매 신고 전 준비할 증빙 5가지 | 휴대폰 불공정 판매 신고, 휴대폰 판매점 신고 | 개통 뒤 고지 누락·강요 의심 시 신고 범위와 증빙 정리 | carrier-issues |
