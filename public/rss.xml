@@ -5,8 +5,15 @@
     <link>https://dn-people.com/blog/</link>
     <description>스마트폰 구매, 요금제, 번호이동을 이해하기 쉽게 설명하는 동네방네 공식 가이드</description>
     <language>ko-KR</language>
-    <lastBuildDate>Wed, 23 Sep 2026 09:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 28 Sep 2026 09:00:00 +0900</lastBuildDate>
     <atom:link href="https://dn-people.com/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>공기청정기 렌탈 총비용 확인 기준 6가지</title>
+      <link>https://dn-people.com/blog/air-purifier-rental-cost/</link>
+      <guid isPermaLink="true">https://dn-people.com/blog/air-purifier-rental-cost/</guid>
+      <description>공기청정기 렌탈은 월 요금만 보지 말고 계약기간, 관리 방식, 필터, A/S, 소유권과 해지 조건을 같은 기준으로 확인해야 합니다. 동네방네 dnbn.co.kr</description>
+      <pubDate>Mon, 28 Sep 2026 09:00:00 +0900</pubDate>
+    </item>
     <item>
       <title>LLM 3사와 글로벌 AI 정책, 어떻게 비교할까?</title>
       <link>https://dn-people.com/blog/global-llm-policy-guide/</link>
