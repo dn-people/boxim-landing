@@ -7,6 +7,7 @@
 ## 발행됨
 | 날짜 | slug | 제목 | 타깃 키워드 | 검색 의도 | 카테고리 |
 |---|---|---|---|---|---|
+| 2026-09-29 | air-conditioner-subscription-check | 에어컨 구독 신청 전 설치·철거 확인 순서 | 에어컨 구독 설치, 에어컨 렌탈 이전설치 | 설치공간·실외기 위치·기존 제품 철거·이전설치·관리 범위를 계약 전에 확인 | rental |
 | 2026-09-28 | air-purifier-rental-cost | 공기청정기 렌탈 총비용 확인 기준 6가지 | 공기청정기 렌탈 비용, 공기청정기 구독 총비용 | 계약기간·관리·필터·A/S·소유권을 같은 조건으로 비교 | rental |
 | 2026-09-23 | global-llm-policy-guide | GPT-6 Astra·Claude Fable·Gemini 4, LLM 시장과 정책 비교 | GPT-6 Astra Claude Fable Gemini 4, LLM 시장 정책 | 공식 발표 구분·대표 LLM사 비교·국가별 AI 정책과 업무용 선택 기준 | buying-guides |
 | 2026-09-22 | mobile-addon-charge-check | 휴대폰 유료 부가서비스 청구, 확인·해지 전 순서 | 휴대폰 유료 부가서비스 청구, 부가서비스 해지 확인 | 낯선 청구 항목의 가입·해지 조건 확인과 이의제기 증빙 정리 | carrier-issues |
