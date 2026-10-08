@@ -8,9 +8,15 @@
   </url>
   <url>
     <loc>https://dn-people.com/blog/</loc>
-    <lastmod>2026-10-07</lastmod>
+    <lastmod>2026-10-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://dn-people.com/blog/mobile-bill-dispute-prep/</loc>
+    <lastmod>2026-10-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://dn-people.com/blog/galaxy-s26-fe-comparison/</loc>
