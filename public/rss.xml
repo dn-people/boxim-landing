@@ -5,8 +5,15 @@
     <link>https://dn-people.com/blog/</link>
     <description>스마트폰 구매, 요금제, 번호이동을 이해하기 쉽게 설명하는 동네방네 공식 가이드</description>
     <language>ko-KR</language>
-    <lastBuildDate>Thu, 08 Oct 2026 09:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 12 Oct 2026 09:00:00 +0900</lastBuildDate>
     <atom:link href="https://dn-people.com/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>아이폰 앱 개인정보 보호 리포트로 접근 기록 확인하는 법</title>
+      <link>https://dn-people.com/blog/iphone-app-privacy-report/</link>
+      <guid isPermaLink="true">https://dn-people.com/blog/iphone-app-privacy-report/</guid>
+      <description>아이폰 앱 개인정보 보호 리포트에서 카메라·위치 접근 시간과 앱 네트워크 활동을 확인하고, 예상 밖 접근은 권한을 점검하는 순서를 정리했습니다. 핸드폰 살 땐 동네방네 dnbn.co.kr</description>
+      <pubDate>Mon, 12 Oct 2026 09:00:00 +0900</pubDate>
+    </item>
     <item>
       <title>휴대폰 요금 이의신청 전 청구서·계약서 정리 순서</title>
       <link>https://dn-people.com/blog/mobile-bill-dispute-prep/</link>
