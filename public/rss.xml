@@ -5,8 +5,15 @@
     <link>https://dn-people.com/blog/</link>
     <description>스마트폰 구매, 요금제, 번호이동을 이해하기 쉽게 설명하는 동네방네 공식 가이드</description>
     <language>ko-KR</language>
-    <lastBuildDate>Mon, 12 Oct 2026 09:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 13 Oct 2026 09:00:00 +0900</lastBuildDate>
     <atom:link href="https://dn-people.com/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>휴대폰 일시정지 전 요금·해제 확인 순서</title>
+      <link>https://dn-people.com/blog/mobile-line-suspension-check/</link>
+      <guid isPermaLink="true">https://dn-people.com/blog/mobile-line-suspension-check/</guid>
+      <description>휴대폰 회선 일시정지 전 정지 요금, 신청 기간, 자동 해제일, 약정기간 산입 여부를 확인하는 순서입니다. 핸드폰 살 땐 동네방네 dnbn.co.kr</description>
+      <pubDate>Tue, 13 Oct 2026 09:00:00 +0900</pubDate>
+    </item>
     <item>
       <title>갤럭시 오프라인 찾기 설정 전 확인 순서</title>
       <link>https://dn-people.com/blog/galaxy-offline-find-settings/</link>
