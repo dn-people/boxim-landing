@@ -8,6 +8,10 @@ description: Publish at most one SEO/AEO blog post for dn-people/boxim-landing f
 Publish at most one post per run. Treat `main` as the sole production source. Use a clean Codex
 Cloud checkout, dedicated worktree, or clean task branch so unrelated work cannot enter the diff.
 
+Use GPT 6.1 Sol (`gpt-6.1-sol`) with `xhigh` reasoning for the scheduled run and all create,
+evaluate, and manage passes. Generate images with the available image-generation tool; the
+Codex execution model setting does not select the image model.
+
 ## Gate the run before mutation
 
 1. Confirm the repository is `dn-people/boxim-landing` and fetch current `origin/main`.
