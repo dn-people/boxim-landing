@@ -6,6 +6,9 @@
 
 ## 0. 시작 전 필수 확인
 
+자동 발행 작업은 GPT 6.1 Sol (`gpt-6.1-sol`) 모델과 `xhigh` 추론 수준으로 실행한다.
+작성·평가·관리 패스 모두 같은 모델을 사용하며, 이미지 생성은 별도 이미지 생성 도구로 수행한다.
+
 1. `docs/blog/AUTOMATION_POLICY.json`, 현재 연도의 `docs/blog/holidays/<연도>.json`,
    `docs/blog/TOPICS.md`, `docs/blog/TEMPLATE.html`을 읽는다.
 2. `public/blog/index.html`, `public/sitemap.xml`, `public/rss.xml`의 현재 상태를 읽는다.
@@ -66,6 +69,9 @@
 - **썸네일 품질:** 썸네일은 제목의 핵심 판단 또는 행동을 한눈에 이해하게 하는 구체적 장면이어야 한다.
   관련 물체를 세 가지 이상 조합해 시각적 위계·깊이·맥락을 만들고, 단순 로고 카드·브랜드 배경·추상 도형
   만으로 끝내지 않는다. 생성 뒤에는 사람 눈으로 주제 적합성, 글자·로고·워터마크 부재, 크롭을 확인한다.
+- **본문 이미지 품질:** 실제 제품·설치 공간·관리 대상이 알아보기 쉬운 구체적 장면으로 각각 생성한다.
+  추상 도형이나 의미가 불분명한 아이콘 조합으로 대체하지 않는다. 문·선반·배관·손 등의 구조와
+  원근이 자연스러운지 확인하고, 잘못된 연결이나 사용 방법을 암시하는 장면은 다시 생성한다.
 - **canonical:** `https://dn-people.com/blog/<slug>/`을 정확히 한 번 사용하고 og:url과 일치시킨다.
 - **카테고리:** `dnbn:category` 메타와 Article JSON-LD의 `articleSection`을 선택한 카테고리와
   일치시키고, 목록 카드의 `data-category`와 `TOPICS.md`에도 같은 ID를 기록한다.
