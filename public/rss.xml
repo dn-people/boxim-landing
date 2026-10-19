@@ -5,8 +5,15 @@
     <link>https://dn-people.com/blog/</link>
     <description>스마트폰 구매, 요금제, 번호이동을 이해하기 쉽게 설명하는 동네방네 공식 가이드</description>
     <language>ko-KR</language>
-    <lastBuildDate>Mon, 19 Oct 2026 09:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 20 Oct 2026 09:00:00 +0900</lastBuildDate>
     <atom:link href="https://dn-people.com/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>노트북 테더링 요금제, 공유 데이터 확인 기준</title>
+      <link>https://dn-people.com/blog/tethering-shared-data-check/</link>
+      <guid isPermaLink="true">https://dn-people.com/blog/tethering-shared-data-check/</guid>
+      <description>노트북 연결용 요금제를 고를 때 테더링·쉐어링 통합 한도, 소진 후 처리, 추가 혜택과 기기 회선 비용을 확인하는 기준입니다. 핸드폰 살 땐 동네방네 dnbn.co.kr</description>
+      <pubDate>Tue, 20 Oct 2026 09:00:00 +0900</pubDate>
+    </item>
     <item>
       <title>선택약정 만료 후 재가입 전 확인할 기준 7가지</title>
       <link>https://dn-people.com/blog/selective-discount-renewal/</link>
