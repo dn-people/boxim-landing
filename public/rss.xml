@@ -5,8 +5,15 @@
     <link>https://dn-people.com/blog/</link>
     <description>스마트폰 구매, 요금제, 번호이동을 이해하기 쉽게 설명하는 동네방네 공식 가이드</description>
     <language>ko-KR</language>
-    <lastBuildDate>Tue, 20 Oct 2026 09:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 21 Oct 2026 09:00:00 +0900</lastBuildDate>
     <atom:link href="https://dn-people.com/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>건조기 구독 전 설치공간·배수·관리 확인 순서</title>
+      <link>https://dn-people.com/blog/dryer-subscription-install-check/</link>
+      <guid isPermaLink="true">https://dn-people.com/blog/dryer-subscription-install-check/</guid>
+      <description>건조기 구독 전 반입·설치공간, 물통과 직배수, 직렬 설치 호환성과 필터 관리를 점검하고 계약 조건을 확인하는 순서입니다. 핸드폰 살 땐 동네방네 dnbn.co.kr</description>
+      <pubDate>Wed, 21 Oct 2026 09:00:00 +0900</pubDate>
+    </item>
     <item>
       <title>노트북 테더링 요금제, 공유 데이터 확인 기준</title>
       <link>https://dn-people.com/blog/tethering-shared-data-check/</link>

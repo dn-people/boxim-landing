@@ -7,6 +7,7 @@
 ## 발행됨
 | 날짜 | slug | 제목 | 타깃 키워드 | 검색 의도 | 카테고리 |
 |---|---|---|---|---|---|
+| 2026-10-21 | dryer-subscription-install-check | 건조기 구독 전 설치공간·배수·관리 확인 순서 | 건조기 구독 설치공간, 건조기 구독 직배수 물통 | 반입·환기·물통 인출 동선과 직배수·직렬 호환성, 일상 필터 청소와 구독 관리 범위를 신청 전에 구분 | rental |
 | 2026-10-20 | tethering-shared-data-check | 노트북 테더링 요금제, 공유 데이터 확인 기준 | 노트북 테더링 요금제, 테더링 공유 데이터 통합 한도 | 노트북과 태블릿의 공유 한도 차감·소진 후 조건·추가 혜택 종료·기기 회선 비용을 가입 전에 비교 | buying-guides |
 | 2026-10-19 | selective-discount-renewal | 선택약정 만료 후 재가입 전 확인할 기준 7가지 | 선택약정 만료 재가입, 선택약정 12개월 24개월 | 같은 회선과 단말기를 유지할 때 재가입 가능일·기간·완료 상태·첫 할인 적용을 확인 | buying-guides |
 | 2026-10-16 | galaxy-fe-generation-comparison | 갤럭시 S26 FE·S25 FE 사양 기반 비교 | 갤럭시 S26 FE S25 FE 차이, S25 FE에서 S26 FE 교체 | 같은 화면·배터리 용량과 AP·촬영 기능의 세대 차이로 교체 필요성 판단 | product-reviews |
@@ -74,8 +75,8 @@
 
 | 카테고리 | 후보 주제 | 검색 의도 | 공식 확인 출처 |
 |---|---|---|---|
-| rental | 건조기 구독 전 설치공간·직배수·관리 조건 확인 순서 | 세탁실 공간과 직배수, 배수필터 관리 조건 점검 | 삼성전자 건조기 설치가이드, LG전자 가전 구독 서비스 안내 |
 | rental | 세탁기 구독 전 수도꼭지·배수·바닥 수평 확인 순서 | 세탁기 반입 경로와 급배수 연결·수평 조건을 설치 전에 점검 | LG전자 세탁기 설치가이드 https://www.lge.co.kr/story/setup-guide/washer-installation-guide |
+| rental | 로봇청소기 구독 전 급배수통·물걸레·배터리 관리 확인 | 모델별 급배수통 케어와 물걸레·필터·배터리 교체 범위를 계약 전에 구분 | LG전자 로봇청소기 구독가이드 https://www.lge.co.kr/story/subscription-guide/23 |
 | product-reviews | 갤럭시 탭 S11·S11 울트라 사양 기반 비교 | 필기 휴대성과 큰 화면 문서 작업 중 선택 | 삼성전자 갤럭시 탭 S11 공식 스펙 https://www.samsung.com/sec/tablets/galaxy-tab-s11/specs/ |
 | product-reviews | 갤럭시 버즈3 FE 사양 기반 리뷰와 호환 조건 | 사용하는 갤럭시 기기에서 360 오디오·헤드 트래킹 지원 범위 확인 | 삼성전자 버즈3 FE 제품 안내 https://www.samsung.com/sec/buds/galaxy-buds3-r420/SM-R420NZKAKOO/ |
 | carrier-issues | 온라인 휴대폰 판매 계약, 청약철회 전 확인할 조건 | 비대면 판매 계약 해지와 철회 전 확인 | 방송통신위원회 이동통신 온라인 판매 가이드라인 |
