@@ -7,6 +7,7 @@
 ## 발행됨
 | 날짜 | slug | 제목 | 타깃 키워드 | 검색 의도 | 카테고리 |
 |---|---|---|---|---|---|
+| 2026-10-23 | galaxy-tab-s11-comparison | 갤럭시 탭 S11·울트라 사양 기반 비교 | 갤럭시 탭 S11 울트라 차이, 갤럭시 탭 S11 휴대성 | Wi-Fi 본체 크기·무게와 화면·필기·액세서리 조건으로 이동 학습과 책상 문서 작업 중 선택 | product-reviews |
 | 2026-10-22 | iphone-app-privacy-report | 아이폰 앱 개인정보 보호 리포트, 접근 기록 확인법 | 아이폰 앱 개인정보 보호 리포트, 아이폰 센서 접근 기록 해석 | 센서 접근 시각·앱 내 콘텐츠의 연결 도메인을 사용 상황과 대조하고 권한·개발자 수집 방침을 구분 | it-tech |
 | 2026-10-21 | dryer-subscription-install-check | 건조기 구독 전 설치공간·배수·관리 확인 순서 | 건조기 구독 설치공간, 건조기 구독 직배수 물통 | 반입·환기·물통 인출 동선과 직배수·직렬 호환성, 일상 필터 청소와 구독 관리 범위를 신청 전에 구분 | rental |
 | 2026-10-20 | tethering-shared-data-check | 노트북 테더링 요금제, 공유 데이터 확인 기준 | 노트북 테더링 요금제, 테더링 공유 데이터 통합 한도 | 노트북과 태블릿의 공유 한도 차감·소진 후 조건·추가 혜택 종료·기기 회선 비용을 가입 전에 비교 | buying-guides |
@@ -78,8 +79,8 @@
 |---|---|---|---|
 | rental | 세탁기 구독 전 수도꼭지·배수·바닥 수평 확인 순서 | 세탁기 반입 경로와 급배수 연결·수평 조건을 설치 전에 점검 | LG전자 세탁기 설치가이드 https://www.lge.co.kr/story/setup-guide/washer-installation-guide |
 | rental | 로봇청소기 구독 전 급배수통·물걸레·배터리 관리 확인 | 모델별 급배수통 케어와 물걸레·필터·배터리 교체 범위를 계약 전에 구분 | LG전자 로봇청소기 구독가이드 https://www.lge.co.kr/story/subscription-guide/23 |
-| product-reviews | 갤럭시 탭 S11·S11 울트라 사양 기반 비교 | 필기 휴대성과 큰 화면 문서 작업 중 선택 | 삼성전자 갤럭시 탭 S11 공식 스펙 https://www.samsung.com/sec/tablets/galaxy-tab-s11/specs/ |
 | product-reviews | 갤럭시 버즈3 FE 사양 기반 리뷰와 호환 조건 | 사용하는 갤럭시 기기에서 360 오디오·헤드 트래킹 지원 범위 확인 | 삼성전자 버즈3 FE 제품 안내 https://www.samsung.com/sec/buds/galaxy-buds3-r420/SM-R420NZKAKOO/ |
+| product-reviews | 갤럭시 워치8 클래식 사양 기반 리뷰와 조작 조건 | 회전 베젤·본체 크기·연결 모델을 손목 착용과 조작 방식에 맞춰 확인 | 삼성전자 워치8 클래식 공식 제품 안내 https://www.samsung.com/sec/store-mobile/galaxywatch8-l500-1/SM-L500NZKAKOO/ |
 | carrier-issues | 온라인 휴대폰 판매 계약, 청약철회 전 확인할 조건 | 비대면 판매 계약 해지와 철회 전 확인 | 방송통신위원회 이동통신 온라인 판매 가이드라인 |
 | carrier-issues | 통신서비스 장애 보상 문의 전 시간·고객센터 기록 정리 | 장애 시간과 접수 기록, 보상 문의 기준 점검 | 와이즈유저 통신 장애 시 이용자 행동요령 |
 | it-tech | 갤럭시 자동 차단 기능 설정 전 앱 설치·USB 제한 확인 순서 | 출처 불명 앱 설치와 USB 명령 차단 범위, 최대 제한 모드 영향 점검 | Samsung Galaxy Auto Blocker 공식 안내 |
