@@ -7,6 +7,7 @@
 ## 발행됨
 | 날짜 | slug | 제목 | 타깃 키워드 | 검색 의도 | 카테고리 |
 |---|---|---|---|---|---|
+| 2026-10-26 | telecom-outage-record-check | 통신장애 보상 문의 전 시간·접수 기록 정리법 | 통신장애 보상 문의, 통신장애 시간 접수 기록 | 통화·데이터·인터넷의 실패·복구 확인 시각과 접수번호를 구분해 장애 문의와 보상 후속 확인 준비 | carrier-issues |
 | 2026-10-23 | galaxy-tab-s11-comparison | 갤럭시 탭 S11·울트라 사양 기반 비교 | 갤럭시 탭 S11 울트라 차이, 갤럭시 탭 S11 휴대성 | Wi-Fi 본체 크기·무게와 화면·필기·액세서리 조건으로 이동 학습과 책상 문서 작업 중 선택 | product-reviews |
 | 2026-10-22 | iphone-app-privacy-report | 아이폰 앱 개인정보 보호 리포트, 접근 기록 확인법 | 아이폰 앱 개인정보 보호 리포트, 아이폰 센서 접근 기록 해석 | 센서 접근 시각·앱 내 콘텐츠의 연결 도메인을 사용 상황과 대조하고 권한·개발자 수집 방침을 구분 | it-tech |
 | 2026-10-21 | dryer-subscription-install-check | 건조기 구독 전 설치공간·배수·관리 확인 순서 | 건조기 구독 설치공간, 건조기 구독 직배수 물통 | 반입·환기·물통 인출 동선과 직배수·직렬 호환성, 일상 필터 청소와 구독 관리 범위를 신청 전에 구분 | rental |
@@ -82,7 +83,7 @@
 | product-reviews | 갤럭시 버즈3 FE 사양 기반 리뷰와 호환 조건 | 사용하는 갤럭시 기기에서 360 오디오·헤드 트래킹 지원 범위 확인 | 삼성전자 버즈3 FE 제품 안내 https://www.samsung.com/sec/buds/galaxy-buds3-r420/SM-R420NZKAKOO/ |
 | product-reviews | 갤럭시 워치8 클래식 사양 기반 리뷰와 조작 조건 | 회전 베젤·본체 크기·연결 모델을 손목 착용과 조작 방식에 맞춰 확인 | 삼성전자 워치8 클래식 공식 제품 안내 https://www.samsung.com/sec/store-mobile/galaxywatch8-l500-1/SM-L500NZKAKOO/ |
 | carrier-issues | 온라인 휴대폰 판매 계약, 청약철회 전 확인할 조건 | 비대면 판매 계약 해지와 철회 전 확인 | 방송통신위원회 이동통신 온라인 판매 가이드라인 |
-| carrier-issues | 통신서비스 장애 보상 문의 전 시간·고객센터 기록 정리 | 장애 시간과 접수 기록, 보상 문의 기준 점검 | 와이즈유저 통신 장애 시 이용자 행동요령 |
+| carrier-issues | 통신사 사칭 스미싱 문자, 접속 전 확인 순서 | 문자에 적힌 연락처·링크 대신 가입 사업자의 공식 안내에서 사칭 여부와 신고 경로를 확인 | T world 스미싱 문자 메시지 대처 방법 https://www.tworld.co.kr/web/support/service/do-like-this/295 |
 | it-tech | 갤럭시 자동 차단 기능 설정 전 앱 설치·USB 제한 확인 순서 | 출처 불명 앱 설치와 USB 명령 차단 범위, 최대 제한 모드 영향 점검 | Samsung Galaxy Auto Blocker 공식 안내 |
 | it-tech | 아이폰 알림이 늦을 때 시간 지정 요약·집중 모드 확인 | 앱별 알림 전달 시점과 요약·집중 모드 설정을 구분 | Apple iPhone 알림 설정 공식 안내 https://support.apple.com/ko-kr/guide/iphone/iph7c3d96bab/ios |
 | buying-guides | 알뜰폰 유심 배송 뒤 미개통 취소 전 확인할 조건 | 유심 수령 뒤 취소·비용·개통 상태 점검 | 알뜰폰허브 요금제 상세 안내 |
