@@ -5,8 +5,15 @@
     <link>https://dn-people.com/blog/</link>
     <description>스마트폰 구매, 요금제, 번호이동을 이해하기 쉽게 설명하는 동네방네 공식 가이드</description>
     <language>ko-KR</language>
-    <lastBuildDate>Fri, 23 Oct 2026 09:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 26 Oct 2026 09:00:00 +0900</lastBuildDate>
     <atom:link href="https://dn-people.com/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>통신장애 보상 문의 전 시간·접수 기록 정리법</title>
+      <link>https://dn-people.com/blog/telecom-outage-record-check/</link>
+      <guid isPermaLink="true">https://dn-people.com/blog/telecom-outage-record-check/</guid>
+      <description>통신장애 보상 문의 전 끊긴 서비스와 장소, 시작·복구 시각과 접수번호를 정리하고 가입 서비스의 약관과 처리 결과를 확인하세요. 핸드폰 살 땐 동네방네 dnbn.co.kr</description>
+      <pubDate>Mon, 26 Oct 2026 09:00:00 +0900</pubDate>
+    </item>
     <item>
       <title>갤럭시 탭 S11·울트라 사양 기반 비교</title>
       <link>https://dn-people.com/blog/galaxy-tab-s11-comparison/</link>
