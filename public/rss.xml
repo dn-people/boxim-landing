@@ -5,8 +5,15 @@
     <link>https://dn-people.com/blog/</link>
     <description>스마트폰 구매, 요금제, 번호이동을 이해하기 쉽게 설명하는 동네방네 공식 가이드</description>
     <language>ko-KR</language>
-    <lastBuildDate>Mon, 26 Oct 2026 09:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 27 Oct 2026 09:00:00 +0900</lastBuildDate>
     <atom:link href="https://dn-people.com/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>아이폰 알림 늦을 때 요약·집중 모드 확인 순서</title>
+      <link>https://dn-people.com/blog/iphone-notification-delay-check/</link>
+      <guid isPermaLink="true">https://dn-people.com/blog/iphone-notification-delay-check/</guid>
+      <description>아이폰 알림이 늦거나 소리만 안 날 때 앱별 알림, 시간 지정 요약, 집중 모드와 Apple Watch 표시 기기를 구분해 확인하세요. 핸드폰 살 땐 동네방네 dnbn.co.kr</description>
+      <pubDate>Tue, 27 Oct 2026 09:00:00 +0900</pubDate>
+    </item>
     <item>
       <title>통신장애 보상 문의 전 시간·접수 기록 정리법</title>
       <link>https://dn-people.com/blog/telecom-outage-record-check/</link>

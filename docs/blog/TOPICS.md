@@ -7,6 +7,7 @@
 ## 발행됨
 | 날짜 | slug | 제목 | 타깃 키워드 | 검색 의도 | 카테고리 |
 |---|---|---|---|---|---|
+| 2026-10-27 | iphone-notification-delay-check | 아이폰 알림 늦을 때 요약·집중 모드 확인 순서 | 아이폰 알림 늦게 옴, 아이폰 시간 지정 요약 집중 모드 | 알림 전달 시점·소리·표시 위치와 Apple Watch 수신 기기를 구분해 앱별 설정을 점검 | it-tech |
 | 2026-10-26 | telecom-outage-record-check | 통신장애 보상 문의 전 시간·접수 기록 정리법 | 통신장애 보상 문의, 통신장애 시간 접수 기록 | 통화·데이터·인터넷의 실패·복구 확인 시각과 접수번호를 구분해 장애 문의와 보상 후속 확인 준비 | carrier-issues |
 | 2026-10-23 | galaxy-tab-s11-comparison | 갤럭시 탭 S11·울트라 사양 기반 비교 | 갤럭시 탭 S11 울트라 차이, 갤럭시 탭 S11 휴대성 | Wi-Fi 본체 크기·무게와 화면·필기·액세서리 조건으로 이동 학습과 책상 문서 작업 중 선택 | product-reviews |
 | 2026-10-22 | iphone-app-privacy-report | 아이폰 앱 개인정보 보호 리포트, 접근 기록 확인법 | 아이폰 앱 개인정보 보호 리포트, 아이폰 센서 접근 기록 해석 | 센서 접근 시각·앱 내 콘텐츠의 연결 도메인을 사용 상황과 대조하고 권한·개발자 수집 방침을 구분 | it-tech |
@@ -85,6 +86,6 @@
 | carrier-issues | 온라인 휴대폰 판매 계약, 청약철회 전 확인할 조건 | 비대면 판매 계약 해지와 철회 전 확인 | 방송통신위원회 이동통신 온라인 판매 가이드라인 |
 | carrier-issues | 통신사 사칭 스미싱 문자, 접속 전 확인 순서 | 문자에 적힌 연락처·링크 대신 가입 사업자의 공식 안내에서 사칭 여부와 신고 경로를 확인 | T world 스미싱 문자 메시지 대처 방법 https://www.tworld.co.kr/web/support/service/do-like-this/295 |
 | it-tech | 갤럭시 자동 차단 기능 설정 전 앱 설치·USB 제한 확인 순서 | 출처 불명 앱 설치와 USB 명령 차단 범위, 최대 제한 모드 영향 점검 | Samsung Galaxy Auto Blocker 공식 안내 |
-| it-tech | 아이폰 알림이 늦을 때 시간 지정 요약·집중 모드 확인 | 앱별 알림 전달 시점과 요약·집중 모드 설정을 구분 | Apple iPhone 알림 설정 공식 안내 https://support.apple.com/ko-kr/guide/iphone/iph7c3d96bab/ios |
+| it-tech | 아이폰 도난당한 기기 보호, 보안 지연 확인 기준 | 분실 전 생체 인증·보안 지연·익숙한 장소와 항상 요구 옵션을 구분해 보호 설정 점검 | Apple 도난당한 기기 보호 공식 안내 https://support.apple.com/ko-kr/120340 |
 | buying-guides | 알뜰폰 유심 배송 뒤 미개통 취소 전 확인할 조건 | 유심 수령 뒤 취소·비용·개통 상태 점검 | 알뜰폰허브 요금제 상세 안내 |
 | buying-guides | 데이터 선물하기 전 받는 회선·사용기한 확인 기준 | 타인 회선으로 보내는 데이터의 대상·선물 횟수·유효기간과 취소 가능 여부 점검 | SKT T끼리 데이터 선물하기 공식 안내 https://www.tworld.co.kr/poc/html/product/TS3.4.4.html |
