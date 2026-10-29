@@ -5,8 +5,15 @@
     <link>https://dn-people.com/blog/</link>
     <description>스마트폰 구매, 요금제, 번호이동을 이해하기 쉽게 설명하는 동네방네 공식 가이드</description>
     <language>ko-KR</language>
-    <lastBuildDate>Wed, 28 Oct 2026 09:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 29 Oct 2026 09:00:00 +0900</lastBuildDate>
     <atom:link href="https://dn-people.com/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>세탁기 구독 전 수도꼭지·배수·수평 확인 순서</title>
+      <link>https://dn-people.com/blog/washer-subscription-install-check/</link>
+      <guid isPermaLink="true">https://dn-people.com/blog/washer-subscription-install-check/</guid>
+      <description>세탁기 구독 전 반입 통로와 문 열림, 수도꼭지 돌출 공간, 오수 배수구와 바닥 상태를 확인하고 설치·관리·계약 조건을 대조하세요. 핸드폰 살 땐 동네방네 dnbn.co.kr</description>
+      <pubDate>Thu, 29 Oct 2026 09:00:00 +0900</pubDate>
+    </item>
     <item>
       <title>통신사 사칭 문자, 링크 열기 전 확인 순서</title>
       <link>https://dn-people.com/blog/telecom-smishing-message-check/</link>
