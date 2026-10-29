@@ -7,6 +7,7 @@
 ## 발행됨
 | 날짜 | slug | 제목 | 타깃 키워드 | 검색 의도 | 카테고리 |
 |---|---|---|---|---|---|
+| 2026-10-30 | robot-vacuum-care-check | 로봇청소기 구독 전 물통·소모품 관리 확인 순서 | 로봇청소기 구독 관리, 로봇청소기 물통 소모품 교체 | 물통형·자동 급배수형의 일상 관리와 방문 케어를 구분하고 소모품·배터리 교체 및 연장 조건을 계약과 대조 | rental |
 | 2026-10-29 | washer-subscription-install-check | 세탁기 구독 전 수도꼭지·배수·수평 확인 순서 | 세탁기 구독 설치조건, 세탁기 수도꼭지 배수 수평 | 단독 세탁기 구독 전 반입·수도꼭지 돌출·오수 배수구·바닥 조건과 설치 견적을 확인 | rental |
 | 2026-10-28 | telecom-smishing-message-check | 통신사 사칭 문자, 링크 열기 전 확인 순서 | 통신사 사칭 문자 확인, 스미싱 링크 열기 전 확인 | 문자 수신 직후 공식 앱·고객센터로 진위를 확인하고 입력·설치 상태별 후속 문의를 준비 | carrier-issues |
 | 2026-10-27 | iphone-notification-delay-check | 아이폰 알림 늦을 때 요약·집중 모드 확인 순서 | 아이폰 알림 늦게 옴, 아이폰 시간 지정 요약 집중 모드 | 알림 전달 시점·소리·표시 위치와 Apple Watch 수신 기기를 구분해 앱별 설정을 점검 | it-tech |
@@ -81,7 +82,6 @@
 
 | 카테고리 | 후보 주제 | 검색 의도 | 공식 확인 출처 |
 |---|---|---|---|
-| rental | 로봇청소기 구독 전 급배수통·물걸레·배터리 관리 확인 | 모델별 급배수통 케어와 물걸레·필터·배터리 교체 범위를 계약 전에 구분 | LG전자 로봇청소기 구독가이드 https://www.lge.co.kr/story/subscription-guide/23 |
 | product-reviews | 갤럭시 버즈3 FE 사양 기반 리뷰와 호환 조건 | 사용하는 갤럭시 기기에서 360 오디오·헤드 트래킹 지원 범위 확인 | 삼성전자 버즈3 FE 제품 안내 https://www.samsung.com/sec/buds/galaxy-buds3-r420/SM-R420NZKAKOO/ |
 | product-reviews | 갤럭시 워치8 클래식 사양 기반 리뷰와 조작 조건 | 회전 베젤·본체 크기·연결 모델을 손목 착용과 조작 방식에 맞춰 확인 | 삼성전자 워치8 클래식 공식 제품 안내 https://www.samsung.com/sec/store-mobile/galaxywatch8-l500-1/SM-L500NZKAKOO/ |
 | carrier-issues | 온라인 휴대폰 판매 계약, 청약철회 전 확인할 조건 | 비대면 판매 계약 해지와 철회 전 확인 | 방송통신위원회 이동통신 온라인 판매 가이드라인 |
@@ -91,3 +91,4 @@
 | buying-guides | 데이터 선물하기 전 받는 회선·사용기한 확인 기준 | 타인 회선으로 보내는 데이터의 대상·선물 횟수·유효기간과 취소 가능 여부 점검 | SKT T끼리 데이터 선물하기 공식 안내 https://www.tworld.co.kr/poc/html/product/TS3.4.4.html |
 | carrier-issues | 휴대폰 번호 변경 후 계정 연락처 갱신 순서 | 이전 번호를 사용하는 사이트·금융·지인 연락처를 구분해 계정 연락처 변경 완료를 점검 | KT 이통사 개인정보 보호 캠페인 https://inside.kt.com/html/privacycenter/privacy205.html |
 | rental | 냉장고 구독 전 문 열림·필터·이전설치 확인 순서 | 냉장고 반입과 도어 간섭, 정수 기능 유무별 관리 및 철거·재설치 범위를 구분 | LG전자 주방가전 구독가이드 https://www.lge.co.kr/story/buying-guide/care-solutions-guide3 |
+| rental | 전기레인지 구독 전 전원·상판 타공 확인 순서 | 빌트인·케이스 설치를 구분하고 전원 공사·기존 상판 치수와 추가 설치 범위를 확인 | LG전자 전기레인지 FAQ https://www.lge.co.kr/story/faq/electric-ranges-faq 및 유형별 설치 가이드 https://www.lge.co.kr/support/solutions-20153396747099 |
