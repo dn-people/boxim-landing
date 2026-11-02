@@ -5,8 +5,15 @@
     <link>https://dn-people.com/blog/</link>
     <description>스마트폰 구매, 요금제, 번호이동을 이해하기 쉽게 설명하는 동네방네 공식 가이드</description>
     <language>ko-KR</language>
-    <lastBuildDate>Mon, 02 Nov 2026 09:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 03 Nov 2026 09:00:00 +0900</lastBuildDate>
     <atom:link href="https://dn-people.com/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SKT 데이터 선물 전 번호·사용기한 확인 순서</title>
+      <link>https://dn-people.com/blog/data-gift-recipient-check/</link>
+      <guid isPermaLink="true">https://dn-people.com/blog/data-gift-recipient-check/</guid>
+      <description>SKT 데이터 선물 전 받는 회선과 번호, 선물 가능한 잔여량과 월말 사용기한을 확인하세요. 취소·재선물 제한과 전송 전 점검 순서를 정리했습니다. 핸드폰 살 땐 동네방네 dnbn.co.kr</description>
+      <pubDate>Tue, 03 Nov 2026 09:00:00 +0900</pubDate>
+    </item>
     <item>
       <title>갤럭시 버즈3 FE 사양 기반 리뷰와 호환 조건</title>
       <link>https://dn-people.com/blog/galaxy-buds-fe-compatibility/</link>

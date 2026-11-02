@@ -7,6 +7,7 @@
 ## 발행됨
 | 날짜 | slug | 제목 | 타깃 키워드 | 검색 의도 | 카테고리 |
 |---|---|---|---|---|---|
+| 2026-11-03 | data-gift-recipient-check | SKT 데이터 선물 전 번호·사용기한 확인 순서 | SKT 데이터 선물 사용기한, 데이터 선물 수신 번호 확인 | 타인 회선 전송 전 수신 번호·가능량·월말 사용기한·취소 제한을 대조 | buying-guides |
 | 2026-11-02 | galaxy-buds-fe-compatibility | 갤럭시 버즈3 FE 사양 기반 리뷰와 호환 조건 | 갤럭시 버즈3 FE 호환, 버즈3 FE 360 오디오 헤드 트래킹 | 연결 기기의 OS·계정과 360 오디오·기기 전환·유선 충전 제한을 구분해 선택 | product-reviews |
 | 2026-10-30 | robot-vacuum-care-check | 로봇청소기 구독 전 물통·소모품 관리 확인 순서 | 로봇청소기 구독 관리, 로봇청소기 물통 소모품 교체 | 물통형·자동 급배수형의 일상 관리와 방문 케어를 구분하고 소모품·배터리 교체 및 연장 조건을 계약과 대조 | rental |
 | 2026-10-29 | washer-subscription-install-check | 세탁기 구독 전 수도꼭지·배수·수평 확인 순서 | 세탁기 구독 설치조건, 세탁기 수도꼭지 배수 수평 | 단독 세탁기 구독 전 반입·수도꼭지 돌출·오수 배수구·바닥 조건과 설치 견적을 확인 | rental |
@@ -88,8 +89,8 @@
 | it-tech | 갤럭시 자동 차단 기능 설정 전 앱 설치·USB 제한 확인 순서 | 출처 불명 앱 설치와 USB 명령 차단 범위, 최대 제한 모드 영향 점검 | Samsung Galaxy Auto Blocker 공식 안내 |
 | it-tech | 아이폰 도난당한 기기 보호, 보안 지연 확인 기준 | 분실 전 생체 인증·보안 지연·익숙한 장소와 항상 요구 옵션을 구분해 보호 설정 점검 | Apple 도난당한 기기 보호 공식 안내 https://support.apple.com/ko-kr/120340 |
 | buying-guides | 알뜰폰 유심 배송 뒤 미개통 취소 전 확인할 조건 | 유심 수령 뒤 취소·비용·개통 상태 점검 | 알뜰폰허브 요금제 상세 안내 |
-| buying-guides | 데이터 선물하기 전 받는 회선·사용기한 확인 기준 | 타인 회선으로 보내는 데이터의 대상·선물 횟수·유효기간과 취소 가능 여부 점검 | SKT T끼리 데이터 선물하기 공식 안내 https://www.tworld.co.kr/poc/html/product/TS3.4.4.html |
 | carrier-issues | 휴대폰 번호 변경 후 계정 연락처 갱신 순서 | 이전 번호를 사용하는 사이트·금융·지인 연락처를 구분해 계정 연락처 변경 완료를 점검 | KT 이통사 개인정보 보호 캠페인 https://inside.kt.com/html/privacycenter/privacy205.html |
 | rental | 냉장고 구독 전 문 열림·필터·이전설치 확인 순서 | 냉장고 반입과 도어 간섭, 정수 기능 유무별 관리 및 철거·재설치 범위를 구분 | LG전자 주방가전 구독가이드 https://www.lge.co.kr/story/buying-guide/care-solutions-guide3 |
 | rental | 전기레인지 구독 전 전원·상판 타공 확인 순서 | 빌트인·케이스 설치를 구분하고 전원 공사·기존 상판 치수와 추가 설치 범위를 확인 | LG전자 전기레인지 FAQ https://www.lge.co.kr/story/faq/electric-ranges-faq 및 유형별 설치 가이드 https://www.lge.co.kr/support/solutions-20153396747099 |
 | product-reviews | 갤럭시 링 사양 기반 리뷰와 사이즈·충전 선택 | 사이즈 키트와 실제 링·충전 케이스 구성을 구분해 착용과 보관 조건을 선택 | 삼성전자 갤럭시 링 공식 제품 안내 https://www.samsung.com/sec/rings/galaxyring-q505/SM-QNZKAKOO/ |
+| buying-guides | SKT 리필쿠폰 사용 전 유효기간·직접 신청 확인 기준 | 장기이용자가 보유한 쿠폰의 유효기간과 실제 리필 신청, 이미 발생한 초과사용량을 구분 | SKT 데이터·음성 리필하기 공식 안내 https://www.tworld.co.kr/poc/html/product/TS3.4.5.html |
