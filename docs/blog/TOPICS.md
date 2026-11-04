@@ -7,6 +7,7 @@
 ## 발행됨
 | 날짜 | slug | 제목 | 타깃 키워드 | 검색 의도 | 카테고리 |
 |---|---|---|---|---|---|
+| 2026-11-04 | data-refill-coupon-check | SKT 리필쿠폰 사용 전 유효기간·신청 확인 순서 | SKT 리필쿠폰 유효기간, SKT 리필쿠폰 직접 신청 | 본인 회선의 쿠폰 만료와 리필 후 당월 사용기한, 신청 전 초과과금·취소·요금제 변경 조건을 구분해 신청 | buying-guides |
 | 2026-11-03 | data-gift-recipient-check | SKT 데이터 선물 전 번호·사용기한 확인 순서 | SKT 데이터 선물 사용기한, 데이터 선물 수신 번호 확인 | 타인 회선 전송 전 수신 번호·가능량·월말 사용기한·취소 제한을 대조 | buying-guides |
 | 2026-11-02 | galaxy-buds-fe-compatibility | 갤럭시 버즈3 FE 사양 기반 리뷰와 호환 조건 | 갤럭시 버즈3 FE 호환, 버즈3 FE 360 오디오 헤드 트래킹 | 연결 기기의 OS·계정과 360 오디오·기기 전환·유선 충전 제한을 구분해 선택 | product-reviews |
 | 2026-10-30 | robot-vacuum-care-check | 로봇청소기 구독 전 물통·소모품 관리 확인 순서 | 로봇청소기 구독 관리, 로봇청소기 물통 소모품 교체 | 물통형·자동 급배수형의 일상 관리와 방문 케어를 구분하고 소모품·배터리 교체 및 연장 조건을 계약과 대조 | rental |
@@ -93,4 +94,4 @@
 | rental | 냉장고 구독 전 문 열림·필터·이전설치 확인 순서 | 냉장고 반입과 도어 간섭, 정수 기능 유무별 관리 및 철거·재설치 범위를 구분 | LG전자 주방가전 구독가이드 https://www.lge.co.kr/story/buying-guide/care-solutions-guide3 |
 | rental | 전기레인지 구독 전 전원·상판 타공 확인 순서 | 빌트인·케이스 설치를 구분하고 전원 공사·기존 상판 치수와 추가 설치 범위를 확인 | LG전자 전기레인지 FAQ https://www.lge.co.kr/story/faq/electric-ranges-faq 및 유형별 설치 가이드 https://www.lge.co.kr/support/solutions-20153396747099 |
 | product-reviews | 갤럭시 링 사양 기반 리뷰와 사이즈·충전 선택 | 사이즈 키트와 실제 링·충전 케이스 구성을 구분해 착용과 보관 조건을 선택 | 삼성전자 갤럭시 링 공식 제품 안내 https://www.samsung.com/sec/rings/galaxyring-q505/SM-QNZKAKOO/ |
-| buying-guides | SKT 리필쿠폰 사용 전 유효기간·직접 신청 확인 기준 | 장기이용자가 보유한 쿠폰의 유효기간과 실제 리필 신청, 이미 발생한 초과사용량을 구분 | SKT 데이터·음성 리필하기 공식 안내 https://www.tworld.co.kr/poc/html/product/TS3.4.5.html |
+| buying-guides | 해외 로밍 일 단위·기간형 요금, 시작 시각 확인 기준 | 현지 자정 기준과 한국 시간 지정 24시간을 구분해 입출국 일정에 맞는 상품을 선택 | T world 로밍 상품 이용안내 https://m.tworld.co.kr/product/roaming/fee-info |
