@@ -5,8 +5,15 @@
     <link>https://dn-people.com/blog/</link>
     <description>스마트폰 구매, 요금제, 번호이동을 이해하기 쉽게 설명하는 동네방네 공식 가이드</description>
     <language>ko-KR</language>
-    <lastBuildDate>Wed, 04 Nov 2026 09:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 05 Nov 2026 09:00:00 +0900</lastBuildDate>
     <atom:link href="https://dn-people.com/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>자녀 공부시간 관리, 데이터 자동차단 요금제 있나요?</title>
+      <link>https://dn-people.com/blog/child-data-cutoff-check/</link>
+      <guid isPermaLink="true">https://dn-people.com/blog/child-data-cutoff-check/</guid>
+      <description>데이터 소진 후 차단 요금제의 KB·고고모바일 공식 조건과 필수 부가서비스를 비교합니다. QoS 없는 요금제의 한계와 공부시간 관리 기준도 확인하세요. 핸드폰 살 땐 동네방네 dnbn.co.kr</description>
+      <pubDate>Thu, 05 Nov 2026 09:00:00 +0900</pubDate>
+    </item>
     <item>
       <title>SKT 리필쿠폰 사용 전 유효기간·신청 확인 순서</title>
       <link>https://dn-people.com/blog/data-refill-coupon-check/</link>
