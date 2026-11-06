@@ -5,8 +5,15 @@
     <link>https://dn-people.com/blog/</link>
     <description>스마트폰 구매, 요금제, 번호이동을 이해하기 쉽게 설명하는 동네방네 공식 가이드</description>
     <language>ko-KR</language>
-    <lastBuildDate>Thu, 05 Nov 2026 09:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 06 Nov 2026 09:00:00 +0900</lastBuildDate>
     <atom:link href="https://dn-people.com/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>갤럭시 보안 위험 자동 차단, 설정 전 확인 순서</title>
+      <link>https://dn-people.com/blog/galaxy-auto-blocker-check/</link>
+      <guid isPermaLink="true">https://dn-people.com/blog/galaxy-auto-blocker-check/</guid>
+      <description>갤럭시 보안 위험 자동 차단의 앱 설치·USB 명령 차단과 최대 제한을 구분하고, 업무 앱·메시지·연결에 미치는 영향을 확인하는 순서입니다. 핸드폰 살 땐 동네방네 dnbn.co.kr</description>
+      <pubDate>Fri, 06 Nov 2026 09:00:00 +0900</pubDate>
+    </item>
     <item>
       <title>자녀 공부시간 관리, 데이터 자동차단 요금제 있나요?</title>
       <link>https://dn-people.com/blog/child-data-cutoff-check/</link>
