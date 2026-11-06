@@ -8,7 +8,7 @@
   </url>
   <url>
     <loc>https://dn-people.com/blog/</loc>
-    <lastmod>2026-11-05</lastmod>
+    <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -437,5 +437,11 @@
   <url>
     <loc>https://dn-people.com/blog/child-data-cutoff-check/</loc>
     <lastmod>2026-11-05</lastmod>
+  </url>
+  <url>
+    <loc>https://dn-people.com/blog/galaxy-auto-blocker-check/</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 </urlset>
