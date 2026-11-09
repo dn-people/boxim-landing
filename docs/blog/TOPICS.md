@@ -7,6 +7,7 @@
 ## 발행됨
 | 날짜 | slug | 제목 | 타깃 키워드 | 검색 의도 | 카테고리 |
 |---|---|---|---|---|---|
+| 2026-11-09 | galaxy-watch-classic-fit | 갤럭시 워치8 클래식 사양 기반 리뷰와 선택 기준 | 갤럭시 워치8 클래식 무게, 워치8 클래식 블루투스 LTE 차이 | 본체 폭·무게와 회전 베젤·퀵 버튼을 착용에 대조하고 LTE 회선·휴대폰 호환·충전 조건을 구분 | product-reviews |
 | 2026-11-06 | galaxy-auto-blocker-check | 갤럭시 보안 위험 자동 차단, 설정 전 확인 순서 | 갤럭시 보안 위험 자동 차단, 갤럭시 최대 제한 USB 명령 | 앱 설치·USB 명령 차단과 최대 제한의 업무 프로필·메시지 영향을 구분해 기기 설정 선택 | it-tech |
 | 2026-11-05 | child-data-cutoff-check | 자녀 공부시간 관리, 데이터 자동차단 요금제 있나요? | 자녀 공부시간 데이터 차단, 데이터 소진 후 차단, QoS 없는 요금제 | 월 할당량 소진 뒤 실제 데이터 중단과 필수·자동가입 부가서비스 및 공부시간 관리 한계를 구분 | carrier-issues |
 | 2026-11-04 | data-refill-coupon-check | SKT 리필쿠폰 사용 전 유효기간·신청 확인 순서 | SKT 리필쿠폰 유효기간, SKT 리필쿠폰 직접 신청 | 본인 회선의 쿠폰 만료와 리필 후 당월 사용기한, 신청 전 초과과금·취소·요금제 변경 조건을 구분해 신청 | buying-guides |
@@ -87,7 +88,6 @@
 
 | 카테고리 | 후보 주제 | 검색 의도 | 공식 확인 출처 |
 |---|---|---|---|
-| product-reviews | 갤럭시 워치8 클래식 사양 기반 리뷰와 조작 조건 | 회전 베젤·본체 크기·연결 모델을 손목 착용과 조작 방식에 맞춰 확인 | 삼성전자 워치8 클래식 공식 제품 안내 https://www.samsung.com/sec/store-mobile/galaxywatch8-l500-1/SM-L500NZKAKOO/ |
 | carrier-issues | 온라인 휴대폰 판매 계약, 청약철회 전 확인할 조건 | 비대면 판매 계약 해지와 철회 전 확인 | 방송통신위원회 이동통신 온라인 판매 가이드라인 |
 | it-tech | 아이폰 충전 한도와 최적화된 충전, 설정 선택 기준 | 충전 상한과 충전 지연을 구분하고 모델별 메뉴·일시 완충 예외를 확인 | Apple 충전 한도 및 최적화된 배터리 충전 https://support.apple.com/ko-kr/108055 |
 | it-tech | 아이폰 도난당한 기기 보호, 보안 지연 확인 기준 | 분실 전 생체 인증·보안 지연·익숙한 장소와 항상 요구 옵션을 구분해 보호 설정 점검 | Apple 도난당한 기기 보호 공식 안내 https://support.apple.com/ko-kr/120340 |
@@ -97,3 +97,4 @@
 | rental | 전기레인지 구독 전 전원·상판 타공 확인 순서 | 빌트인·케이스 설치를 구분하고 전원 공사·기존 상판 치수와 추가 설치 범위를 확인 | LG전자 전기레인지 FAQ https://www.lge.co.kr/story/faq/electric-ranges-faq 및 유형별 설치 가이드 https://www.lge.co.kr/support/solutions-20153396747099 |
 | product-reviews | 갤럭시 링 사양 기반 리뷰와 사이즈·충전 선택 | 사이즈 키트와 실제 링·충전 케이스 구성을 구분해 착용과 보관 조건을 선택 | 삼성전자 갤럭시 링 공식 제품 안내 https://www.samsung.com/sec/rings/galaxyring-q505/SM-QNZKAKOO/ |
 | buying-guides | 해외 로밍 일 단위·기간형 요금, 시작 시각 확인 기준 | 현지 자정 기준과 한국 시간 지정 24시간을 구분해 입출국 일정에 맞는 상품을 선택 | T world 로밍 상품 이용안내 https://m.tworld.co.kr/product/roaming/fee-info |
+| product-reviews | 갤럭시 북6 프로 14형·16형 화면과 휴대성 사양 비교 | 노트북 가방 수납, 작업 화면과 보조 SSD 지원 차이로 14형·16형 선택 | 삼성전자 14형 https://www.samsung.com/sec/support/model/NT940XJG-KC51S/ 및 16형 https://www.samsung.com/sec/support/model/NT960XJG-KD72G/ |
