@@ -5,8 +5,15 @@
     <link>https://dn-people.com/blog/</link>
     <description>스마트폰 구매, 요금제, 번호이동을 이해하기 쉽게 설명하는 동네방네 공식 가이드</description>
     <language>ko-KR</language>
-    <lastBuildDate>Wed, 11 Nov 2026 09:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 13 Nov 2026 09:00:00 +0900</lastBuildDate>
     <atom:link href="https://dn-people.com/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>휴대폰 번호 변경 후 인증·연락처 확인 순서</title>
+      <link>https://dn-people.com/blog/mobile-number-change-check/</link>
+      <guid isPermaLink="true">https://dn-people.com/blog/mobile-number-change-check/</guid>
+      <description>휴대폰 번호를 바꾼 뒤 일반 문자 수신부터 계정 인증번호와 은행·배송 연락처까지, 이전 번호가 남기 쉬운 항목을 확인하세요. 핸드폰 살 땐 동네방네 dnbn.co.kr</description>
+      <pubDate>Fri, 13 Nov 2026 09:00:00 +0900</pubDate>
+    </item>
     <item>
       <title>아이폰 충전 한도와 최적화된 충전 선택 기준</title>
       <link>https://dn-people.com/blog/iphone-charge-limit-settings/</link>
