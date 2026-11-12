@@ -8,7 +8,7 @@
   </url>
   <url>
     <loc>https://dn-people.com/blog/</loc>
-    <lastmod>2026-11-11</lastmod>
+    <lastmod>2026-11-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -457,5 +457,9 @@
   <url>
     <loc>https://dn-people.com/blog/iphone-charge-limit-settings/</loc>
     <lastmod>2026-11-11</lastmod>
+  </url>
+  <url>
+    <loc>https://dn-people.com/blog/mobile-number-change-check/</loc>
+    <lastmod>2026-11-13</lastmod>
   </url>
 </urlset>
