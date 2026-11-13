@@ -8,6 +8,7 @@
 | 날짜 | slug | 제목 | 타깃 키워드 | 검색 의도 | 카테고리 |
 |---|---|---|---|---|---|
 | 2026-11-13 | mobile-number-change-check | 휴대폰 번호 변경 후 인증·연락처 확인 순서 | 휴대폰 번호 변경 후 인증번호, 휴대폰 번호 변경 후 연락처 | 새 번호 통화·문자 수신과 계정 인증·복구 번호, 금융·배송 연락처 갱신 완료를 차례로 확인 | carrier-issues |
+| 2026-11-12 | refrigerator-subscription-install-check | 냉장고 구독 전 반입·문 열림·필터 확인 순서 | 냉장고 구독 설치 조건, 냉장고장 문 열림, 얼음정수 냉장고 필터 교체 | 반입·서랍 인출과 직수 급수 가능 여부를 먼저 확인하고 필터 관리·이사 운송비를 계약과 대조 | rental |
 | 2026-11-11 | iphone-charge-limit-settings | 아이폰 충전 한도와 최적화된 충전 선택 기준 | 아이폰 충전 한도 80%, 아이폰 최적화된 배터리 충전, 아이폰 80%에서 충전 멈춤 | 모델별 충전 한도와 지연 충전 차이, 가끔 완충·온도 대기·일시 허용을 구분하고 필요한 잔량에 맞춰 설정 선택 | it-tech |
 | 2026-11-10 | induction-subscription-install-check | 전기레인지 구독 전 타공·케이스·전원 확인 순서 | 전기레인지 구독 설치 조건, 인덕션 타공 치수, 프리스탠딩 케이스 전원 | 상판 구멍과 하부 공간을 실측하고 케이스·회로 호환 및 별도 시공·이전 견적을 대조 | rental |
 | 2026-11-09 | galaxy-watch-classic-fit | 갤럭시 워치8 클래식 사양 기반 리뷰와 선택 기준 | 갤럭시 워치8 클래식 무게, 워치8 클래식 블루투스 LTE 차이 | 본체 폭·무게와 회전 베젤·퀵 버튼을 착용에 대조하고 LTE 회선·휴대폰 호환·충전 조건을 구분 | product-reviews |
@@ -96,7 +97,7 @@
 | it-tech | 아이폰 도난당한 기기 보호, 보안 지연 확인 기준 | 분실 전 생체 인증·보안 지연·익숙한 장소와 항상 요구 옵션을 구분해 보호 설정 점검 | Apple 도난당한 기기 보호 공식 안내 https://support.apple.com/ko-kr/120340 |
 | buying-guides | 알뜰폰 유심 배송 뒤 미개통 취소 전 확인할 조건 | 유심 수령 뒤 취소·비용·개통 상태 점검 | 알뜰폰허브 요금제 상세 안내 |
 | carrier-issues | 해외 장기정지 중 인증 문자 수신 조건 확인 | 해외 체류 중 국내 번호가 필요한 이용자가 SMS 본인확인·PASS·ARS의 지원 여부와 귀국 전 해제 절차를 비교 | KT 해외 장기 체류 공식 안내 https://globalroaming.kt.com/info/all |
-| rental | 냉장고 구독 전 문 열림·필터·이전설치 확인 순서 | 냉장고 반입과 도어 간섭, 정수 기능 유무별 관리 및 철거·재설치 범위를 구분 | LG전자 주방가전 구독가이드 https://www.lge.co.kr/story/buying-guide/care-solutions-guide3 |
+| rental | 제습기 구독 전 물통 관리와 연속 배수 조건 확인 | 물통 비우기와 호스 연속 배수 중 환경에 맞는 방식을 고르고, 열교환기·극세필터 방문관리 범위를 확인 | LG전자 제습기 구독 가이드 https://www.lge.co.kr/story/subscription-guide/15 및 LG전자 DQ256MWGA 제품 안내 https://www.lge.co.kr/product/care-solutions/dehumidifiers/dq256mwga |
 | rental | 안마의자 구독 전 반입 폭·리클라이닝 공간 확인 순서 | 출입문·복도 반입 치수와 등받이를 눕혔을 때의 자리, 가죽 교체 관리 범위를 확인 | LG전자 힐링미 MX6 구독 상세 https://www.lge.co.kr/product/care-solutions/massage-chairs/mh65cc?modelId=MD09925826&pdpType=SUBSCRIPTION&subscCategoryKeyId=231091 및 베스트샵 설치 여유 안내 https://bestshop.lge.co.kr/story/insight/detail/IN10035000 |
 | product-reviews | 갤럭시 링 사양 기반 리뷰와 사이즈·충전 선택 | 사이즈 키트와 실제 링·충전 케이스 구성을 구분해 착용과 보관 조건을 선택 | 삼성전자 갤럭시 링 공식 제품 안내 https://www.samsung.com/sec/rings/galaxyring-q505/SM-QNZKAKOO/ |
 | buying-guides | 해외 로밍 일 단위·기간형 요금, 시작 시각 확인 기준 | 현지 자정 기준과 한국 시간 지정 24시간을 구분해 입출국 일정에 맞는 상품을 선택 | T world 로밍 상품 이용안내 https://m.tworld.co.kr/product/roaming/fee-info |
