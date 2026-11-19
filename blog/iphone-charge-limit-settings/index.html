@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>아이폰 충전 한도와 최적화된 충전 선택 기준 | 동네방네</title>
+    <meta name="description" content="아이폰 충전 한도와 최적화된 충전의 차이, 80%에서 멈추거나 가끔 100%까지 차는 이유를 확인하세요. 핸드폰 살 땐 동네방네 dnbn.co.kr" />
+    <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1" />
+    <meta name="dnbn:category" content="it-tech" />
+    <link rel="canonical" href="https://dn-people.com/blog/iphone-charge-limit-settings/" />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="ko_KR" />
+    <meta property="og:site_name" content="동네방네" />
+    <meta property="og:title" content="아이폰 충전 한도와 최적화된 충전 선택 기준 | 동네방네" />
+    <meta property="og:description" content="아이폰에서 80% 충전이 멈추거나 가끔 100%에 도달하는 이유와 하루만 완충하는 방법을 알아봅니다." />
+    <meta property="og:url" content="https://dn-people.com/blog/iphone-charge-limit-settings/" />
+    <meta property="og:image" content="https://dn-people.com/blog/assets/iphone-charge-limit-settings.png" />
+    <meta property="article:published_time" content="2026-11-11" />
+    <meta property="article:modified_time" content="2026-11-11" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="아이폰 충전 한도와 최적화된 충전 선택 기준 | 동네방네" />
+    <meta name="twitter:description" content="아이폰에서 80% 충전이 멈추거나 가끔 100%에 도달하는 이유와 하루만 완충하는 방법을 알아봅니다." />
+    <meta name="twitter:image" content="https://dn-people.com/blog/assets/iphone-charge-limit-settings.png" />
+    <link rel="icon" href="/favicon.ico" />
+    <link
+      rel="stylesheet"
+      crossorigin
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css"
+    />
+    <style>
+      *{box-sizing:border-box}
+      html{scroll-behavior:smooth}
+      body{margin:0;font-family:"Pretendard","Apple SD Gothic Neo",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#111827;background:#fff;line-height:1.75;word-break:keep-all}
+      a{color:#0159fb;text-decoration:underline;text-underline-offset:3px}
+      .site-header{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.88);backdrop-filter:blur(14px);border-bottom:1px solid #e5e7eb}
+      .header-inner{max-width:1120px;margin:0 auto;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+      .brand{font-size:20px;font-weight:900;letter-spacing:0;color:#111827;text-decoration:none}
+      .nav{display:flex;align-items:center;gap:4px;flex-wrap:wrap;justify-content:flex-end}
+      .nav a{display:flex;align-items:center;justify-content:center;padding:10px 12px;border-radius:4px;font-size:15px;line-height:1;font-weight:800;color:#6b7280;text-decoration:none}
+      .nav a.active{background:#3b82f6;color:#fff}
+      .article-wrap{max-width:900px;margin:0 auto;padding:52px 20px 80px}
+      .breadcrumb{display:flex;gap:8px;align-items:center;margin-bottom:22px;color:#6b7280;font-size:15px;font-weight:700}
+      .breadcrumb a{color:#6b7280;text-decoration:none}
+      h1{font-size:40px;line-height:1.32;margin:0 0 16px;font-weight:900;color:#111827;letter-spacing:0}
+      .post-meta{margin:0 0 26px;color:#6b7280;font-size:15px;font-weight:700}
+      .hero-image{display:block;width:100%;height:auto;border-radius:8px;margin:0 auto 30px}
+      .article-figure{margin:28px 0 30px}
+      .article-inline-image{display:block;width:100%;height:auto;border-radius:8px}
+      h2{font-size:25px;line-height:1.45;margin:46px 0 16px;font-weight:900;color:#0159fb;letter-spacing:0}
+      h3{font-size:19px;line-height:1.5;margin:24px 0 10px;font-weight:900;color:#111827;letter-spacing:0}
+      p{font-size:17px;margin:0 0 16px}
+      ul,ol{margin:0 0 20px 22px;padding:0}
+      li{font-size:17px;margin:6px 0}
+      .summary-box{background:#f5f8ff;border-left:5px solid #0159fb;padding:18px 20px;margin:0 0 32px}
+      .note-box{background:#fafafa;border:1px solid #e6eaf2;border-radius:8px;padding:18px 20px;margin:24px 0}
+      .table-scroll{width:100%;overflow-x:auto;margin:18px 0 28px}
+      table{width:100%;min-width:680px;border-collapse:collapse;border-top:2px solid #0159fb}
+      th,td{font-size:16px;text-align:left;vertical-align:top;border-bottom:1px solid #e6eaf2;padding:13px 12px}
+      th{background:#f5f8ff;font-weight:900;color:#111827}
+      .check-list{background:#fff;border:1px solid #e6eaf2;border-radius:8px;padding:18px 20px;margin:20px 0 28px}
+      .check-list ol{margin-bottom:0}
+      .faq-item{border-top:1px solid #e6eaf2;padding:18px 0}
+      .faq-item:last-child{border-bottom:1px solid #e6eaf2}
+      .faq-item h3{margin:0 0 8px;color:#0159fb}
+      .source-list{background:#fafafa;border-radius:8px;padding:18px 20px;margin:18px 0 30px}
+      .source-list ul{margin-bottom:0}
+      .brand-cta{background:#0159fb;color:#fff;padding:22px 24px;border-radius:8px;font-size:20px;font-weight:900;text-align:center;margin-top:34px}
+      .brand-cta a{color:#fff;text-decoration:underline}
+      .small{font-size:15px;color:#555}
+      .divider{height:1px;background:#e6eaf2;margin:36px 0}
+      .footer{border-top:1px solid #e5e7eb;background:#fafafa}
+      .footer-inner{max-width:900px;margin:0 auto;padding:24px 20px;color:#6b7280;font-size:14px}
+      @media(max-width:720px){.header-inner{align-items:flex-start;flex-direction:column}.nav{justify-content:flex-start}.article-wrap{padding:36px 18px 64px}h1{font-size:31px}h2{font-size:22px}p,li{font-size:16px}th,td{font-size:15px;padding:11px 10px}.brand-cta{font-size:18px}}
+
+      /* 모바일 하단 탭바 (랜딩 페이지와 동일한 내비게이션) */
+      .bottom-nav{display:none}
+      @media(max-width:1023px){
+        body{padding-bottom:calc(60px + env(safe-area-inset-bottom,0px))}
+        .header-inner{flex-direction:row;align-items:center}
+        .site-header .nav{display:none}
+        .bottom-nav{display:block;position:fixed;left:0;right:0;bottom:0;z-index:20;background:rgba(255,255,255,.92);backdrop-filter:blur(14px);border-top:1px solid #e5e7eb;padding-bottom:env(safe-area-inset-bottom,0px)}
+        .bottom-nav ul{display:flex;align-items:stretch;margin:0;padding:0;list-style:none}
+        .bottom-nav li{flex:1;margin:0;font-size:inherit}
+        .site-header .brand{display:flex;align-items:center;min-height:44px}
+        .breadcrumb a{padding:9px 0;margin:-9px 0}
+        .category-button{padding-top:10px}
+        .bottom-nav a{display:flex;height:60px;flex-direction:column;align-items:center;justify-content:center;gap:3px;font-size:11px;line-height:12px;font-weight:800;color:#6b7280;text-decoration:none}
+        .bottom-nav a.active{color:#2563eb}
+        .bottom-nav .icon{display:flex;height:28px;width:40px;align-items:center;justify-content:center;border-radius:9999px}
+        .bottom-nav a.active .icon{background:#eff6ff}
+      }
+    </style>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Article",
+            "@id": "https://dn-people.com/blog/iphone-charge-limit-settings/#article",
+            "headline": "아이폰 충전 한도와 최적화된 충전 선택 기준",
+            "description": "아이폰 충전 한도와 최적화된 충전의 차이, 80%에서 멈추거나 가끔 100%까지 차는 이유를 확인하세요. 핸드폰 살 땐 동네방네 dnbn.co.kr",
+            "inLanguage": "ko-KR",
+            "datePublished": "2026-11-11",
+            "dateModified": "2026-11-11",
+            "image": "https://dn-people.com/blog/assets/iphone-charge-limit-settings.png",
+            "articleSection": "IT·테크",
+            "author": {
+              "@type": "Organization",
+              "name": "동네방네",
+              "url": "https://dnbn.co.kr/"
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "동네방네",
+              "url": "https://dnbn.co.kr/"
+            },
+            "mainEntityOfPage": {
+              "@type": "WebPage",
+              "@id": "https://dn-people.com/blog/iphone-charge-limit-settings/"
+            }
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://dn-people.com/blog/iphone-charge-limit-settings/#breadcrumb",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "홈",
+                "item": "https://dn-people.com/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "블로그",
+                "item": "https://dn-people.com/blog/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "아이폰 충전 한도와 최적화된 충전 선택 기준",
+                "item": "https://dn-people.com/blog/iphone-charge-limit-settings/"
+              }
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "@id": "https://dn-people.com/blog/iphone-charge-limit-settings/#faq",
+            "inLanguage": "ko-KR",
+            "mainEntity": [
+              {"@type": "Question", "name": "아이폰 14에서도 80% 충전 한도를 정할 수 있나요?", "acceptedAnswer": {"@type": "Answer", "text": "Apple이 안내하는 충전 한도 선택 기능은 아이폰 15 이후 모델에 있습니다. 아이폰 14는 설정에서 배터리 성능 상태 및 충전으로 들어가 최적화된 배터리 충전을 켜거나 끌 수 있습니다."}},
+              {"@type": "Question", "name": "충전 한도를 80%로 했는데 100%까지 충전된 이유는 무엇인가요?", "acceptedAnswer": {"@type": "Answer", "text": "아이폰은 배터리 잔량 추정을 정확하게 유지하기 위해 한도를 100% 미만으로 둔 상태에서도 가끔 완전히 충전합니다. 자주 100%에 도달한다면 충전 설정에서 현재 적용 중인 한도부터 확인하세요."}},
+              {"@type": "Question", "name": "최적화된 충전이 어떤 날에는 작동하지 않는 이유는 무엇인가요?", "acceptedAnswer": {"@type": "Answer", "text": "아이폰은 평소 패턴을 학습해 전원에 오래 연결될 것으로 예상할 때 최적화된 충전을 적용합니다. 새 기기나 낯선 장소에서 충전하는 날에는 평소와 동작이 달라질 수 있습니다."}},
+              {"@type": "Question", "name": "오늘만 완전히 충전하고 내일 다시 기존 한도로 돌아갈 수 있나요?", "acceptedAnswer": {"@type": "Answer", "text": "충전 한도 메뉴에서 100%를 골랐을 때 내일까지 허용이 표시되면 그 옵션을 선택하세요. Apple의 iOS 26·27 사용 설명서에 따르면 오전 6시에 원래 한도로 돌아갑니다."}},
+              {"@type": "Question", "name": "배터리가 80%에서 멈췄는데 충전기를 바꿔야 하나요?", "acceptedAnswer": {"@type": "Answer", "text": "먼저 현재 충전 한도와 잠금 화면의 충전 완료 예정 또는 온도 관련 메시지를 확인하세요. 설정과 온도를 확인한 뒤에도 충전이 이어지지 않으면 케이블·어댑터와 연결 상태를 Apple 지원 절차에 따라 점검하세요."}}
+            ]
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="/"><img src="/logo-dnbn.svg" alt="동네방네" style="height:24px;width:auto;display:block" /></a>
+        <nav class="nav" aria-label="주요 메뉴">
+          <a href="/#hero-section">홈</a>
+          <a href="/#intro-section">소개</a>
+          <a href="/#dnbn-section">회사</a>
+          <a href="/#review-section">후기</a>
+          <a class="active" href="/blog/">블로그</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="article-wrap">
+      <div class="breadcrumb">
+        <a href="/">홈</a>
+        <span>/</span>
+        <a href="/blog/">블로그</a>
+      </div>
+
+      <article>
+        <h1>아이폰 충전 한도와 최적화된 충전 선택 기준</h1>
+        <p class="post-meta">
+          2026년 11월 11일 ·
+          <a href="/blog/?category=it-tech">IT·테크</a>
+        </p>
+
+        <img
+          class="hero-image"
+          src="/blog/assets/iphone-charge-limit-settings.png"
+          alt="침대 옆 탁자에 배터리 아이콘이 켜진 휴대폰과 연결된 충전 케이블, 시계, 조명이 놓여 있습니다."
+          loading="lazy"
+        />
+
+        <div class="summary-box">
+          <p><strong>요약 답변</strong></p>
+          <p>아이폰 15 이후 모델의 충전 한도는 평소 충전을 멈출 잔량을 정합니다. 최적화된 배터리 충전은 일정한 충전 습관을 바탕으로 80% 이후 충전을 미뤘다가 사용 전에 마치도록 돕습니다. 같은 80%라도 선택한 설정과 화면 알림을 먼저 보세요.</p>
+          <p class="small">기준일: 2026년 11월 11일</p>
+        </div>
+
+        <p class="small">2026년 11월 기준 Apple 한국 지원 문서와 iOS 26·27 사용 설명서를 확인했습니다. 대표 및 본문 이미지는 AI로 만든 상황 예시입니다.</p>
+
+        <h2>충전 한도와 최적화된 충전은 무엇이 다른가요?</h2>
+        <p>충전 한도는 목표 잔량을 정하고, 최적화된 충전은 완충을 마치는 시점을 조절합니다. 한도를 85%로 골랐다면 아이폰은 보통 그 근처에서 충전을 멈춥니다. 최적화된 배터리 충전이 작동하는 날에는 80% 부근에서 기다렸다가 사용 시각에 맞춰 나머지를 채우려고 합니다. 밤에 충전기에 꽂아 둔 채 80%를 봤다면 아래 항목을 확인해 보세요.</p>
+        <table>
+          <thead><tr><th scope="col">구분</th><th scope="col">기기에서 확인할 항목</th><th scope="col">일반적인 동작</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">충전 한도</th><td>아이폰 15 이후의 충전 메뉴에서 80~95% 선택</td><td>선택한 값 근처에서 멈춥니다. 잔량 추정을 위해 가끔 완전히 충전할 수 있습니다.</td></tr>
+            <tr><th scope="row">최적화된 배터리 충전</th><td>아이폰 15 이후는 한도 100%일 때 설정 가능. 아이폰 14 이하는 배터리 성능 상태 및 충전에서 확인</td><td>전원에 오래 연결될 것으로 예상할 때 80% 이후 충전을 미룹니다. 적용 중이면 잠금 화면에 완충 예정 시간이 표시됩니다.</td></tr>
+            <tr><th scope="row">온도에 따른 보호</th><td>충전이 온도 때문에 대기 중이라는 안내</td><td>기기가 너무 뜨겁거나 차가우면 충전이 느려지거나 멈출 수 있습니다. 적정 온도로 돌아오면 재개됩니다.</td></tr>
+          </tbody>
+        </table>
+
+        <h2>내 아이폰에서는 어디에서 설정하나요?</h2>
+        <p>아이폰 15 이후는 배터리의 충전 메뉴에서, 아이폰 14 이하는 배터리 성능 상태 및 충전에서 확인합니다. 먼저 설정의 일반과 정보에서 모델 이름과 iOS 버전을 확인하면 설명서에서 맞는 경로를 찾기 쉽습니다. 아이폰 15 이후는 <strong>설정 → 배터리 → 충전</strong>에서 80%, 85%, 90%, 95%, 100% 중 선택합니다. 100%를 선택했을 때 최적화된 배터리 충전 옵션을 사용할 수 있습니다.</p>
+        <p>아이폰 14 이하에서는 <strong>설정 → 배터리 → 배터리 성능 상태 및 충전</strong>에서 최적화된 배터리 충전 스위치를 확인하세요. 모델과 iOS가 다른 두 기기를 비교할 때는 상대방 기기의 메뉴 위치를 그대로 찾기보다 본인 모델의 지원 안내를 참고하세요.</p>
+        <figure class="article-figure">
+          <img class="article-inline-image" src="/blog/assets/iphone-charge-limit-settings-limit.png" width="1200" height="675" loading="lazy" alt="책상에서 충전 케이블이 꽂힌 휴대폰을 들고 화면의 가로 슬라이더에 손가락을 대고 있습니다." />
+          <figcaption class="small">충전 메뉴에서 평소 사용할 한도를 고르는 상황을 표현한 이미지입니다.</figcaption>
+        </figure>
+
+        <h2>한도 근처에서 멈추거나 가끔 완충되는 이유는 무엇인가요?</h2>
+        <p>설정값 근처에서 멈추거나 잔량을 정확히 표시하기 위해 가끔 완전히 충전하는 것은 Apple이 안내한 동작입니다. 한도를 90%로 정했을 때 표시값은 90% 근처에서 멈출 수 있습니다. 전원을 연결한 상태에서 잔량이 5%포인트 이상 내려가면 설정값 근처까지 다시 충전할 수 있습니다.</p>
+        <p>한도를 낮게 두었는데 한 번 100%가 표시됐다면 먼저 충전 메뉴에서 현재 값을 확인하세요. 이전에 외출을 준비하면서 100%를 새 한도로 저장했다면 이후에도 그 값이 유지됩니다. 이때 평소 쓰던 한도로 되돌리려면 충전 메뉴에서 원하는 값을 다시 선택하면 됩니다.</p>
+
+        <h2>80%에서 멈췄을 때 어떤 메시지를 확인하나요?</h2>
+        <p>잠금 화면의 완충 예정 시각과 온도 관련 충전 대기 안내를 확인한 뒤, 배터리 설정에서 선택한 한도를 보세요. 완충 예정 시간이 보이면 최적화된 충전이 적용된 상황일 수 있습니다. 온도 때문에 대기 중이면 기기를 직사광선이나 뜨거운 차 안에서 옮기고 정상 온도로 돌아오는지 확인하세요. 충전 한도를 바꾸기 전에 화면에 표시된 이유를 보면 다음 조치를 고르기 쉽습니다.</p>
+        <p>평소보다 이른 시간에 완충이 필요하고 최적화된 충전 알림이 떠 있다면, 해당 알림을 길게 눌러 <strong>지금 충전</strong>을 선택할 수 있습니다. 충전 대기 안내가 없고 선택한 한도보다 낮은 상태에서 계속 진행되지 않는다면 Apple의 충전 문제 안내에 따라 케이블과 전원 연결을 점검하세요.</p>
+
+        <h2>여행이나 이른 출근 전날만 완충할 수 있나요?</h2>
+        <p>충전 한도 메뉴에 내일까지 허용이 보이면 100% 충전을 임시 허용하고 다음 날 기존 한도로 돌아갈 수 있습니다. Apple의 iOS 26·27 설명서에 따르면 충전 메뉴에서 100%를 골라 <strong>내일까지 허용</strong>을 누르면 오전 6시에 원래 한도가 적용됩니다. <strong>100%로 한도 설정</strong>을 고르면 다시 변경할 때까지 그 값이 유지됩니다.</p>
+        <p>평소와 다른 장소에 머물거나 기상 시간이 앞당겨진 날은 잠들기 전에 다음 날 필요한 잔량과 현재 한도를 확인해 두세요. 잠금 화면에 완충 예정 시간이 나타나면 출발 시간과 대조하고, 시간이 빠듯하면 그때 표시되는 즉시 충전 옵션을 확인하세요.</p>
+        <figure class="article-figure">
+          <img class="article-inline-image" src="/blog/assets/iphone-charge-limit-settings-schedule.png" width="1200" height="675" loading="lazy" alt="새벽빛이 들어오는 침대 옆 탁자에 충전 중인 휴대폰과 알람 시계, 열쇠가 놓여 있습니다." />
+          <figcaption class="small">이른 출발을 앞두고 평소 한도와 필요한 충전량을 확인하는 상황입니다.</figcaption>
+        </figure>
+
+        <h2>최적화된 충전은 매일 같은 시간에 작동하나요?</h2>
+        <p>최적화된 충전은 전원에 오래 연결해 둘 것으로 예상할 때 작동하므로, 일정이나 장소가 바뀌면 적용 여부도 달라집니다. Apple은 사용 습관을 학습하려면 적어도 14일이 걸리고, 특정 장소에서 5시간 이상 충전한 경우가 최소 9번 필요하다고 안내합니다. 새 기기를 쓰기 시작했거나 여행 중이라면 충전기가 연결돼 있어도 평소 보던 완충 예정 알림이 없을 수 있습니다.</p>
+        <p>충전 시간을 매일 정해 두기 어렵지만 책상에서 자주 전원에 연결한다면, 필요한 잔량에 맞춰 충전 한도를 선택할 수 있습니다. 아침에 충전기를 뺀 뒤 저녁까지 전원에 연결하기 어렵다면, 한도 100%와 최적화된 충전 조합을 살펴보세요. 어떤 설정이 편한지는 하루 동안 실제로 사용할 수 있는 잔량과 다시 충전할 기회에 달려 있습니다.</p>
+
+        <h2>설정을 바꾸기 전에 무엇부터 점검하나요?</h2>
+        <p>모델과 현재 한도, 화면 알림을 먼저 확인하고 다음 충전 기회까지 필요한 잔량을 기준으로 선택하세요. 평소와 다른 동작을 확인했다면 설정값과 당시 충전 상태를 적어 두면 이후 같은 상황을 비교하기 쉽습니다.</p>
+        <ol>
+          <li>설정의 일반과 정보에서 모델 및 iOS 버전을 확인합니다.</li>
+          <li>배터리 메뉴에서 선택된 한도 또는 최적화된 충전 스위치를 확인합니다.</li>
+          <li>80% 근처에서 멈추면 잠금 화면에서 완충 예정 시각이나 온도 대기 안내를 찾습니다.</li>
+          <li>오늘만 완충이 필요하다면 임시 허용이나 현재 화면에 표시되는 즉시 충전 옵션을 확인합니다.</li>
+          <li>충전이 끝난 뒤 화면에 남아 있는 한도를 보고 평소 사용할 값인지 확인합니다.</li>
+        </ol>
+        <p>기기를 충전한 뒤에도 잔량이 빨리 줄어든다면 배터리 사용량과 기기 상태를 따로 확인해 보세요. 삼성 기기는 <a href="/blog/galaxy-battery-self-check/">갤럭시 배터리 자가진단 순서</a>에서 확인할 항목을 볼 수 있습니다.</p>
+
+        <div class="divider"></div>
+
+        <h2>자주 묻는 질문</h2>
+
+        <div class="faq-item"><h3>아이폰 14에서도 80% 충전 한도를 정할 수 있나요?</h3><p>Apple이 안내하는 충전 한도 선택 기능은 아이폰 15 이후 모델에 있습니다. 아이폰 14는 설정에서 배터리 성능 상태 및 충전으로 들어가 최적화된 배터리 충전을 켜거나 끌 수 있습니다.</p></div>
+        <div class="faq-item"><h3>충전 한도를 80%로 했는데 100%까지 충전된 이유는 무엇인가요?</h3><p>아이폰은 배터리 잔량 추정을 정확하게 유지하기 위해 한도를 100% 미만으로 둔 상태에서도 가끔 완전히 충전합니다. 자주 100%에 도달한다면 충전 설정에서 현재 적용 중인 한도부터 확인하세요.</p></div>
+        <div class="faq-item"><h3>최적화된 충전이 어떤 날에는 작동하지 않는 이유는 무엇인가요?</h3><p>아이폰은 평소 패턴을 학습해 전원에 오래 연결될 것으로 예상할 때 최적화된 충전을 적용합니다. 새 기기나 낯선 장소에서 충전하는 날에는 평소와 동작이 달라질 수 있습니다.</p></div>
+        <div class="faq-item"><h3>오늘만 완전히 충전하고 내일 다시 기존 한도로 돌아갈 수 있나요?</h3><p>충전 한도 메뉴에서 100%를 골랐을 때 내일까지 허용이 표시되면 그 옵션을 선택하세요. Apple의 iOS 26·27 사용 설명서에 따르면 오전 6시에 원래 한도로 돌아갑니다.</p></div>
+        <div class="faq-item"><h3>배터리가 80%에서 멈췄는데 충전기를 바꿔야 하나요?</h3><p>먼저 현재 충전 한도와 잠금 화면의 충전 완료 예정 또는 온도 관련 메시지를 확인하세요. 설정과 온도를 확인한 뒤에도 충전이 이어지지 않으면 케이블·어댑터와 연결 상태를 Apple 지원 절차에 따라 점검하세요.</p></div>
+
+        <h2>참고할 공식 사이트</h2>
+        <div class="source-list">
+          <ul>
+            <li><a href="https://support.apple.com/ko-kr/108055" target="_blank" rel="noopener">Apple 지원 · 충전 한도와 최적화된 배터리 충전</a></li>
+            <li><a href="https://support.apple.com/ko-kr/guide/iphone/iph0777c60aa/26/ios/26" target="_blank" rel="noopener">Apple 사용 설명서 · iOS 26 충전 한도 설정</a></li>
+            <li><a href="https://support.apple.com/ko-kr/guide/iphone/iph0777c60aa/27/ios/27" target="_blank" rel="noopener">Apple 사용 설명서 · iOS 27 충전 한도 설정</a></li>
+            <li><a href="https://support.apple.com/ko-kr/guide/iphone/iph3006fbee4/27/ios/27" target="_blank" rel="noopener">Apple 사용 설명서 · 온도에 따른 충전 제한</a></li>
+            <li><a href="https://support.apple.com/ko-kr/108805" target="_blank" rel="noopener">Apple 지원 · 충전이 진행되지 않을 때 확인할 항목</a></li>
+          </ul>
+        </div>
+
+        <div class="brand-cta">
+          자급제폰, 오픈박스폰, 알뜰폰 요금제까지 한 번에 비교하고 싶다면<br />
+          핸드폰 살 땐 동네방네 <a href="https://dnbn.co.kr/" target="_blank" rel="noopener">dnbn.co.kr</a>
+        </div>
+      </article>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">핸드폰 살 땐 동네방네 dnbn.co.kr</div>
+    </footer>
+      <nav class="bottom-nav" aria-label="빠른 이동">
+      <ul>
+        <li><a href="/#hero-section"><span class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"/><path d="M5.5 9.5V20a1 1 0 0 0 1 1h3.75v-5.5h3.5V21h3.75a1 1 0 0 0 1-1V9.5"/></svg></span>홈</a></li>
+        <li><a href="/#intro-section"><span class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5.5"/><path d="M12 7.75h.01"/></svg></span>소개</a></li>
+        <li><a href="/#dnbn-section"><span class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 21h17"/><path d="M6 21V4.5a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1V21"/><path d="M9.5 8h1.5M13 8h1.5M9.5 12h1.5M13 12h1.5"/><path d="M10.5 21v-4h3v4"/></svg></span>회사</a></li>
+        <li><a href="/#review-section"><span class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3.75 2.6 5.27 5.82.85-4.21 4.1 1 5.8L12 17.03l-5.21 2.74 1-5.8-4.21-4.1 5.82-.85z"/></svg></span>후기</a></li>
+        <li><a class="active" aria-current="true" href="/blog/"><span class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3.5h8L19 8.5V20a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V4.5a1 1 0 0 1 1-1z"/><path d="M14 3.5v5h5"/><path d="M8.5 13.5h7M8.5 17h4.5"/></svg></span>블로그</a></li>
+      </ul>
+    </nav>
+  </body>
+</html>
