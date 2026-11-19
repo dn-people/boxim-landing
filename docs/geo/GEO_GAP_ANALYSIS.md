@@ -39,7 +39,7 @@ dnbn.co.kr(자매 서비스, `D:\app\dnbn` 리포지토리)은 JSON-LD가 전무
 ```json
 "@type": "Organization",
 "url": "https://dnbn.co.kr/",
-"sameAs": ["https://dn-people.com/", "https://dnbn.co.kr/", "https://www.instagram.com/dnbn_official/"]
+"sameAs": ["https://dn-people.com/", "https://dnbn.co.kr/", "https://www.instagram.com/dnbn__official/"]
 ```
 
 즉 이 사이트는 **자기 자신(dn-people.com)이 아니라 dnbn.co.kr을 브랜드 엔티티의 대표 URL로 선언**하고 있다. 본문의 저자·회사소개 링크(`rel="author"`, `<a href="https://dnbn.co.kr/company">회사소개</a>`)도 전부 dnbn.co.kr을 가리킨다. 블로그 글의 Article `author`/`publisher` 역시 `"url": "https://dnbn.co.kr/"`.
