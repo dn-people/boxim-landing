@@ -7,6 +7,7 @@
 ## 발행됨
 | 날짜 | slug | 제목 | 타깃 키워드 | 검색 의도 | 카테고리 |
 |---|---|---|---|---|---|
+| 2026-11-26 | kt-shared-roaming-signup | KT 함께 쓰는 로밍, 대표·추가 회선 가입 순서 | KT 함께 쓰는 로밍 가입, KT 로밍 서브 회선, KT 로밍 데이터 공유 | 여행 전에 대표가 번호를 지정하고 각 추가 회선이 별도 가입을 마쳤는지, 공유량과 적용 기간이 맞는지 확인 | buying-guides |
 | 2026-11-25 | roaming-day-count-check | 해외 로밍 하루 요금 계산법, 현지 자정과 24시간 | 해외 로밍 하루 기준, 로밍 현지 자정, 로밍 시작 시각 24시간 | 심야 입국·출국 일정에서 현지 수도 자정과 시작부터 24시간을 구분하고 이용일과 예약 기간의 청구 방식을 비교 | buying-guides |
 | 2026-11-17 | galaxy-book6-pro-size | 갤럭시 북6 프로 14형·16형 사양 기반 리뷰 | 갤럭시 북6 프로 14형 16형 차이, 갤럭시 북6 프로 보조 SSD, 갤럭시 북6 프로 가방 수납 | 동일 프로세서·기본 SSD 구성의 14형과 16형에서 가방 수납과 단독 화면 크기, 추가 SSD 지원을 비교해 선택 | product-reviews |
 | 2026-11-16 | dehumidifier-drainage-care-check | 제습기 구독 전 물통·연속 배수 확인 순서 | 제습기 구독 연속 배수, 제습기 물통 만수용량, 제습기 방문관리 | 방마다 옮길 때의 물통 인출·비우기와 낮은 배수구까지의 호스 경로를 비교하고, 열교환기 분해와 필터 방문관리 제공 시점을 확인 | rental |
@@ -104,4 +105,4 @@
 | rental | 안마의자 구독 전 반입 폭·리클라이닝 공간 확인 순서 | 출입문·복도 반입 치수와 등받이를 눕혔을 때의 자리, 가죽 교체 관리 범위를 확인 | LG전자 힐링미 MX6 구독 상세 https://www.lge.co.kr/product/care-solutions/massage-chairs/mh65cc?modelId=MD09925826&pdpType=SUBSCRIPTION&subscCategoryKeyId=231091 및 베스트샵 설치 여유 안내 https://bestshop.lge.co.kr/story/insight/detail/IN10035000 |
 | product-reviews | 갤럭시 링 사양 기반 리뷰와 사이즈·충전 선택 | 사이즈 키트와 실제 링·충전 케이스 구성을 구분해 착용과 보관 조건을 선택 | 삼성전자 갤럭시 링 공식 제품 안내 https://www.samsung.com/sec/rings/galaxyring-q505/SM-QNZKAKOO/ |
 | product-reviews | 갤럭시 북6 울트라 내장·외장 그래픽 사양 기반 리뷰 | 같은 16형 울트라에서 전용 그래픽 메모리가 필요한 앱을 기준으로 GPU 탑재 여부와 100W·140W 어댑터 사양을 대조 | 삼성전자 내장형 https://www.samsung.com/sec/support/model/NT960UJG-KC72Y/ 및 외장형 https://www.samsung.com/sec/support/model/NT960UJH-XC94Y/ |
-| buying-guides | KT 함께 쓰는 로밍 대표·추가 회선 신청 순서 | 데이터 공유 전 대표 번호 등록과 지정받은 추가 회선의 별도 가입 여부, 적용 기간을 확인 | KT 함께 쓰는 로밍 공식 상품 https://globalroaming.kt.com/product/data/gasam |
+| buying-guides | 가정용 인터넷 100메가·500메가 선택 기준 | 가정 내 여러 기기의 동시 사용, 최대 속도 표시와 공유기·유선 연결을 확인해 속도 등급을 결정 | KT 요고 인터넷 공식 요금·공유기 안내 https://product.kt.com/wDic/productDetail.do?ItemCode=1676 |
