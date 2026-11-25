@@ -5,8 +5,15 @@
     <link>https://dn-people.com/blog/</link>
     <description>스마트폰 구매, 요금제, 번호이동을 이해하기 쉽게 설명하는 동네방네 공식 가이드</description>
     <language>ko-KR</language>
-    <lastBuildDate>Wed, 25 Nov 2026 09:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 26 Nov 2026 09:00:00 +0900</lastBuildDate>
     <atom:link href="https://dn-people.com/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>KT 함께 쓰는 로밍, 대표·추가 회선 가입 순서</title>
+      <link>https://dn-people.com/blog/kt-shared-roaming-signup/</link>
+      <guid isPermaLink="true">https://dn-people.com/blog/kt-shared-roaming-signup/</guid>
+      <description>KT 함께 쓰는 로밍은 대표가 번호를 지정한 뒤 추가 회선도 따로 가입해야 합니다. 출국 전 가입 상태와 데이터 공유 조건을 확인하세요. 핸드폰 살 땐 동네방네 dnbn.co.kr</description>
+      <pubDate>Thu, 26 Nov 2026 09:00:00 +0900</pubDate>
+    </item>
     <item>
       <title>해외 로밍 하루 요금 계산법, 현지 자정과 24시간</title>
       <link>https://dn-people.com/blog/roaming-day-count-check/</link>
