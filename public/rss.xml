@@ -5,8 +5,15 @@
     <link>https://dn-people.com/blog/</link>
     <description>스마트폰 구매, 요금제, 번호이동을 이해하기 쉽게 설명하는 동네방네 공식 가이드</description>
     <language>ko-KR</language>
-    <lastBuildDate>Thu, 26 Nov 2026 09:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 27 Nov 2026 09:00:00 +0900</lastBuildDate>
     <atom:link href="https://dn-people.com/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>휴대폰 번호이동이 막힐 때 가입제한 확인 순서</title>
+      <link>https://dn-people.com/blog/mobile-signup-limit-check/</link>
+      <guid isPermaLink="true">https://dn-people.com/blog/mobile-signup-limit-check/</guid>
+      <description>2026년 11월 20일부터 기본 제공되는 가입제한서비스를 확인하세요. 번호이동 전 명의자 본인의 해지, 재시도, 개통 후 설정 확인 순서를 정리합니다. 핸드폰 살 땐 동네방네 dnbn.co.kr</description>
+      <pubDate>Fri, 27 Nov 2026 09:00:00 +0900</pubDate>
+    </item>
     <item>
       <title>KT 함께 쓰는 로밍, 대표·추가 회선 가입 순서</title>
       <link>https://dn-people.com/blog/kt-shared-roaming-signup/</link>
